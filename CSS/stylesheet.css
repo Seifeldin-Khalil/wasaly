@@ -20,6 +20,7 @@ body {
     font-size: 22px;
     font-weight: 700;
     text-decoration: underline;
+    margin-top: 100px;
 }
 
 .footer-distributed {
@@ -167,8 +168,8 @@ body {
 
 .footer-distributed .footer-icons a {
     display: inline-block;
-    width: 35px;
-    height: 35px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     background-color: #33383b;
     border-radius: 2px;
@@ -181,6 +182,13 @@ body {
     margin-right: 3px;
     margin-bottom: 5px;
 }
+/*footer icons fb youtube twitter and insta*/
+
+.facebook, .twitter, .youtube, .instagram{
+    width: 100%;
+    height: 100%;
+} 
+
 
 /* If you don't want the footer to be responsive, remove these media queries */
 

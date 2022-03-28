@@ -7,10 +7,12 @@
 /* footer font */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
 
+/*Generic*/
 * {
     font-family: Open Sans;
 }
 
+/*Page content */
 body {
     width: 100%;
     display: inline-block;
@@ -22,10 +24,18 @@ body {
     margin-top: 100px;
 }
 
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+/* footer */
+
 .footer-distributed {
-     position: fixed;
-  left: 0;
-  bottom: 0;
     background: #3b4440;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
@@ -33,6 +43,8 @@ body {
     text-align: left;
     font: bold 16px sans-serif;
     padding: 55px 50px;
+    bottom: 0;
+    position: absolute;
 }
 
 .footer-distributed .footer-left,

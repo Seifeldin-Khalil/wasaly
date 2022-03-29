@@ -2,14 +2,15 @@
 <html>
 
 <head>
-    <script src="https://code.iconify.design/2/2.2.0/iconify.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="JavaScripts/maiadaJavascript.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="CSS/stylesheet.css">
+    <script src="JavaScripts/maiadaJavascript.js"></script>
     <link rel="stylesheet" href="CSS/MaiiStylesheet.css">
-
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+    <meta name="robots" content="noindex,follow" />
+    
     <div class="dashboard-header">
         <nav class="navbar navbar-expand-lg bg-white fixed-top"> <img class="navbar-brand" src="imgs/final_footer.png"> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
@@ -82,127 +83,158 @@
 </head>
 
 <body>
-    <div id="page-container">
-        <div id="content-wrap">
-            <div class="CartContainer">
-                <div class="cartHeader">
-                    <h3 class="cartHeading">Shopping Cart</h3>
-                    <h5 class="cartAction">Remove all</h5>
-                </div>
 
-                <div class="Cart-Items">
-                    <div class="image-box">
-                        <img src="images/apple.png" style={{ height="120px" }} />
-                    </div>
-                    <div class="cartabout">
-                        <h1 class="carttitle">Apple Juice</h1>
-                        <h3 class="subtitle">250ml</h3>
-                        <img src="images/veg.png" style={{ height="30px" }} />
-                    </div>
-                    <div class="cartcounter">
-                        <div class="cartbtn">+</div>
-                        <div class="cartcount">2</div>
-                        <div class="cartbtn">-</div>
-                    </div>
-                    <div class="cartprices">
-                        <div class="cartamount">$2.99</div>
-                        <div class="cartsave"><u>Save for later</u></div>
-                        <div class="cartremove"><u>Remove</u></div>
-                    </div>
-                </div>
-
-                <div class="Cart-Items cartpad">
-                    <div class="image-box">
-                        <img src="images/grapes.png" style={{ height="120px" }} />
-                    </div>
-                    <div class="cartabout">
-                        <h1 class="carttitle">Grapes Juice</h1>
-                        <h3 class="subtitle">250ml</h3>
-                        <img src="images/veg.png" style={{ height="30px" }} />
-                    </div>
-                    <div class="cartcounter">
-                        <div class="cartbtn">+</div>
-                        <div class="cartcount">1</div>
-                        <div class="cartbtn">-</div>
-                    </div>
-                    <div class="cartprices">
-                        <div class="cartamount">$3.19</div>
-                        <div class="cartsave"><u>Save for later</u></div>
-                        <div class="cartremove"><u>Remove</u></div>
-                    </div>
-                </div>
-                <hr>
-                <div class="cartcheckout">
-                    <div class="carttotal">
-                        <div>
-                            <div class="cartSubtotal">Sub-Total</div>
-                            <div class="cartitems">2 items</div>
-                        </div>
-                        <div class="carttotal-amount">$6.18</div>
-                    </div>
-                    <button class="cartbutton">Checkout</button>
-                </div>
-            </div>
+    <div class="shopping-cart">
+        <!-- Title -->
+        <div class="carttitle">
+            Shopping Bag
         </div>
 
-        <footer class="footer-distributed">
-            <div class="footer-left">
-
-                <img src="imgs/final_footer.png" alt="footer logo">
-                <p class="footer-links">
-                    <a href="#" class="link-1">Home</a>
-
-                    <a href="#">Blog</a>
-
-                    <a href="#">Pricing</a>
-
-                    <a href="#">About</a>
-
-                    <a href="#">Faq</a>
-
-                    <a href="#">Contact</a>
-                </p>
-
-                <p class="footer-company-name">Company Name © 2015</p>
+        <!-- Product #1 -->
+        <div class="cartitem">
+            <div class="cartbuttons">
+                <span class="delete-btn"></span>
+                <span class="like-btn"></span>
             </div>
 
-            <div class="footer-center">
-
-                <div>
-                    <i class="fa fa-map-marker"></i>
-                    <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
-                </div>
-
-                <div>
-                    <i class="fa fa-phone"></i>
-                    <p>+1.555.555.5555</p>
-                </div>
-
-                <div>
-                    <i class="fa fa-envelope"></i>
-                    <p><a href="mailto:support@company.com">support@company.com</a></p>
-                </div>
-
+            <div class="cartItemImage">
+                <img src="item-1.png" alt="" />
             </div>
 
-            <div class="footer-right">
-
-                <p class="footer-company-about">
-                    <span>About the company</span>
-                    Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-                </p>
-
-                <div class="footer-icons">
-
-                    <a href="#"><i><img class="facebook" src="imgs/footer_icons/facebook.png"></i></a>
-                    <a href="#"><i><img class="twitter" src="imgs/footer_icons/twitter.png"></i></a>
-                    <a href="#"><i></i><img class="youtube" src="imgs/footer_icons/youtube.png"></a>
-                    <a href="#"><i><img class="instagram" src="imgs/footer_icons/instagram.png"></i></a>
-                </div>
+            <div class="cartItemDescription">
+                <span>Common Projects</span>
+                <span>Bball High</span>
+                <span>White</span>
             </div>
-        </footer>
+
+            <div class="cartItemquantity">
+                <button class="plus-btn" type="button" name="button">
+                    <img src="plus.svg" alt="" />
+                </button>
+                <input type="text" name="name" value="1">
+                <button class="minus-btn" type="button" name="button">
+                    <img src="minus.svg" alt="" />
+                </button>
+            </div>
+
+            <div class="Item-total-price">$549</div>
+        </div>
+
+        <!-- Product #2 -->
+        <div class="item">
+            <div class="buttons">
+                <span class="delete-btn"></span>
+                <span class="like-btn"></span>
+            </div>
+
+            <div class="image">
+                <img src="item-2.png" alt="" />
+            </div>
+
+            <div class="description">
+                <span>Maison Margiela</span>
+                <span>Future Sneakers</span>
+                <span>White</span>
+            </div>
+
+            <div class="quantity">
+                <button class="plus-btn" type="button" name="button">
+                    <img src="plus.svg" alt="" />
+                </button>
+                <input type="text" name="name" value="1">
+                <button class="minus-btn" type="button" name="button">
+                    <img src="minus.svg" alt="" />
+                </button>
+            </div>
+
+            <div class="total-price">$870</div>
+        </div>
+
+        <!-- Product #3 -->
+        <div class="item">
+            <div class="buttons">
+                <span class="delete-btn"></span>
+                <span class="like-btn"></span>
+            </div>
+
+            <div class="image">
+                <img src="item-3.png" alt="" />
+            </div>
+
+            <div class="description">
+                <span>Our Legacy</span>
+                <span>Brushed Scarf</span>
+                <span>Brown</span>
+            </div>
+
+            <div class="quantity">
+                <button class="plus-btn" type="button" name="button">
+                    <img src="plus.svg" alt="" />
+                </button>
+                <input type="text" name="name" value="1">
+                <button class="minus-btn" type="button" name="button">
+                    <img src="minus.svg" alt="" />
+                </button>
+            </div>
+
+            <div class="total-price">$349</div>
+        </div>
     </div>
-</body>
 
+    <script type="text/javascript">
+        $('.minus-btn').on('click', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            var $input = $this.closest('div').find('input');
+            var value = parseInt($input.val());
+
+            if (value > 1) {
+                value = value - 1;
+            } else {
+                value = 0;
+            }
+
+            $input.val(value);
+
+        });
+
+        $('.plus-btn').on('click', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            var $input = $this.closest('div').find('input');
+            var value = parseInt($input.val());
+
+            if (value < 100) {
+                value = value + 1;
+            } else {
+                value = 100;
+            }
+
+            $input.val(value);
+        });
+
+        $('.like-btn').on('click', function() {
+            $(this).toggleClass('is-active');
+        });
+    </script>
+
+    <div class="footer-right">
+
+        <p class="footer-company-about">
+            <span>About the company</span>
+            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+        </p>
+
+        <div class="footer-icons">
+
+            <a href="#"><i><img class="facebook" src="imgs/footer_icons/facebook.png"></i></a>
+            <a href="#"><i><img class="twitter" src="imgs/footer_icons/twitter.png"></i></a>
+            <a href="#"><i></i><img class="youtube" src="imgs/footer_icons/youtube.png"></a>
+            <a href="#"><i><img class="instagram" src="imgs/footer_icons/instagram.png"></i></a>
+
+        </div>
+    </div>
+    </footer>
+</body>
 
 </html>

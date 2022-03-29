@@ -1,0 +1,429 @@
+/* Contact Us*/
+
+/* Subscription form */
+
+.sign-up-container {
+  width: 70%;
+   margin-left: 70px;
+  padding-top: 208.33333px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+}
+
+.paper {
+  width: 85%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  position: relative;
+  top: -145px;
+  padding: 1rem 1.4rem 125px 1.4rem;
+  background: #fff;
+  background: -webkit-linear-gradient(top, #f1f1f1 43%, #fff 100%);
+  background: linear-gradient(to bottom, #f1f1f1 43%, #eee2b4 100%);
+  color: #db4344;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+#SubsTitle {
+  margin-bottom: 1rem;
+  margin-top: 0;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.text-input,
+.subsbutton {
+  box-sizing: border-box;
+  padding: 0.8em 0.67em;
+  margin-bottom: 0.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 2em;
+  outline: none;
+}
+
+.subsbutton {
+  border: 1px solid #999;
+  -webkit-transition: background 0.1s, color 0.1s;
+  transition: background 0.1s, color 0.1s;
+}
+.subsbutton:hover {
+  background: #db4344;
+  color: #fef8e1;
+}
+
+.text-input {
+  background: #fff;
+    color: #333;
+}
+.text-input::-webkit-input-placeholder {
+  color: inherit;
+  font-style: italic;
+}
+.text-input::-moz-placeholder {
+  color: inherit;
+  font-style: italic;
+}
+.text-input:-ms-input-placeholder {
+  color: inherit;
+  font-style: italic;
+}
+.text-input::placeholder {
+  color: inherit;
+  font-style: italic;
+}
+
+.sign-up-form {
+  width: 100%;
+}
+.sign-up-form * {
+  width: 100%;
+}
+
+.envelope {
+  position: relative;
+  width: 400px;
+  height: 250px;
+  margin: 0 auto;
+  background: #fa5b5c;
+  border-radius: 24px;
+}
+.envelope:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -240px;
+  width: 0;
+  height: 0;
+  z-index: -1;
+  border-width: 125px 200px;
+  border-color: transparent;
+  border-style: solid;
+  border-bottom-color: #fa5b5c;
+  border-radius: 24px;
+}
+.envelope:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  pointer-events: none;
+  border-width: 125px 200px;
+  border-style: solid;
+  border-color: #db4344;
+  border-top-color: transparent;
+  border-radius: 24px;
+}
+.envelope .bottom-flap {
+  width: 400px;
+  height: 250px;
+  display: block;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  border-radius: 24px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.envelope .bottom-flap:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 40%;
+  border-radius: 24px;
+  background: #fa5b5c;
+  -webkit-transform: scaleY(0.7) rotate(45deg);
+          transform: scaleY(0.7) rotate(45deg);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submitted .paper {
+  -webkit-animation: paper-in 0.8s ease-out;
+          animation: paper-in 0.8s ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.submitted .envelope:before {
+  -webkit-animation: fold 0.5s ease-in;
+          animation: fold 0.5s ease-in;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+
+@-webkit-keyframes paper-in {
+  30% {
+    -webkit-transform: translateY(-80px);
+            transform: translateY(-80px);
+    padding-bottom: 125px;
+  }
+  to {
+    top: 10px;
+    padding-bottom: 0;
+  }
+}
+
+@keyframes paper-in {
+  30% {
+    -webkit-transform: translateY(-80px);
+            transform: translateY(-80px);
+    padding-bottom: 125px;
+  }
+  to {
+    top: 10px;
+    padding-bottom: 0;
+  }
+}
+
+@keyframes fold {
+  from {
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    z-index: 10;
+  }
+  to {
+    z-index: 10;
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    -webkit-transform: rotateX(-180deg) translateY(10px);
+    border-bottom-color: #fa5b5c;
+  }
+}
+
+/* Contact Form: Style inputs */
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.contactForm {
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    padding: 50px;
+    margin-left: 75px;
+    margin-right: 75px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* Create two columns that float next to eachother */
+.contactFormcolumn {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+}
+
+/* Clear floats after the columns */
+.contactFormrow:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+
+    .column,
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+/* Cart */
+
+.CartContainer{
+	width: 70%;
+	height: 90%;
+	background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px #1687d933;
+}
+
+.cartHeader{
+	margin: auto;
+	width: 90%;
+	height: 15%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.cartHeading{
+	font-size: 20px;
+	font-family: 'Open Sans';
+	font-weight: 700;
+	color: #2F3841;
+}
+
+.cartAction{
+	font-size: 14px;
+	font-family: 'Open Sans';
+	font-weight: 600;
+	color: #E44C4C;
+	cursor: pointer;
+	border-bottom: 1px solid #E44C4C;
+}
+
+.Cart-Items{
+	margin: auto;
+	width: 90%;
+	height: 30%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.image-box{
+	width: 15%;
+	text-align: center;
+}
+.cartabout{
+	height: 100%;
+	width: 24%;
+}
+.carttitle{
+	padding-top: 10px;
+	line-height: 10px;
+	font-size: 32px;
+	font-family: 'Open Sans';
+	font-weight: 800;
+	color: #202020;
+}
+.subtitle{
+	line-height: 10px;
+	font-size: 18px;
+	font-family: 'Open Sans';
+	font-weight: 600;
+	color: #909090;
+}
+
+.cartcounter{
+	width: 15%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.cartbtn{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #d9d9d9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+	font-family: 'Open Sans';
+	font-weight: 900;
+	color: #202020;
+	cursor: pointer;
+}
+.cartcount{
+	font-size: 20px;
+	font-family: 'Open Sans';
+	font-weight: 600;
+	color: #202020;
+}
+
+.cartprices{
+	height: 100%;
+	text-align: right;
+}
+.cartamount{
+	padding-top: 20px;
+	font-size: 26px;
+	font-family: 'Open Sans';
+	font-weight: 800;
+	color: #202020;
+}
+.cartsave{
+	padding-top: 5px;
+	font-size: 14px;
+	font-family: 'Open Sans';
+	font-weight: 600;
+	color: #1687d9;
+	cursor: pointer;
+}
+.cartremove{
+	padding-top: 5px;
+	font-size: 14px;
+	font-family: 'Open Sans';
+	font-weight: 600;
+	color: #E44C4C;
+	cursor: pointer;
+}
+
+.cartpad{
+	margin-top: 5px;
+}
+
+hr{
+	width: 66%;
+	float: right;
+	margin-right: 5%;
+}
+.cartcheckout{
+	float: right;
+	margin-right: 5%;
+	width: 28%;
+}
+.carttotal{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.cartSubtotal{
+	font-size: 22px;
+	font-family: 'Open Sans';
+	font-weight: 700;
+	color: #202020;
+}
+.cartitems{
+	font-size: 16px;
+	font-family: 'Open Sans';
+	font-weight: 500;
+	color: #909090;
+	line-height: 10px;
+}
+.carttotal-amount{
+	font-size: 36px;
+	font-family: 'Open Sans';
+	font-weight: 900;
+	color: #202020;
+}
+.cartbutton{
+	margin-top: 10px;
+	width: 100%;
+	height: 40px;
+	border: none;
+	background: linear-gradient(to bottom right, #B8D7FF, #8EB7EB);
+	border-radius: 20px;
+	cursor: pointer;
+	font-size: 16px;
+	font-family: 'Open Sans';
+	font-weight: 600;
+	color: #202020;
+}

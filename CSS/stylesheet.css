@@ -17,6 +17,8 @@ body {
     width: 100%;
     display: inline-block;
     background: #ffffff;
+    height: 50vh;
+    text-align: center;
     font-size: 22px;
     font-weight: 700;
     margin-top: 100px;
@@ -561,42 +563,3 @@ body {
     font-size: 14px
 }
 
-/*     order history card view     */
-
-.orderitem {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    font-family: arial;
-    display:inline-block;
-}
-
-.price {
-    color: grey;
-    font-size: 22px;
-}
-
-.orderitem button {
-    border: none;
-    outline: 0;
-    padding: 12px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-}
-
-.orderitem button:hover {
-    opacity: 0.7;
-}
-
-.scrollhoriz{
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    width: 65%;
-
-}

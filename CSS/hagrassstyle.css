@@ -94,3 +94,34 @@ body {
     margin: auto;
     font-size: 15px;
 }
+/*     order history card view     */
+
+.gridorderhistory{
+    display: grid;
+    column-gap: 50px;
+    grid-template-columns: auto auto auto;
+}
+.ads{
+    margin: 10px 10px 0 0;
+}
+.filter{
+    height: 395px;
+    margin: 10px 0 10px 10px;
+    background: gray;
+}
+.orderHistory {
+    border-collapse: collapse;
+    width: 100%;
+}
+.orderHistory tr th, .orderHistory tr td{
+    font-size: 15px;
+    font-weight: normal;
+    text-align: left;
+    padding: 8px 20px 8px 8px;
+}
+.orderHistory tr th{
+    font-weight: bold;
+}
+.orderHistory tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

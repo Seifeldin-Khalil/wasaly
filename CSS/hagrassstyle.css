@@ -109,19 +109,19 @@ body {
     margin: 10px 0 10px 10px;
     background: gray;
 }
-.orderHistory {
+#orderHistory {
     border-collapse: collapse;
     width: 100%;
 }
-.orderHistory tr th, .orderHistory tr td{
+#orderHistory tr th, #orderHistory tr td{
     font-size: 15px;
     font-weight: normal;
     text-align: left;
     padding: 8px 20px 8px 8px;
 }
-.orderHistory tr th{
+#orderHistory tr th{
     font-weight: bold;
 }
-.orderHistory tr:nth-child(even) {
+#orderHistory tr:nth-child(even) {
     background-color: #f2f2f2;
 }

@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="CSS/stylesheet.css">
     <link rel="stylesheet" href="CSS/hagrassstyle.css">
+    <script src="JavaScripts/hagrassJavascript.js"></script>
     
     
 </head>
@@ -18,11 +19,16 @@
     
     <div class = "gridorderhistory">
         <div class = "filter">
-            <p>ergdfvf;ve;lvm;emvlver</p>
+            
+            <input id = "filtercheck" type="radio" name = "filtername" value = "asc"><label for="filtercheck">Lower to higher price</label>
+            <br>    
+            <input id = "filtercheck2" type="radio" name = "filtername" value = "desc"><label for="filtercheck">higher to lower price</label>
+            <br>
+            <button onclick="sortTable()">Sort</button>
         </div>
         
             <div>
-                <table class = "orderHistory">
+                <table id = "orderHistory">
                     <tr>
                         <th></th>
                         <th>Order number</th>
@@ -40,7 +46,7 @@
                         </td>
                         <td>3659772000000164</td>
                         <td>12/3/2021</td>
-                        <td>100$</td>
+                        <td>200$</td>
                         <td><a href = "#">View order details</a></td>
                         <td><a href = "#">Reorder</a></td>
                     </tr>
@@ -55,7 +61,7 @@
                         </td>
                         <td>3659772000000164</td>
                         <td>12/3/2021</td>
-                        <td>100$</td>
+                        <td>700$</td>
                         <td><a href = "#">View order details</a></td>
                         <td><a href = "#">Reorder</a></td>
                     </tr>
@@ -70,7 +76,7 @@
                         </td>
                         <td>3659772000000164</td>
                         <td>12/3/2021</td>
-                        <td>100$</td>
+                        <td>400$</td>
                         <td><a href = "#">View order details</a></td>
                         <td><a href = "#">Reorder</a></td>
                     </tr>
@@ -85,7 +91,7 @@
                         </td>
                         <td>3659772000000164</td>
                         <td>12/3/2021</td>
-                        <td>100$</td>
+                        <td>300$</td>
                         <td><a href = "#">View order details</a></td>
                         <td><a href = "#">Reorder</a></td>
                     </tr>

@@ -98,22 +98,54 @@ body {
 
 .gridorderhistory{
     display: grid;
-    column-gap: 50px;
+    column-gap: 25px;
     grid-template-columns: auto auto auto;
 }
 .ads{
     margin: 10px 10px 0 0;
 }
+#searchInput{
+    padding: 5px;
+    font-size: 18px;
+}
 .filter{
-    height: 395px;
-    margin: 10px 0 10px 10px;
-    background: gray;
+    padding: 0 10px 0 10px;
+    font-family: Copperplate Gothic Light;
+    border-radius: 8px;
+    height: 330px;
+    margin: 25px 0 10px 20px;
+    background: #fbb124;
+}
+.filter input{
+    margin: 0 10px 0 0;
+}
+#filterheader{
+    margin-bottom: 17px;
+    margin-top: 17px;
+}
+.labelfont{
+    font-size: 18px;
+    font-family: candara;
+}
+#sortbutton{
+    width: 65%;
+    padding: 2px 0 2px 0;
+    margin: 10px 0 0 0;
+    border-radius: 8px;
+}
+#leftads{
+    margin: 25px 0 10px 20px;
+}
+#tabletitle{
+    margin: 10px 0 0 10px;
+    font-family: Copperplate Gothic Light;
+    text-align: left;
 }
 #orderHistory {
     border-collapse: collapse;
     width: 100%;
 }
-#orderHistory tr th, #orderHistory tr td{
+#orderHistory th, #orderHistory td{
     font-size: 15px;
     font-weight: normal;
     text-align: left;
@@ -124,4 +156,7 @@ body {
 }
 #orderHistory tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+.tablecontainer{
+    margin: 25px 0 0 0;
 }

@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="CSS/stylesheet.css">
     <link rel="stylesheet" href="CSS/hagrassstyle.css">
+    <script src="JavaScripts/hagrassJavascript.js"></script>
     
     
 </head>
@@ -15,67 +16,160 @@
       <a href="#contact">Contact</a>
       <a href="#about">About</a>
     </div>
-    <center>
-        <div class = "scrollhoriz">
-            <div class="orderitem">
-                <img src="/imgs/final_footer.png" alt="Denim Jeans" style="width:100%">
-                <h1>Tailored Jeans</h1>
-                <p class="price">$19.99</p>
-                <p>Some text about the jeans..</p>
-                <p><button>Add to Cart</button></p>
+    
+    <div class = "gridorderhistory">
+        
+            <div class = "filter">
+                <h3 id = "filterheader">Quick Search</h3>
+                <input type="text" id="searchInput" onkeyup="searchInTable()" placeholder="Search for date..">
+                <h3 id = "filterheader">Quick Sorting</h3>
+                <input id = "filtercheck" type="radio" name = "filtername" value = "asc" style="height:15px; width:15px;"><label class = "labelfont">Lower to higher price</label>
+                <br>    
+                <input id = "filtercheck2" type="radio" name = "filtername" value = "desc" style="height:15px; width:15px;"><label class = "labelfont">Higher to lower price</label>
+                <br>
+                <button id = "sortbutton" onclick="sortTable()">Sort</button>
             </div>
-            <div class="orderitem">
-                <img src="/imgs/final_footer.png" alt="Denim Jeans" style="width:100%">
-                <h1>Tailored Jeans</h1>
-                <p class="price">$19.99</p>
-                <p>Some text about the jeans..</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-            <div class="orderitem">
-                <img src="/imgs/final_footer.png" alt="Denim Jeans" style="width:100%">
-                <h1>Tailored Jeans</h1>
-                <p class="price">$19.99</p>
-                <p>Some text about the jeans..</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-                    <div class="orderitem">
-                <img src="/imgs/final_footer.png" alt="Denim Jeans" style="width:100%">
-                <h1>Tailored Jeans</h1>
-                <p class="price">$19.99</p>
-                <p>Some text about the jeans..</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-                    <div class="orderitem">
-                <img src="/imgs/final_footer.png" alt="Denim Jeans" style="width:100%">
-                <h1>Tailored Jeans</h1>
-                <p class="price">$19.99</p>
-                <p>Some text about the jeans..</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-                    <div class="orderitem">
-                <img src="/imgs/final_footer.png" alt="Denim Jeans" style="width:100%">
-                <h1>Tailored Jeans</h1>
-                <p class="price">$19.99</p>
-                <p>Some text about the jeans..</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-                    <div class="orderitem">
-                <img src="/imgs/final_footer.png" alt="Denim Jeans" style="width:100%">
-                <h1>Tailored Jeans</h1>
-                <p class="price">$19.99</p>
-                <p>Some text about the jeans..</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-                    <div class="orderitem">
-                <img src="/imgs/final_footer.png" alt="Denim Jeans" style="width:100%">
-                <h1>Tailored Jeans</h1>
-                <p class="price">$19.99</p>
-                <p>Some text about the jeans..</p>
-                <p><button>Add to Cart</button></p>
-            </div>
+        
+            <div class = "tablecontainer">
+                <h3 id = "tabletitle">My orders</h3>
+                
+                <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                
+                <table id = "orderHistory">
+                    <tr>
+                        <th></th>
+                        <th>Order number</th>
+                        <th>Order date</th>
+                        <th>Total Price</th>
+                        <th>Order status</th>
 
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <p>apple x1</p>           
+                                <p>banana x2</p>
+                                <p>tomato x3</p>
+                            </div>
+                        </td>
+                        <td>3659772000000164</td>
+                        <td>23/9/2021</td>
+                        <td>200$</td>
+                        <td>Delivered</td>
+                        <td>
+                            <a href = "#">View order details</a>
+                            <br>
+                            <a href = "#">Rate &#128512;</a>
+                        </td>
+                        <td><a href = "#">Reorder</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div>
+                                <p>apple x1</p>           
+                                <p>banana x2</p>
+                                <p>tomato x3</p>
+                            </div>
+                        </td>
+                        <td>3659772000000164</td>
+                        <td>10/5/2021</td>
+                        <td>700$</td>
+                        <td>Delivered</td>
+                        <td>
+                            <a href = "#">View order details</a>
+                            <br>
+                            <a href = "#">Rate &#128512;</a>
+                        </td>
+                        <td><a href = "#">Reorder</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div>
+                                <p>apple x1</p>           
+                                <p>banana x2</p>
+                                <p>tomato x3</p>
+                            </div>
+                        </td>
+                        <td>3659772000000164</td>
+                        <td>12/3/2021</td>
+                        <td>400$</td>
+                        <td>Delivered</td>
+                        <td>
+                            <a href = "#">View order details</a>
+                            <br>
+                            <a href = "#">Rate &#128512;</a>
+                        </td>
+                        <td><a href = "#">Reorder</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div>
+                                <p>apple x1</p>           
+                                <p>banana x2</p>
+                                <p>tomato x3</p>
+                            </div>
+                        </td>
+                        <td>3659772000000164</td>
+                        <td>12/3/2021</td>
+                        <td>300$</td>
+                        <td>Delivered</td>
+                        <td>
+                            <a href = "#">View order details</a>
+                            <br>
+                            <a href = "#">Rate &#128512;</a>
+                        </td>
+                        <td><a href = "#">Reorder</a></td>
+                    </tr>
+                </table>
+            </div>
+        
+            <div class = "ads">
+                <img class = "adimage" src = "imgs/ads/ad.jfif">
+                <img class = "adimage" src = "imgs/ads/ad2.jfif">
+            </div>
+        
+    </div>
+    <div id = "recommendationsTitle">
+        <h3>Recommendations</h3>
+        <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+    </div>
+    <div class = "gridRecommendation">
+
+        <div class = "itemRecommend">
+            <a href = "#"><img src = "imgs/Fruits&Veggies/pngfind.com-apple-vector-png-5952311.png"></a>
+            <a href = "#"><h4>Apple</h4></a>
+            <p>15 EGP per kilo</p>
+            <p>Shipping fees 10.00 EGP</p>
         </div>
-    </center>
+        <div class = "itemRecommend">
+            <a href = "#"><img src = "imgs/Fruits&Veggies/favpng_cavendish-banana-juice-cooking-banana-fruit.png"></a>
+            <a href = "#"><h4>Banana</h4></a>
+            <p>25 EGP per kilo</p>
+            <p>Shipping fees 12.00 EGP</p>
+        </div>
+        <div class = "itemRecommend">
+            <a href = "#"><img src = "imgs/Fruits&Veggies/pngfind.com-apple-vector-png-5952311.png"></a>
+            <a href = "#"><h4>apple</h4></a>
+            <p>15 EGP per kilo</p>
+            <p>Shipping fees 10.00 EGP</p>
+        </div>
+        <div class = "itemRecommend">
+            <a href = "#"><img src = "imgs/Fruits&Veggies/pngfind.com-apple-vector-png-5952311.png"></a>
+            <a href = "#"><h4>apple</h4></a>
+            <p>15 EGP per kilo</p>
+            <p>Shipping fees 10.00 EGP</p>
+        </div>
+        <div class = "itemRecommend">
+            <a href = "#"><img src = "imgs/Fruits&Veggies/pngfind.com-apple-vector-png-5952311.png"></a>
+            <a href = "#"><h4>apple</h4></a>
+            <p>15 EGP per kilo</p>
+            <p>Shipping fees 10.00 EGP</p>
+        </div>
+    </div>
+    
 <footer class="footer-distributed">
 
     <div class="footer-left">

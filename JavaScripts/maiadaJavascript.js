@@ -1,45 +1,49 @@
 /* Contact Us: Subs form */
-$(document).ready(function() {
-	$('.sign-up-form').on('submit', submit);
+$(document).ready(function () {
+    $('.sign-up-form').on('submit', submit);
 });
 
 function submit(e) {
-	$('.sign-up-container').addClass('submitted');
-	e.preventDefault();
+    $('.sign-up-container').addClass('submitted');
+    e.preventDefault();
 }
 
 /* Cart */
-$('.like-btn').on('click', function() {
-   $(this).toggleClass('is-active');
-});
 
-$('.minus-btn').on('click', function(e) {
-    e.preventDefault();
-    var $this = $(this);
-    var $input = $this.closest('div').find('input');
-    var value = parseInt($input.val());
- 
-    if (value &amp;amp;gt; 1) {
-        value = value - 1;
-    } else {
-        value = 0;
+
+
+function plusQunatity() {
+    // Selecting the input element and get its value 
+    var inputVal = document.getElementById("Qunatity").value;
+    var val = parseInt(inputVal);
+    
+    // selecting the total price element and getting its alue
+    var totalprice = document.getElementById("Item-total-price").innerHTML;
+    var myArray = totalprice.split(" ");
+    var tPrice = parseInt(myArray[1]);
+    
+    // Deducing one item's price 
+    var itemPrice = tPrice / val;
+
+    // updating the the quantity
+    if(val >= 9){
+        val = 9;
+        itemPrice = 0;
+        alert("Can't add more kilos");
+    }else{
+        val = val + 1;
     }
- 
-  $input.val(value);
- 
-});
- 
-$('.plus-btn').on('click', function(e) {
-    e.preventDefault();
-    var $this = $(this);
-    var $input = $this.closest('div').find('input');
-    var value = parseInt($input.val());
- 
-    if (value &amp;amp;lt; 100) {
-        value = value + 1;
-    } else {
-        value =100;
-    }
- 
-    $input.val(value);
+    
+    // Updating the total price
+    var newPrice = tPrice + itemPrice;
+
+    //displaying the new quanitity
+    document.getElementById("Qunatity").value = val;
+    
+    // displaying the new price
+    document.getElementById("Item-total-price").innerHTML= "$ " + newPrice;
+}
+
+$('.delete-btn').click(function() {
+  $(this).slideUp();
 });

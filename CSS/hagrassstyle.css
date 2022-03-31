@@ -95,31 +95,31 @@ body {
     font-size: 15px;
 }
 /*     order history card view     */
-
+/*grid style*/
 .gridorderhistory{
     display: grid;
     column-gap: 25px;
     grid-template-columns: auto auto auto;
 }
-.ads{
-    margin: 10px 10px 0 0;
-}
+/*search input*/
 #searchInput{
     padding: 5px;
     font-size: 18px;
 }
+/*silter style*/
 .filter{
     padding: 0 10px 0 10px;
     font-family: Copperplate Gothic Light;
     border-radius: 8px;
     height: 330px;
-    margin: 25px 0 10px 20px;
+    margin: 80px 0 10px 20px;
     background: #fbb124;
 }
 .filter input{
     margin: 0 10px 0 0;
 }
 #filterheader{
+    font-weight: bold;
     margin-bottom: 17px;
     margin-top: 17px;
 }
@@ -133,10 +133,9 @@ body {
     margin: 10px 0 0 0;
     border-radius: 8px;
 }
-#leftads{
-    margin: 25px 0 10px 20px;
-}
+/*order history table*/
 #tabletitle{
+    font-weight: bold;
     margin: 10px 0 0 10px;
     font-family: Copperplate Gothic Light;
     text-align: left;
@@ -159,4 +158,51 @@ body {
 }
 .tablecontainer{
     margin: 25px 0 0 0;
+}
+/*grid right side*/
+.ads{
+    width: 300px;
+    margin: 78px 0px 0 0;
+}
+.adimage{
+    margin-top: 10px;
+    height: 250px;
+    width: 300px;
+}
+/*recommendations*/
+.gridRecommendation{
+    margin-bottom: 40px;
+    display: grid;
+    column-gap: 0px;
+    grid-template-columns: auto auto auto auto auto;
+}
+#recommendationsTitle{
+    margin: 40px 0 40px 20px;
+}
+#recommendationsTitle h3{
+    font-weight: bold;
+    font-family: Copperplate Gothic Light;
+    text-align: left;
+}
+.itemRecommend img{
+    width: 80%;
+    height: 150px;  
+}
+.itemRecommend a{
+    text-decoration:none; 
+}
+.itemRecommend h4{
+    margin-bottom: 0px;
+    margin-left: 30px;
+    margin-top: 15px;
+    text-align: left;
+    font-family: Copperplate Gothic Light;
+    color: black;
+}
+.itemRecommend p{
+    margin-bottom: 0px;
+    font-size: 19px;
+    margin-left: 30px;
+    text-align: left;
+    font-family: candara;
 }

@@ -463,14 +463,14 @@ button[class*=btn] {
 	font-weight: 700;
 	color: #202020;
 }
-.itemsCnt{
+#itemsCnt{
 	font-size: 16px;
 	font-family: 'Open Sans';
 	font-weight: 500;
 	color: #909090;
 	line-height: 10px;
 }
-.total-amount{
+#total-amount{
 	font-size: 36px;
 	font-family: 'Open Sans';
 	font-weight: 900;

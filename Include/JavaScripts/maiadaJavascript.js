@@ -10,16 +10,24 @@ function submit(e) {
 
 /* Cart */
 function removeAllCartItems() {
-    var container = document.getElementById("shopping-cart");
+    var container = document.getElementById("cartBox");
     var elements = container.getElementsByClassName("cartitem");
 
     while (elements[0]) {
         elements[0].parentNode.removeChild(elements[0]);
     }
+
+    document.getElementById("total-amount").innerHTML = "$ 0";
+    document.getElementById("itemsCnt").innerHTML = "0 items";
 }
 
 function deleteItem(idd) {
     document.getElementById(idd).parentNode.parentNode.remove();
+
+    // Update checkout summary
+    // should have deduced the item's total price  from the total order price according to the selected  item to be deleted but will be fixed in phase 2 with database but for now...
+    document.getElementById("total-amount").innerHTML = "$ 0";
+    document.getElementById("itemsCnt").innerHTML = "0 items";
 }
 
 function minusQunatity() {
@@ -49,6 +57,16 @@ function minusQunatity() {
 
         // displaying the new price
         document.getElementById("Item-total-price").innerHTML = "$ " + newPrice;
+
+        // get current order total price 
+        var currTotal = document.getElementById("total-amount").innerHTML;
+        var Array = currTotal.split(" ");
+        var curTot = parseInt(Array[1]);
+        var updatedTotal = curTot - itemPrice;
+
+        // update order total price 
+        // - itemPrice
+        document.getElementById("total-amount").innerHTML = "$ " + updatedTotal;
     }
 }
 
@@ -83,4 +101,14 @@ function plusQunatity() {
 
     // displaying the new price
     document.getElementById("Item-total-price").innerHTML = "$ " + newPrice;
+
+    // get current order total price 
+    var currTotal = document.getElementById("total-amount").innerHTML;
+    var Array = currTotal.split(" ");
+    var curTot = parseInt(Array[1]);
+    var updatedTotal = curTot + itemPrice;
+
+    // update order total price 
+    // - itemPrice
+    document.getElementById("total-amount").innerHTML = "$ " + updatedTotal;
 }

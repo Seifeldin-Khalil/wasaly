@@ -206,3 +206,36 @@ body {
     text-align: left;
     font-family: candara;
 }
+/*   add product    */
+.addproduct{
+    margin: auto;    
+    font-size: 20px;
+    padding: 8px;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(75, 61, 61);
+    background: #14b38a;
+}
+.addproduct a{
+    text-decoration: none;
+    color: rgb(75, 61, 61);
+}
+.insertfile input{
+            margin: 0 auto 5px auto;
+            padding: 5px 0 5px 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 86%;
+    
+            height: auto;
+            border: 2px solid #e1dede69;
+            border-radius: 5px;
+            background: white;
+            color: black;
+            text-align: center;
+            outline: none;
+            font-size: 15px;
+}

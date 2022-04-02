@@ -2,15 +2,15 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="CSS/stylesheet.css">
-    <script src="JavaScripts/maiadaJavascript.js"></script>
-    <link rel="stylesheet" href="CSS/MaiiStylesheet.css">
-    
     <meta charset="utf-8">
+    <link rel="stylesheet" href="Include/CSS/stylesheet.css">
+    <link rel="stylesheet" href="Include/CSS/MaiiStylesheet.css">
+    <script src="Include/JavaScripts/maiadaJavascript.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
     <meta name="robots" content="noindex,follow" />
-    
+
     <div class="dashboard-header">
         <nav class="navbar navbar-expand-lg bg-white fixed-top"> <img class="navbar-brand" src="imgs/final_footer.png"> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
@@ -83,158 +83,115 @@
 </head>
 
 <body>
-
-    <div class="shopping-cart">
+    <div class="shopping-cart" id="cartBox">
         <!-- Title -->
         <div class="carttitle">
-            Shopping Bag
+            <span style="float:left">Shopping Bag
+            </span>
+            <button onclick="removeAllCartItems()" style="float: right">Remove All</button>
         </div>
 
         <!-- Product #1 -->
-        <div class="cartitem">
+        <div class="cartitem" id="item1">
             <div class="cartbuttons">
-                <span class="delete-btn"></span>
-                <span class="like-btn"></span>
+                <button class="delete-btn" id="deleteItem1" type="button" name="button" onclick="deleteItem(this.id)">
+                    <img src="imgs/Maii/delete-icn.svg" alt="" />
+                </button>
             </div>
 
             <div class="cartItemImage">
-                <img src="item-1.png" alt="" />
+                <img src="imgs/Fruits&Veggies/redApples.kpg.jpg" alt="" />
             </div>
 
             <div class="cartItemDescription">
-                <span>Common Projects</span>
-                <span>Bball High</span>
-                <span>White</span>
+                <span>Sugarbee Apples</span>
             </div>
 
             <div class="cartItemquantity">
-                <button class="plus-btn" type="button" name="button">
-                    <img src="plus.svg" alt="" />
+                <button class="plus-btn" id="PlusBtn1" type="button" name="button" onclick="plusQunatity(this.id)">
+                    <img src="imgs/Maii/plus.svg" alt="" />
                 </button>
-                <input type="text" name="name" value="1">
-                <button class="minus-btn" type="button" name="button">
-                    <img src="minus.svg" alt="" />
+                <input type="text" name="name" value="1" id="Qunatity" readonly>
+                <button class="minus-btn" type="button" name="button" onclick="minusQunatity()">
+                    <img src="imgs/Maii/minus.svg" alt="" />
                 </button>
             </div>
 
-            <div class="Item-total-price">$549</div>
+            <div id="Item-total-price">$ 5</div>
         </div>
 
-        <!-- Product #2 -->
-        <div class="item">
-            <div class="buttons">
-                <span class="delete-btn"></span>
-                <span class="like-btn"></span>
+        <center>
+            <div class="chckout" align = "right">
+                <div class="Cartsummary">
+                    <div>
+                        <div class="Subtotal">Sub-Total</div>
+                        <div id="itemsCnt">1 item</div>
+                    </div>
+                    <div id="total-amount">$ 5</div>
+                </div>
+                <button class="chkoutBtn">Checkout</button>
             </div>
-
-            <div class="image">
-                <img src="item-2.png" alt="" />
-            </div>
-
-            <div class="description">
-                <span>Maison Margiela</span>
-                <span>Future Sneakers</span>
-                <span>White</span>
-            </div>
-
-            <div class="quantity">
-                <button class="plus-btn" type="button" name="button">
-                    <img src="plus.svg" alt="" />
-                </button>
-                <input type="text" name="name" value="1">
-                <button class="minus-btn" type="button" name="button">
-                    <img src="minus.svg" alt="" />
-                </button>
-            </div>
-
-            <div class="total-price">$870</div>
-        </div>
-
-        <!-- Product #3 -->
-        <div class="item">
-            <div class="buttons">
-                <span class="delete-btn"></span>
-                <span class="like-btn"></span>
-            </div>
-
-            <div class="image">
-                <img src="item-3.png" alt="" />
-            </div>
-
-            <div class="description">
-                <span>Our Legacy</span>
-                <span>Brushed Scarf</span>
-                <span>Brown</span>
-            </div>
-
-            <div class="quantity">
-                <button class="plus-btn" type="button" name="button">
-                    <img src="plus.svg" alt="" />
-                </button>
-                <input type="text" name="name" value="1">
-                <button class="minus-btn" type="button" name="button">
-                    <img src="minus.svg" alt="" />
-                </button>
-            </div>
-
-            <div class="total-price">$349</div>
-        </div>
+        </center>
     </div>
 
-    <script type="text/javascript">
-        $('.minus-btn').on('click', function(e) {
-            e.preventDefault();
-            var $this = $(this);
-            var $input = $this.closest('div').find('input');
-            var value = parseInt($input.val());
+    <footer class="footer-distributed">
+        <div class="footer-left">
 
-            if (value > 1) {
-                value = value - 1;
-            } else {
-                value = 0;
-            }
+            <img src="imgs/final_footer.png" alt="footer logo">
+            <p class="footer-links">
+                <a href="#" class="link-1">Home</a>
 
-            $input.val(value);
+                <a href="#">Blog</a>
 
-        });
+                <a href="#">Pricing</a>
 
-        $('.plus-btn').on('click', function(e) {
-            e.preventDefault();
-            var $this = $(this);
-            var $input = $this.closest('div').find('input');
-            var value = parseInt($input.val());
+                <a href="#">About</a>
 
-            if (value < 100) {
-                value = value + 1;
-            } else {
-                value = 100;
-            }
+                <a href="#">Faq</a>
 
-            $input.val(value);
-        });
+                <a href="#">Contact</a>
+            </p>
 
-        $('.like-btn').on('click', function() {
-            $(this).toggleClass('is-active');
-        });
-    </script>
+            <p class="footer-company-name">Company Name © 2015</p>
+        </div>
 
-    <div class="footer-right">
+        <div class="footer-center">
 
-        <p class="footer-company-about">
-            <span>About the company</span>
-            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-        </p>
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+            </div>
 
-        <div class="footer-icons">
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+1.555.555.5555</p>
+            </div>
 
-            <a href="#"><i><img class="facebook" src="imgs/footer_icons/facebook.png"></i></a>
-            <a href="#"><i><img class="twitter" src="imgs/footer_icons/twitter.png"></i></a>
-            <a href="#"><i></i><img class="youtube" src="imgs/footer_icons/youtube.png"></a>
-            <a href="#"><i><img class="instagram" src="imgs/footer_icons/instagram.png"></i></a>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@company.com">support@company.com</a></p>
+            </div>
 
         </div>
-    </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about">
+                <span>About the company</span>
+                Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+            </p>
+
+            <div class="footer-icons">
+
+                <a href="#"><i><img class="facebook" src="imgs/footer_icons/facebook.png"></i></a>
+                <a href="#"><i><img class="twitter" src="imgs/footer_icons/twitter.png"></i></a>
+                <a href="#"><i></i><img class="youtube" src="imgs/footer_icons/youtube.png"></a>
+                <a href="#"><i><img class="instagram" src="imgs/footer_icons/instagram.png"></i></a>
+
+            </div>
+        </div>
     </footer>
 </body>
+
 
 </html>

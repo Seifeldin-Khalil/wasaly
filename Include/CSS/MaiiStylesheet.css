@@ -494,7 +494,6 @@ button[class*=btn] {
 /* -- Maiada: User Account -- */
 .account-settings .user-profile {
     margin: 0 0 1rem 0;
-    padding-bottom: 1rem;
     text-align: center;
 }
 .account-settings .user-profile .user-avatar {
@@ -516,15 +515,15 @@ button[class*=btn] {
     font-weight: 400;
     color: #9fa8b9;
 }
-.account-settings .about {
+.account-settings .accountDetails {
     margin: 2rem 0 0 0;
     text-align: center;
 }
-.account-settings .about h5 {
+.account-settings .accountDetails h5 {
     margin: 0 0 15px 0;
     color: #007ae1;
 }
-.account-settings .about p {
+.account-settings .accountDetails p {
     font-size: 0.825rem;
 }
 .form-control {
@@ -537,7 +536,7 @@ button[class*=btn] {
     color: #2e323c;
 }
 
-.card {
+.accountCard {
     background: #ffffff;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -546,4 +545,9 @@ button[class*=btn] {
     margin-bottom: 1rem;
 }
 
-
+.accountBtn:active {
+            transform: scale(0.98);
+            /* Scaling button to 0.98 to its original size */
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+            /* Lowering the shadow */
+        }

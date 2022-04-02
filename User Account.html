@@ -5,7 +5,7 @@
     <script src="https://code.iconify.design/2/2.2.0/iconify.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <link rel="stylesheet" href="Include/CSS/stylesheet.css">
     <link rel="stylesheet" href="Include/CSS/MaiiStylesheet.css">
 
@@ -85,7 +85,7 @@
     <div class="container">
         <div class="row gutters">
             <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-                <div class="card h-100">
+                <div class="accountCard h-100">
                     <div class="card-body">
                         <div class="account-settings">
                             <div class="user-profile">
@@ -93,18 +93,30 @@
                                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
                                 </div>
                                 <h5 class="user-name">Yuki Hayashi</h5>
-                                <h6 class="user-email">yuki@Maxwell.com</h6>
                             </div>
-                            <div class="about">
-                                <h5>About</h5>
-                                <p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
+                            <div class="accountDetails">
+                                <button class = "accountBtn" style = "border-radius: 10px; width:100%; margin-bottom: 10px;" onclick="document.location='Home.html'">
+                                    <span class="iconify" data-icon="el:home-alt" style="color: green;"></span> Home
+                                </button>
+                                <br>
+                                <button class = "accountBtn" style = "background-color: grey; border-radius: 10px; width:100%; margin-bottom: 10px;" disabled>
+                                    <span class="iconify" data-icon="fluent:inprivate-account-28-filled" style="color: midnightblue;"></span> My Account 
+                                </button>
+                                <br>
+                                <button class = "accountBtn" style = "border-radius: 10px; width:100%; margin-bottom: 10px;" onclick="document.location='Order History.html'">
+                                    <span class="iconify" data-icon="noto:package"></span> Orders
+                                </button>
+                                <br>
+                                <button class = "accountBtn" style = "border-radius: 10px; width:100%; margin-bottom: 10px" onclick="document.location='Login.html'">
+                                    <span class="iconify" data-icon="icon-park:logout"></span> Logout
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-                <div class="card h-100">
+                <div class="accountCard h-100">
                     <div class="card-body">
                         <div class="row gutters">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -119,7 +131,7 @@
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label for="eMail">Email</label>
-                                    <input type="email" class="form-control" id="eMail" placeholder="Enter email ID">
+                                    <input type="email" class="form-control" id="eMail" style="height: 45px" placeholder="Enter email ID">
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -128,12 +140,25 @@
                                     <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
                                 </div>
                             </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <label for="website">Website URL</label>
-                                    <input type="url" class="form-control" id="website" placeholder="Website url">
-                                </div>
+                            
+                            <div class="col-12 col-sm-5 offset-sm-1 mb-3">
+                        <div class="row">
+                          <div class="col">
+                            <label>Email Notifications</label>
+                            <div class="custom-controls-stacked px-2">
+                              <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="notifications-blog" checked="">
+                                <label class="custom-control-label" for="notifications-blog">Blog posts</label>
+                              </div>
+                              <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="notifications-news" checked="">
+                                <label class="custom-control-label" for="notifications-news">Newsletter</label>
+                              </div>
                             </div>
+                          </div>
+                        </div>
+                      </div>
+
                         </div>
                         <div class="row gutters">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -167,8 +192,8 @@
                         <div class="row gutters">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="text-right">
-                                    <button type="button" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
-                                    <button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>
+                                    <hr>
+                                    <button style = "background-color: limegreen; width: 100%; margin-bottom: 15px;margin-top: 15px; padding-bottom: 30px; padding-top : 10px;" type="button" id="submit" name="submit" class="btn btn-primary">Save Changes</button>
                                 </div>
                             </div>
                         </div>

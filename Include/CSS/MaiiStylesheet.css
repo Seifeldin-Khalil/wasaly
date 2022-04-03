@@ -496,9 +496,11 @@ button[class*=btn] {
     margin: 0 0 1rem 0;
     text-align: center;
 }
+
 .account-settings .user-profile .user-avatar {
     margin: 0 0 1rem 0;
 }
+
 .account-settings .user-profile .user-avatar img {
     width: 90px;
     height: 90px;
@@ -506,26 +508,32 @@ button[class*=btn] {
     -moz-border-radius: 100px;
     border-radius: 100px;
 }
+
 .account-settings .user-profile h5.user-name {
     margin: 0 0 0.5rem 0;
 }
+
 .account-settings .user-profile h6.user-email {
     margin: 0;
     font-size: 0.8rem;
     font-weight: 400;
     color: #9fa8b9;
 }
+
 .account-settings .accountDetails {
     margin: 2rem 0 0 0;
     text-align: center;
 }
+
 .account-settings .accountDetails h5 {
     margin: 0 0 15px 0;
     color: #007ae1;
 }
+
 .account-settings .accountDetails p {
     font-size: 0.825rem;
 }
+
 .form-control {
     border: 1px solid #cfd1d8;
     -webkit-border-radius: 2px;
@@ -546,8 +554,19 @@ button[class*=btn] {
 }
 
 .accountBtn:active {
-            transform: scale(0.98);
-            /* Scaling button to 0.98 to its original size */
-            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-            /* Lowering the shadow */
-        }
+    transform: scale(0.98);
+    /* Scaling button to 0.98 to its original size */
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    /* Lowering the shadow */
+}
+
+/* -- Maiada: Admin Stock Management -- */
+.stockcard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.stockcard {
+    border-radius: 15px;
+    padding-top: 10px;
+    background-color: white;
+}

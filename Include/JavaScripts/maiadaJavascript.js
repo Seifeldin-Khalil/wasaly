@@ -1,4 +1,5 @@
-/* Contact Us: Subs form */
+/* -- Maiada: Contact Us -- */
+
 $(document).ready(function () {
     $('.sign-up-form').on('submit', submit);
 });
@@ -8,7 +9,8 @@ function submit(e) {
     e.preventDefault();
 }
 
-/* Cart */
+/* -- Maiada: Cart -- */
+
 function removeAllCartItems() {
     var container = document.getElementById("cartBox");
     var elements = container.getElementsByClassName("cartitem");
@@ -111,4 +113,19 @@ function plusQunatity() {
     // update order total price 
     // - itemPrice
     document.getElementById("total-amount").innerHTML = "$ " + updatedTotal;
+}
+
+/* -- Maiada: Admin Stock Management -- */
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("stocktabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
 }

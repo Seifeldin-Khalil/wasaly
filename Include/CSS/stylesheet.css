@@ -1,8 +1,18 @@
 /* nav bar*/
 .navbar2{
+    box-shadow: 5px 10px #eee;
     padding: 12px 0px;
+    border-bottom: 1px solid black;
 }
-
+.navbar2 a{
+    font-family: Montserrat ;
+    color: black;
+}
+.navimg{
+    margin: 5px;
+    width: 100px;
+    height: 40px;
+}
 
 
 /* footer font */
@@ -73,7 +83,7 @@ body {
 
 .footer-distributed .footer-links {
     color: #ffffff;
-    margin: 20px 0 12px;
+    margin: 20px 0 12px 40px;
     padding: 0;
 }
 
@@ -89,7 +99,7 @@ body {
     color: #222;
     font-size: 14px;
     font-weight: normal;
-    margin: 0;
+    margin-left: 40px;
 }
 
 /* Footer Center */

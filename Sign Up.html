@@ -4,43 +4,101 @@
 <head>
     <link rel="stylesheet" href="Include/CSS/stylesheet.css">
     <link rel="stylesheet" href="Include/CSS/hagrassstyle.css">
+    <script src = "Include/JavaScripts/hagrassJavascript.js"></script>
     
     
 </head>
 
 <body>
-    <div class="topnav">
-      <a class="active" href="#home">Home</a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
-    </div>
+<nav>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+        <div class="navbar2">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                            <div class="navbar-header">
+                                <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                                <a href="#" class="navbar-brand">GROUP.COM</a>
+                            </div>
+
+                            <div class="navbar-collapse collapse" id="mobile_menu">
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href="#">Home</a></li>
+                                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">About One</a></li>
+                                            <li><a href="#">About Two</a></li>
+                                            <li><a href="#">About Three</a></li>
+                                            <li><a href="#">About Four</a></li>
+                                            <li><a href="#">About Five</a></li>
+                                            <li><a href="#">About Six</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Welcome</a></li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="#">Gallery</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                                <ul class="nav navbar-nav">
+                                    <li>
+                                        <form action="" class="navbar-form">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <input type="search" name="search" id="" placeholder="Search Anything Here..." class="form-control">
+                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </li>
+                                </ul>
+
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+                                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login / Sign Up <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Login</a></li>
+                                            <li><a href="#">Sign Up</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </nav>
     <center>
-        <form class = "formtemplate">
+        <form class = "formtemplate" name = "signup" onsubmit = "return signupvalidateForm()">
 
             <h1 id = "pagetitle">Sign Up</h1>
 
             <div class = "section1">
-                <input placeholder="First name" type="text" >
-                <input placeholder="Last name" type="text" >
+                <input placeholder="First name" name = "fname" type="text" >
+                <input placeholder="Last name" name = "lname" type="text" >
             </div>
             <div class = "section">
-                <input placeholder="E-mail" type="email" >
+                <input placeholder="E-mail" name = "email" type="email" >
             </div>
             <div class = "section">
-                <input placeholder="Address" type="text" >
+                <input placeholder="Address" name = "address" type="text" >
             </div>
             <div class = "section">
-                <input placeholder="Phone number" type="text" >
+                <input placeholder="Phone number" name = "mobile" type="text" >
             </div>
             <div class = "section">
-                <input placeholder="Age" type="text" >
+                <input placeholder="Age" name = "age" type="text" >
             </div>
             <div class = "section">
-                <input placeholder="User Name" type="text" >
+                <input placeholder="User Name" name = "username" type="text" >
             </div>
             <div class = "section">
-                <input placeholder="Password" type="password" >
+                <input placeholder="Password" name = "password" type="password" >
+            </div>
+            <div class = "section">
+                <input placeholder="Reenter Password" name = "reenterpassword" type="password" >
             </div>
             <div class="accept-box">
                 <input type="checkbox" name="accept" id="accept">
@@ -56,11 +114,13 @@
                 </div>
             </div>
             <div>
-                <p class="">Company Name © 2015</p>
+                <p>Wasaly.mart © 2022</p>
             </div>
         </form>
     </center>
-    
+        <div>
+        <button id = "totop"><img src="imgs/icons/Arrow-Up-PNG-Pic.png"></button>
+    </div>
     <footer class="footer-distributed">
 
     <div class="footer-left">

@@ -11,81 +11,66 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <div class="dashboard-header">
-        <nav class="navbar navbar-expand-lg bg-white fixed-top"> <img class="navbar-brand" src = "imgs/final_footer.png"> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-            <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto navbar-right-top">
-                    <li class="nav-item">
-                        <div id="custom-search" class="top-search-bar"> <input class="form-control" type="text" placeholder="Search.."> </div>
-                    </li>
-                    <li class="nav-item dropdown notification"> <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i> <span class="indicator"></span></a>
-                        <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
-                            <li>
-                                <div class="notification-title"> Notification</div>
-                                <div class="notification-list">
-                                    <div class="list-group"> <a href="#" class="list-group-item list-group-item-action active">
-                                            <div class="notification-info">
-                                                <div class="notification-list-user-img"><img src="https://img.icons8.com/office/100/000000/administrator-female.png" alt="" class="user-avatar-md rounded-circle"></div>
-                                                <div class="notification-list-user-block"><span class="notification-list-user-name">Jeremy Hukonah</span>accepted your invitation to join the team. <div class="notification-date">2 min ago</div>
-                                                </div>
-                                            </div>
-                                        </a> <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="notification-info">
-                                                <div class="notification-list-user-img"><img src="https://img.icons8.com/color/48/000000/administrator-female.png" alt="" class="user-avatar-md rounded-circle"></div>
-                                                <div class="notification-list-user-block"><span class="notification-list-user-name">John Sammy</span>updated the email address <div class="notification-date">2 days ago</div>
-                                                </div>
-                                            </div>
-                                        </a> <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="notification-info">
-                                                <div class="notification-list-user-img"><img src="https://img.icons8.com/color/100/000000/name.png" alt="" class="user-avatar-md rounded-circle"></div>
-                                                <div class="notification-list-user-block"><span class="notification-list-user-name">Kioh Samso</span> is watching your main repository <div class="notification-date">2 min ago</div>
-                                                </div>
-                                            </div>
-                                        </a> </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="list-footer"> <a href="#">View all notifications</a></div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown connection"> <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
-                        <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
-                            <li class="connection-list">
-                                <div class="row">
-                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 "> <a href="#" class="connection-item"><img src="https://img.icons8.com/nolan/100/000000/github.png" alt=""> <span>Github</span></a> </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 "> <a href="#" class="connection-item"><img src="https://img.icons8.com/color/100/000000/dribbble.png" alt=""> <span>Dribbble</span></a> </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 "> <a href="#" class="connection-item"><img src="https://img.icons8.com/color/100/000000/dropbox.png" alt=""> <span>Dropbox</span></a> </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 "> <a href="#" class="connection-item"><img src="https://img.icons8.com/color/100/000000/bitbucket.png" alt=""> <span>Bitbucket</span></a> </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 "> <a href="#" class="connection-item"><img src="https://img.icons8.com/color/100/000000/remove-ads.png" alt=""><span>Facebook ads</span></a> </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 "> <a href="#" class="connection-item"><img src="https://img.icons8.com/wired/64/000000/slack.png" alt=""> <span>Slack</span></a> </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="conntection-footer"><a href="#">More</a></div>
-                            </li>
-                        </ul>
-                    </li>
-                    
-                    <li class="nav-item dropdown nav-user"> <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="https://img.icons8.com/dusk/100/000000/user-female-circle.png" alt="" class="user-avatar-md rounded-circle"></a>
-                        <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
-                            <div class="nav-user-info">
-                                <h5 class="mb-0 text-white nav-user-name">Tikoha Samga</h5> <span class="status"></span><span class="ml-2">Available</span>
-                            </div> <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a> <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a> <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+   
        
 
     <script src = "Include/JavaScripts/assem.js"> </script>
 </head>
 
 <body>
+    
+    <nav>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+        <div class="navbar2">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                            <div class="navbar-header">
+                                <a href="#"><img class = "navimg" src = "imgs/navbar_logo.png"></a>
+                            </div>                        
+                            <div class="navbar-collapse collapse" id="mobile_menu">
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href="#">Home</a></li>
+                                    <li><a href="#" class="dropdown-toggle">About Us</a></li>
+                                    <li><a href="#">Fruits</a></li>
+                                    <li><a href="#">Veggies</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                                <ul class="nav navbar-nav">
+                                    <li>
+                                        <form action="" class="navbar-form">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <input type="search" name="search" id="" placeholder="Search Anything Here..." class="form-control">
+                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </li>
+                                </ul>
+
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="#">Cart</a></li>
+                                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+
+                                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login / Sign Up <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Login</a></li>
+                                            <li><a href="#">Sign Up</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </nav>
+    
+    
  <div id="page-container">
    <div id="content-wrap">
      <!-- all other page content -->
@@ -129,41 +114,35 @@
 
      
    <footer class="footer-distributed">
-         <div class="footer-left">
+
+    <div class="footer-left">
 
         <img src="imgs/final_footer.png" alt = "footer logo">
         <p class="footer-links">
             <a href="#" class="link-1">Home</a>
-
-            <a href="#">Blog</a>
-
-            <a href="#">Pricing</a>
-
-            <a href="#">About</a>
-
-            <a href="#">Faq</a>
-
-            <a href="#">Contact</a>
+            <a href="#">Account</a>
+            <a href="#">About us</a>
+            <a href="#">Contact up</a>
         </p>
 
-        <p class="footer-company-name">Company Name © 2015</p>
+        <p class="footer-company-name">Wasaly.mart © 2015</p>
     </div>
 
     <div class="footer-center">
 
         <div>
             <i class="fa fa-map-marker"></i>
-            <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+            <p><span>Building 30, North 90 Road, </span> 5th Settlement, New Cairo, Egypt</p>
         </div>
 
         <div>
             <i class="fa fa-phone"></i>
-            <p>+1.555.555.5555</p>
+            <p>+201013700990</p>
         </div>
 
         <div>
             <i class="fa fa-envelope"></i>
-            <p><a href="mailto:support@company.com">support@company.com</a></p>
+            <p><a href="mailto:support@company.com">Support.mart@wasaly.com</a></p>
         </div>
 
     </div>
@@ -171,8 +150,8 @@
     <div class="footer-right">
 
         <p class="footer-company-about">
-            <span>About the company</span>
-            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+            <span>About wasaly.mart</span>
+            Egyptian based company established to enhance the lifestyle and health of the Egyptian community. Our main goal is to provide you with the best quality fruits and vegetables from the comfort of your own home. Your health is our priority.
         </p>
 
         <div class="footer-icons">
@@ -184,14 +163,15 @@
 
         </div>
     </div>
-     </footer>
+</footer>
  </div>
-    <script>
-        $(document).ready(function()
-        {
-            
-        }
-    </script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+    //By using jQuery
+    $(window).bind('beforeunload', function () {
+        return 'please save your setting before leaving the page.';
+    });
+</script>
 </body>
     <style>
 *{
@@ -293,7 +273,7 @@ h2:after{
 	outline: none;
 	background-color: rgba(230, 230, 230, 0.6);
 	padding: 0.5rem 1rem;
-	font-size: 1.1rem;
+	font-size: 20px;
 	margin-bottom: 22px;
     text-align: center;
 	transition: .3s;
@@ -321,6 +301,7 @@ textarea{
 	transition: .3s;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+    font-size:20px;
 }
 
 .btn:hover{

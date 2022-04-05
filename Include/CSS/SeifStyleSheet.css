@@ -1,22 +1,24 @@
 /* Login*/
-@import url(https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css);
 .register-photo {
     background: #f1f7fc;
-    padding: 80px 0
+    padding: 80px 0;
+
 }
 
 .register-photo .image-holder {
     display: table-cell;
     width: 50%;
-    background-size: cover;
-    object-fit: fill;
+
 }
 
+.image-holder img{
+   width: 100%;
+}
 
 .register-photo .form-container {
     display: table;
     max-width: 900px;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
 }
@@ -88,35 +90,41 @@
     text-decoration: none
 }
 
-/* Fruits */
+/* Fruits & Veggies*/
 @import url(https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css);
 @import url(https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js);
 
-body {
-    background: #eee
+.header-fruits{
+    font-size: 24px;
+    color: #14b38a;;
 }
 
-.wrapper {
-    margin-top: 30px
+.wrapper-fruits {
+    margin: 30px
+}
+.product-details span{
+    text-align: center;
 }
 
-.card {
+.carddd {
     border: 1px solid #eee;
     cursor: pointer
 }
 
 .weight {
     margin-top: -65px;
-    transition: all 0.5s
+    transition: all 0.5s;
 }
 
 .weight small {
-    color: #e2dede
+    color: #14b38a;
+    font-size: 16px;
+    font-style: italic;
 }
 
-.buttons {
+.buttttons {
     padding: 10px;
     background-color: #d6d4d44f;
     border-radius: 4px;
@@ -169,6 +177,19 @@ body {
     animation: item 0.3s ease-in forwards
 }
 
+.carddd:hover .buttttons {
+    opacity: 1
+}
+
+.carddd:hover .weight {
+    margin-top: 10px
+}
+
+.carddd:hover {
+    transform: scale(1.04);
+    z-index: 2;
+    overflow: hidden
+}
 @keyframes item {
     0% {
         opacity: 1;
@@ -201,16 +222,39 @@ body {
     }
 }
 
-.card:hover .buttons {
-    opacity: 1
+.ads-fruit{
+    width: 300px;
+    margin: 20px 20px 0 0;
+    float: right
+}
+.adimage-fruit{
+    margin-top: 50px;
+    height: 250px;
+    width: 300px;
 }
 
-.card:hover .weight {
-    margin-top: 10px
-}
 
-.card:hover {
-    transform: scale(1.04);
-    z-index: 2;
-    overflow: hidden
+/*Checkout*/
+
+.formtemplate-checkout{
+    background: #f1f1f1;
+    width: 30%;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 30px 3px #888888;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.section-checkout{
+    margin: 20px 10px 10px 10px;
+}
+.checkout-button{
+            margin: 20px;
+            font-size: 20px;
+            padding: 8px;
+            width: 280px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            background: #3b4440;
 }

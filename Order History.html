@@ -2,20 +2,70 @@
 <html>
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="Include/CSS/stylesheet.css">
     <link rel="stylesheet" href="Include/CSS/hagrassstyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="Include/JavaScripts/hagrassJavascript.js"></script>
-
 </head>
 
 <body>
-    <div class="topnav">
-      <a class="active" href="#home">Home</a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
-    </div>
-    
+    <nav>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+        <div class="navbar2">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                            <div class="navbar-header">
+                                <a href="#"><img class = "navimg" src = "../imgs/navbar_logo.png"></a>
+                            </div>                        
+                            <div class="navbar-collapse collapse" id="mobile_menu">
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href="#">Home</a></li>
+                                    <li><a href="#" class="dropdown-toggle">About Us</a></li>
+                                    <li><a href="#">Fruits</a></li>
+                                    <li><a href="#">Veggies</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                                <ul class="nav navbar-nav">
+                                    <li>
+                                        <form action="" class="navbar-form">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <input type="search" name="search" id="" placeholder="Search Anything Here..." class="form-control">
+                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </li>
+                                </ul>
+
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="#">Cart</a></li>
+                                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+
+                                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login / Sign Up <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Login</a></li>
+                                            <li><a href="#">Sign Up</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </nav>
     <div class = "gridorderhistory">
         
             <div class = "filter">
@@ -135,6 +185,7 @@
         <h3>Recommendations</h3>
         <hr style="height:2px;border-width:0;color:gray;background-color:gray">
     </div>
+    <center class = "container">
     <div class = "gridRecommendation">
 
         <div class = "itemRecommend">
@@ -142,33 +193,41 @@
             <a href = "#"><h4>Apple</h4></a>
             <p>15 EGP per kilo</p>
             <p>Shipping fees 10.00 EGP</p>
+            <button class = "addtocart">Add to cart</button>
         </div>
         <div class = "itemRecommend">
             <a href = "#"><img src = "imgs/Fruits&Veggies/favpng_cavendish-banana-juice-cooking-banana-fruit.png"></a>
             <a href = "#"><h4>Banana</h4></a>
             <p>25 EGP per kilo</p>
             <p>Shipping fees 12.00 EGP</p>
+            <button class = "addtocart">Add to cart</button>
         </div>
         <div class = "itemRecommend">
             <a href = "#"><img src = "imgs/Fruits&Veggies/favpng_citrus-sinensis-sweet-lemon-orange-fruit-food.png"></a>
             <a href = "#"><h4>Orange</h4></a>
             <p>15 EGP per kilo</p>
             <p>Shipping fees 10.00 EGP</p>
+            <button class = "addtocart">Add to cart</button>
         </div>
         <div class = "itemRecommend">
             <a href = "#"><img src = "imgs/Fruits&Veggies/Lovepik_com-401520273-tomato-splashing.png"></a>
             <a href = "#"><h4>Tomato</h4></a>
             <p>15 EGP per kilo</p>
             <p>Shipping fees 10.00 EGP</p>
+            <button class = "addtocart">Add to cart</button>
         </div>
         <div class = "itemRecommend">
             <a href = "#"><img src = "imgs/Fruits&Veggies/pngaaa.com-3510282.png"></a>
             <a href = "#"><h4>Pepper</h4></a>
             <p>15 EGP per kilo</p>
             <p>Shipping fees 10.00 EGP</p>
+            <button class = "addtocart">Add to cart</button>
         </div>
     </div>
-    
+    </center>
+    <div>
+        <button id = "totop"><img src="imgs/icons/Arrow-Up-PNG-Pic.png"></button>
+    </div>
 <footer class="footer-distributed">
 
     <div class="footer-left">
@@ -176,36 +235,29 @@
         <img src="imgs/final_footer.png" alt = "footer logo">
         <p class="footer-links">
             <a href="#" class="link-1">Home</a>
-
-            <a href="#">Blog</a>
-
-            <a href="#">Pricing</a>
-
-            <a href="#">About</a>
-
-            <a href="#">Faq</a>
-
-            <a href="#">Contact</a>
+            <a href="#">Account</a>
+            <a href="#">About us</a>
+            <a href="#">Contact up</a>
         </p>
 
-        <p class="footer-company-name">Company Name © 2015</p>
+        <p class="footer-company-name">Wasaly.mart © 2015</p>
     </div>
 
     <div class="footer-center">
 
         <div>
             <i class="fa fa-map-marker"></i>
-            <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+            <p><span>Building 30, North 90 Road, </span> 5th Settlement, New Cairo, Egypt</p>
         </div>
 
         <div>
             <i class="fa fa-phone"></i>
-            <p>+1.555.555.5555</p>
+            <p>+201013700990</p>
         </div>
 
         <div>
             <i class="fa fa-envelope"></i>
-            <p><a href="mailto:support@company.com">support@company.com</a></p>
+            <p><a href="mailto:support@company.com">Support.mart@wasaly.com</a></p>
         </div>
 
     </div>
@@ -213,8 +265,8 @@
     <div class="footer-right">
 
         <p class="footer-company-about">
-            <span>About the company</span>
-            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+            <span>About wasaly.mart</span>
+            Egyptian based company established to enhance the lifestyle and health of the Egyptian community. Our main goal is to provide you with the best quality fruits and vegetables from the comfort of your own home. Your health is our priority.
         </p>
 
         <div class="footer-icons">

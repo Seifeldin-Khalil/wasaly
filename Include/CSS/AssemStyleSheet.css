@@ -23,7 +23,55 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: bold; 
 }
+.about-title
+{
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 80px;
+    text-align: left; 
+    padding-left: 95px;
+}
+.about-title-main
+{
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 80px;
+    text-align: center; 
+    padding-left: 50px;
+}
+.about-p
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold; 
+     width: 70%;
+    font-size: 30px;
+    padding-left: 95px;
+    text-align: left;
+}
+.about-p-main
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold; 
+     width: 50%;
+    font-size: 30px;
+    padding-left: 50px;
+    text-align: center;
+    align-content: center;
+}
 
+.about-mid
+{
+    
+}
+.about-container
+{
+    display: flex;
+}
+.about-img
+{
+    width:auto;
+    
+}
 ----------     
 .slideshow{
   margin: 0;

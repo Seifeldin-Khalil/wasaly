@@ -13,33 +13,33 @@
 </head>
     <body>
         <center>
-<form class = "formtemplate-checkout">
+<form name="Checkout" onsubmit="return checkoutValidation()" class = "formtemplate-checkout">
     <h1>Check-Out</h1>
-                Credit Card <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck"> Cash <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck"><br>
+                Credit Card <input type="checkbox" onclick="javascript:yesnoCheck();" name="yes" id="yesCheck"> Cash <input type="checkbox" onclick="javascript:yesnoCheck();" name="no" id="noCheck"><br>
 
         <div class = "section-checkout">
-                <input placeholder="City" type="text" >
+                <input name="City" placeholder="City" type="text" >
             </div>
             <div class = "section-checkout">
-                <input placeholder="Address" type="text" >
+                <input name="Address" placeholder="Address" type="text" >
             </div>
             <div class = "section-checkout">
-                <input placeholder="Post/zip code" type="text" >
+                <input name="postal" placeholder="Post/zip code" type="text" >
             </div>
 
     <div id="ifYes" style="visibility:hidden">
         <div class = "section-checkout">
-                <input placeholder="Card Holder Name" type="text" >
+                <input name="cName"placeholder="Card Holder Name" type="text" >
             </div>
             <div class = "section-checkout">
-                <input placeholder="CVV" type="text" >
+                <input name="cvv" placeholder="CVV" type="text" >
             </div>
             <div class = "section-checkout">
-                <input placeholder="Expiry Date" type="text" >
+                <input name="Expiry" placeholder="Expiry Date" type="text" >
             </div>
     </div>
     <div>
-                <input onclick="paymentAlert()" class="checkout-button" type="submit" name="Checkout" value = "Checkout" save>
+                <input class="checkout-button" type="submit" name="submit" value = "Checkout">
             </div>
             </form>
         </center>

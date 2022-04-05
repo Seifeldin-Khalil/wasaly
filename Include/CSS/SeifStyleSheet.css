@@ -11,6 +11,10 @@
 
 }
 
+.image-holder img{
+   width: 100%;
+}
+
 .register-photo .form-container {
     display: table;
     max-width: 900px;
@@ -92,13 +96,16 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js);
 
-.header{
+.header-fruits{
     font-size: 24px;
     color: #14b38a;;
 }
 
-.wrapper {
+.wrapper-fruits {
     margin: 30px
+}
+.product-details span{
+    text-align: center;
 }
 
 .card {
@@ -115,7 +122,6 @@
     color: #14b38a;
     font-size: 16px;
     font-style: italic;
-    text-align: center;
 }
 
 .buttons {

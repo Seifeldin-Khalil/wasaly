@@ -9,6 +9,32 @@ function submit(e) {
     e.preventDefault();
 }
 
+function contactUsFormValidation() {
+    var x = document.forms["ContactUS"]["firstname"].value;
+    if (x == "") {
+        alert("Please fill in your name");
+        return false;
+    } else if (/[A-Za-z]/.test(x) == false) {
+        alert("Please use letters only in your name");
+        return false;
+    }
+
+    var x = document.forms["ContactUS"]["phone"].value;
+    if (x == "") {
+        alert("Please fill in your phone number");
+        return false;
+    } else if (/\d/.test(x) == true) {
+        alert("Please use numbers only in your phone");
+        return true;
+    }
+
+    var x = document.forms["ContactUS"]["desc"].value;
+    if (x == "") {
+        alert("Please fill in your needs");
+        return false;
+    }
+}
+
 /* -- Maiada: Cart -- */
 
 function removeAllCartItems() {
@@ -116,16 +142,136 @@ function plusQunatity() {
 }
 
 /* -- Maiada: Admin Stock Management -- */
+
 function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("stocktabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("stocktabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+/* -- Maiada: User Account -- */
+
+function UserAccFormValidation() {
+    var x = document.forms["UserAccountDetails"]["Fullname"].value;
+    if (x == "") {
+        alert("Name cannot be empty");
+        return false;
+    } else if (/[A-Za-z]/.test(x) == false) {
+        alert("Please use letters only in your name");
+        return false;
+    }
+
+    var x = document.forms["UserAccountDetails"]["Email"].value;
+    if (x == "") {
+        alert("Email cannot be empty");
+        return false;
+    } else if (!x.includes("@")) {
+        alert("Wrong email format");
+    } else if (!x.includes(".com")) {
+        alert("Wrong email format");
+    }
+
+    var x = document.forms["UserAccountDetails"]["Phone"].value;
+    if (x == "") {
+        alert("Phone Number cannot be empty");
+        return false;
+    } else if (/\d/.test(x) == true) {
+        alert("Please use numbers only in your phone");
+        return true;
+    }
+
+    var x = document.forms["UserAccountDetails"]["Street"].value;
+    if (x == "") {
+        alert("Street cannot be empty");
+        return false;
+    } else if (/[A-Za-z]/.test(x) == false) {
+        alert("Please use letters only in the street");
+        return false;
+    }
+
+    var x = document.forms["UserAccountDetails"]["city"].value;
+    if (x == "") {
+        alert("City cannot be empty");
+        return false;
+    } else if (/[A-Za-z]/.test(x) == false) {
+        alert("Please use letters only in the city");
+        return false;
+    }
+
+    var x = document.forms["UserAccountDetails"]["State"].value;
+    if (x == "") {
+        alert("State cannot be empty");
+        return false;
+    } else if (/[A-Za-z]/.test(x) == false) {
+        alert("Please use letters only in the state");
+        return false;
+    }
+
+}
+
+/* -- Maiada: Admin Account -- */
+
+function AdminAccFormValidation() {
+    var x = document.forms["UserAccountDetails"]["Fullname"].value;
+    if (x == "") {
+        alert("Name cannot be empty");
+        return false;
+    } else if (/[A-Za-z]/.test(x) == false) {
+        alert("Please use letters only in your name");
+        return false;
+    }
+
+    var x = document.forms["UserAccountDetails"]["Email"].value;
+    if (x == "") {
+        alert("Email cannot be empty");
+        return false;
+    } else if (!x.includes("@")) {
+        alert("Wrong email format");
+    } else if (!x.includes(".com")) {
+        alert("Wrong email format");
+    }
+
+    var x = document.forms["UserAccountDetails"]["Phone"].value;
+    if (x == "") {
+        alert("Phone Number cannot be empty");
+        return false;
+    } else if (/\d/.test(x) == true) {
+        alert("Please use numbers only in your phone");
+        return true;
+    }
+    
+    var x = document.forms["UserAccountDetails"]["Pass"].value;
+    if (x == "") {
+        alert("Please enter the old password");
+        return false;
+    } else if (/\d/.test(x) == true) {
+        alert("Please use numbers only in the password");
+        return true;
+    }
+    
+    var x = document.forms["UserAccountDetails"]["newPass"].value;
+    if (x == "") {
+        alert("Please enter the new password");
+        return false;
+    } else if (/\d/.test(x) == true) {
+        alert("Please use numbers only in the password");
+        return true;
+    }
+    
+    var x = document.forms["UserAccountDetails"]["confirmPass"].value;
+    if (x == "") {
+        alert("Please confirm the new password");
+        return false;
+    } else if (/\d/.test(x) == true) {
+        alert("Please use numbers only in the password");
+        return true;
+    }
 }

@@ -108,7 +108,7 @@
     text-align: center;
 }
 
-.card {
+.carddd {
     border: 1px solid #eee;
     cursor: pointer
 }
@@ -124,7 +124,7 @@
     font-style: italic;
 }
 
-.buttons {
+.buttttons {
     padding: 10px;
     background-color: #d6d4d44f;
     border-radius: 4px;
@@ -177,15 +177,15 @@
     animation: item 0.3s ease-in forwards
 }
 
-.card:hover .buttons {
+.carddd:hover .buttttons {
     opacity: 1
 }
 
-.card:hover .weight {
+.carddd:hover .weight {
     margin-top: 10px
 }
 
-.card:hover {
+.carddd:hover {
     transform: scale(1.04);
     z-index: 2;
     overflow: hidden
@@ -222,12 +222,12 @@
     }
 }
 
-.ads{
+.ads-fruit{
     width: 300px;
     margin: 20px 20px 0 0;
     float: right
 }
-.adimage{
+.adimage-fruit{
     margin-top: 50px;
     height: 250px;
     width: 300px;

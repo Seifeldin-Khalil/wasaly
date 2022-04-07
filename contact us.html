@@ -2,21 +2,80 @@
 <html>
 
 <head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="Include/JavaScripts/maiadaJavascript.js"></script>
     <script src="https://code.iconify.design/2/2.2.0/iconify.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="shortcut icon" type="image/x-icon" href="imgs/Home/mini%20logo.jpg" />
+    
     <link rel="stylesheet" href="Include/CSS/stylesheet.css">
     <link rel="stylesheet" href="Include/CSS/MaiiStylesheet.css">
-    <script src="Include/JavaScripts/maiadaJavascript.js"></script>
-    
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+
+    <!-- Header Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
     <title>Contact Us</title>
 </head>
 
 <body>
+    <nav>
+        <div class="navbar2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
 
+                        <div class="navbar-header">
+                            <a href="#"><img class="navimg" src="../imgs/navbar_logo.png"></a>
+                        </div>
+                        <div class="navbar-collapse collapse" id="mobile_menu">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="#" class="dropdown-toggle">About Us</a></li>
+                                <li><a href="#">Fruits</a></li>
+                                <li><a href="#">Veggies</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <form action="" class="navbar-form">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input type="search" name="search" id="" placeholder="Search Anything Here..." class="form-control">
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#">Cart</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+
+                                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login / Sign Up <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Login</a></li>
+                                        <li><a href="#">Sign Up</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
     <div class="contactForm">
         <div class="contactFormrow">
             <div class="contactFormcolumn" style="text-align:center;">
@@ -28,8 +87,9 @@
                     <span class="iconify-inline" data-icon="logos:google-play" style="margin-right: 30px"></span>
                     <span class="iconify" data-icon="logos:apple-app-store"></span>
                 </h3>
-                
-                <br><hr>
+
+                <br>
+                <hr>
                 <div class="sign-up-container">
                     <div class="envelope">
                         <div class="paper">
@@ -45,13 +105,13 @@
 
             </div>
             <div class="contactFormcolumn" style="text-align:Left;">
-                <form name = "ContactUS">
+                <form name="ContactUS">
                     <h2 style="text-align:center">Contact Us <span class="iconify-inline" data-icon="ant-design:phone-filled" data-flip="horizontal"></span> 19339 </h2>
                     <h5 style="text-align:center">Opening hours: Everyday from 10:00 a.m. to 10:00 p.m.</h5>
                     <br>
-                    <h3 style="text-align:center" > OR </h3>
+                    <h3 style="text-align:center"> OR </h3>
                     <br>
-                    <h3 style="text-align:center" >Jot us a note and we’ll get back to you as quickly as possible!</h3>
+                    <h3 style="text-align:center">Jot us a note and we’ll get back to you as quickly as possible!</h3>
                     <br>
 
                     <label for="fname">Name</label>
@@ -69,43 +129,37 @@
             </div>
         </div>
     </div>
-
+    
     <footer class="footer-distributed">
+
         <div class="footer-left">
 
             <img src="imgs/final_footer.png" alt="footer logo">
             <p class="footer-links">
                 <a href="#" class="link-1">Home</a>
-
-                <a href="#">Blog</a>
-
-                <a href="#">Pricing</a>
-
-                <a href="#">About</a>
-
-                <a href="#">Faq</a>
-
-                <a href="#">Contact</a>
+                <a href="#">Account</a>
+                <a href="#">About us</a>
+                <a href="#">Contact up</a>
             </p>
 
-            <p class="footer-company-name">Company Name © 2015</p>
+            <p class="footer-company-name">Wasaly.mart © 2015</p>
         </div>
 
         <div class="footer-center">
 
             <div>
                 <i class="fa fa-map-marker"></i>
-                <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+                <p><span>Building 30, North 90 Road, </span> 5th Settlement, New Cairo, Egypt</p>
             </div>
 
             <div>
                 <i class="fa fa-phone"></i>
-                <p>+1.555.555.5555</p>
+                <p>+201013700990</p>
             </div>
 
             <div>
                 <i class="fa fa-envelope"></i>
-                <p><a href="mailto:support@company.com">support@company.com</a></p>
+                <p><a href="mailto:support@company.com">Support.mart@wasaly.com</a></p>
             </div>
 
         </div>
@@ -113,8 +167,8 @@
         <div class="footer-right">
 
             <p class="footer-company-about">
-                <span>About the company</span>
-                Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+                <span>About wasaly.mart</span>
+                Egyptian based company established to enhance the lifestyle and health of the Egyptian community. Our main goal is to provide you with the best quality fruits and vegetables from the comfort of your own home. Your health is our priority.
             </p>
 
             <div class="footer-icons">
@@ -128,4 +182,5 @@
         </div>
     </footer>
 </body>
-        </html>
+
+</html>

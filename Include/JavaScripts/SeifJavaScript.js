@@ -22,9 +22,13 @@ function yesnoCheck() {
     else document.getElementById('ifYes').style.visibility = 'hidden';
 }
 
-function paymentAlert() {
-  alert("Payment Successful");
-}
+$(document).ready(function(){
+    $(".checkout-button").hover(function(){
+  $(this).css({"background-color": "green"});
+  },function(){
+  $(this).css({"background-color": "#3b4440"});
+});
+});
 
 function checkoutValidation() {
     var x = document.forms["Checkout"]["yes"];
@@ -78,3 +82,5 @@ function checkoutValidation() {
   }
     }
 }
+
+

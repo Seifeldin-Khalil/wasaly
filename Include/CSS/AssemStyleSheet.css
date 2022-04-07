@@ -12,7 +12,6 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: bold; 
 }
-
 .home-discovery-h2
 {
     font-family: 'Oswald', sans-serif;
@@ -197,7 +196,7 @@
 
 
 
-.container{
+.container-home{
 
 	position: relative;
 	width:1100px;
@@ -209,7 +208,7 @@
 	
 }
 
-.container .card{
+.container-home .card{
 	width:308px;
 	position: relative;
 	height: 600px;
@@ -222,7 +221,7 @@
 	transition:0.3s ease-in-out;
 	margin-top: 5%;
 }
-.container .card .imgBx{
+.container-home .card .imgBx{
 	position: relative;
 	width:260px;
 	height: 260px;
@@ -232,7 +231,7 @@
 
 }
 
-.container .card .imgBx img
+.container-home .card .imgBx img
 {
 	max-width: 100%;
    

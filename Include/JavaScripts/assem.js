@@ -1,10 +1,10 @@
 function validateForm() {
-  var x = document.forms["feedback"]["name"].value;
-  if (x == "") 
-  {
-    alert("Name must be filled out");
-    return false;
-  }
+    var x = document.forms["feedback"]["name"].value;
+    if (x == "") 
+    {
+        alert("Name must be filled out");
+        return false;
+    }
     x = document.forms["feedback"]["email"].value;
       if (x == "") 
       {
@@ -29,11 +29,16 @@ function validateForm() {
         alert("Rating must be filled out");
         return false;
       }
+    return true;
 }
+
 $(document).ready(function(){
     $(".btn").click(function () {
-        alert("Feedback Submitted");
-    }); 
+        if(validateForm() == true)
+           {
+                alert("Feedback Submitted");
+           }
+}); 
 });
 
     

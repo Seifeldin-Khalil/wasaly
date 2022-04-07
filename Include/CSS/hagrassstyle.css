@@ -4,11 +4,13 @@
 
 /*   form  */
 .formtemplate{
+    margin-top: 30px;
     padding: 10px;
     background: #f1f1f1;
     width: 30%;
 }
 .section{
+        font-family: Montserrat;
     margin: 20px 10px 10px 10px;
 }
 .section input{
@@ -103,7 +105,7 @@
 }
 .labelfont{
     font-size: 18px;
-    font-family: candara;
+    font-family: Montserrat;
 }
 #sortbutton{
     font-size: 19px;
@@ -121,6 +123,7 @@
     text-align: left;
 }
 #orderHistory {
+    font-family: Montserrat;
     border-collapse: collapse;
     width: 100%;
 }
@@ -180,19 +183,21 @@
     text-decoration:none; 
 }
 .itemRecommend h4{
-    margin-bottom: 0px;
+    font-weight: bold;
+    margin-bottom: 10px;
     margin-left: 30px;
     margin-top: 15px;
     text-align: left;
-    font-family: Copperplate Gothic Light;
+    font-family: Montserrat;
     color: black;
 }
 .itemRecommend p{
     margin-bottom: 0px;
-    font-size: 18px;
+    font-size: 15px;
     margin-left: 30px;
     text-align: left;
-    font-family: candara;
+    font-family: Montserrat;
+    font-weight: 100;
 }
 .addtocart{
     margin: 15px 0 15px 0;    
@@ -217,9 +222,18 @@
     color: rgb(75, 61, 61);
     background: #14b38a;
 }
+#pagetitle{
+    font-family: Montserrat;
+    font-weight: bold;
+}
 .addproduct a{
     text-decoration: none;
     color: rgb(75, 61, 61);
+}
+.addproduct a:hover {
+    color: rgb(75, 61, 61);
+  text-decoration: none;
+  cursor: pointer;
 }
 .insertfile input{
             margin: 0 auto 5px auto;

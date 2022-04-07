@@ -1,4 +1,76 @@
-/* nav bar*/
+/*Generic*/
+/* Header: Admin */
+#logo{
+    width: 100%;
+    height: 90px;
+    background-color: white ;
+    border-bottom: 1px solid black;
+    box-shadow: 5px 10px #eee;
+    list-style-position: inside;
+    font-family: Montserrat ;
+}
+
+#logo img {
+    float: left;
+    width: 150px;
+    height: 80px;
+    margin: 5px 20px 0px 50px;
+}
+.AccBtn {
+    width: 100px;
+    font-family: candara;
+    height: 80px;
+    background-color: white;
+    color: black;
+    text-align: center  ;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    float: right;
+    margin-top:8px;
+    padding: 9px;
+}
+
+.AccBtn:hover{
+    text-decoration: none;
+}
+
+#navigation{
+    background-color: lightgray;
+    border-bottom: 1px solid black;
+}
+#nav {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+        margin: 0 auto;
+}
+.navv {
+    width: 33.3%;
+    float: left;
+    
+}
+.navv a {
+    color: black;
+    font-family: Montserrat ;
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    padding: 14px 50px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navv a:hover{
+    background-color: white;
+    text-decoration: none;
+}
+
+#login{
+        margin-right: 50px;
+}
+
+/* Header: User */
 .navbar2{
     box-shadow: 5px 10px #eee;
     padding: 12px 0px;
@@ -13,13 +85,6 @@
     width: 100px;
     height: 40px;
 }
-
-
-/* footer font */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
-
-/*Generic*/
-
 
 /*Page content */
 body {
@@ -42,6 +107,9 @@ body {
 }
 
 /* footer */
+
+/* footer font */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
 
 .footer-distributed {
     background: #3b4440;
@@ -231,6 +299,594 @@ body {
     .footer-distributed .footer-center i {
         margin-left: 0;
     }
+}
 
+/* -- Maiada  -- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Oswald:wght@300;500&display=swap');
+
+/* -- Maiada: Contact Us -- */
+
+/* Subscription form */
+.sign-up-container {
+    width: 70%;
+    margin-left: 70px;
+    padding-top: 208.33333px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.paper {
+    width: 85%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative;
+    top: -145px;
+    padding: 1rem 1.4rem 125px 1.4rem;
+    background: #fff;
+    background: -webkit-linear-gradient(top, #f1f1f1 43%, #fff 100%);
+    background: linear-gradient(to bottom, #f1f1f1 43%, #eee2b4 100%);
+    color: #db4344;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+#SubsTitle {
+    margin-bottom: 1rem;
+    margin-top: 0;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 300;
+    font-family: 'Oswald', sans-serif;
+}
+
+.text-input,
+.subsbutton {
+    box-sizing: border-box;
+    padding: 0.8em 0.67em;
+    margin-bottom: 0.5rem;
+    background: transparent;
+    border: none;
+    border-radius: 2em;
+    outline: none;
+}
+
+.subsbutton {
+    border: 1px solid #999;
+    -webkit-transition: background 0.1s, color 0.1s;
+    transition: background 0.1s, color 0.1s;
+}
+
+.subsbutton:hover {
+    background: #db4344;
+    color: #fef8e1;
+}
+
+.text-input {
+    background: #fff;
+    color: #333;
+}
+
+.text-input::-webkit-input-placeholder {
+    color: inherit;
+    font-style: italic;
+}
+
+.text-input::-moz-placeholder {
+    color: inherit;
+    font-style: italic;
+}
+
+.text-input:-ms-input-placeholder {
+    color: inherit;
+    font-style: italic;
+}
+
+.text-input::placeholder {
+    color: inherit;
+    font-style: italic;
+}
+
+.sign-up-form {
+    width: 100%;
+}
+
+.sign-up-form * {
+    width: 100%;
+}
+
+.envelope {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    margin: 0 auto;
+    background: #fa5b5c;
+    border-radius: 24px;
+}
+
+.envelope:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -240px;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    border-width: 125px 200px;
+    border-color: transparent;
+    border-style: solid;
+    border-bottom-color: #fa5b5c;
+    border-radius: 24px;
+}
+
+.envelope:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    pointer-events: none;
+    border-width: 125px 200px;
+    border-style: solid;
+    border-color: #db4344;
+    border-top-color: transparent;
+    border-radius: 24px;
+}
+
+.envelope .bottom-flap {
+    width: 400px;
+    height: 250px;
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    border-radius: 24px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.envelope .bottom-flap:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 40%;
+    border-radius: 24px;
+    background: #fa5b5c;
+    -webkit-transform: scaleY(0.7) rotate(45deg);
+    transform: scaleY(0.7) rotate(45deg);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submitted .paper {
+    -webkit-animation: paper-in 0.8s ease-out;
+    animation: paper-in 0.8s ease-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.submitted .envelope:before {
+    -webkit-animation: fold 0.5s ease-in;
+    animation: fold 0.5s ease-in;
+    -webkit-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+}
+
+@-webkit-keyframes paper-in {
+    30% {
+        -webkit-transform: translateY(-80px);
+        transform: translateY(-80px);
+        padding-bottom: 125px;
+    }
+
+    to {
+        top: 10px;
+        padding-bottom: 0;
+    }
+}
+
+@keyframes paper-in {
+    30% {
+        -webkit-transform: translateY(-80px);
+        transform: translateY(-80px);
+        padding-bottom: 125px;
+    }
+
+    to {
+        top: 10px;
+        padding-bottom: 0;
+    }
+}
+
+@keyframes fold {
+    from {
+        -webkit-transform-origin: bottom center;
+        transform-origin: bottom center;
+        z-index: 10;
+    }
+
+    to {
+        z-index: 10;
+        -webkit-transform-origin: bottom center;
+        transform-origin: bottom center;
+        -webkit-transform: rotateX(-180deg) translateY(10px);
+        border-bottom-color: #fa5b5c;
+    }
+}
+
+/* Contact Form: Style inputs */
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.contactForm {
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    padding: 50px;
+    margin-left: 75px;
+    margin-right: 75px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Create two columns that float next to eachother */
+.contactFormcolumn {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+}
+
+/* Clear floats after the columns */
+.contactFormrow:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+
+    .column,
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+/* -- Maiada: Cart -- */
+
+.shopping-cart {
+    width: 56%;
+    padding: 50px;
+    height: auto;
+    margin: 80px auto;
+    margin-top: 60p;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Oswald', sans-serif;
+}
+
+.carttitle {
+    height: 60px;
+    border-bottom: 1px solid #E1E8EE;
+    padding: 20px 30px;
+    padding-top: 0;
+    color: #5E6977;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.cartitem {
+    padding: 20px 30px;
+    height: 120px;
+    display: flex;
+    border-bottom: 1px solid #E1E8EE;
+}
+
+.cartitem:nth-child(3) {
+    border-top: 1px solid #E1E8EE;
+    border-bottom: 1px solid #E1E8EE;
+}
+
+/* Buttons -  Delete and Like */
+.cartbuttons {
+    position: relative;
+    padding-top: 20px;
+    margin-right: 40px;
+}
+
+.delete-btn {
+    display: inline-block;
+    cursor: pointer;
+    width: 18px;
+    height: 17px;
+    background: url("delete-icn.svg") no-repeat center;
+}
+
+.is-active {
+    animation-name: animate;
+    animation-duration: .8s;
+    animation-iteration-count: 1;
+    animation-timing-function: steps(28);
+    animation-fill-mode: forwards;
+}
+
+@keyframes animate {
+    0% {
+        background-position: left;
+    }
+
+    50% {
+        background-position: right;
+    }
+
+    100% {
+        background-position: right;
+    }
+}
+
+/* Product Image */
+.cartItemImage {
+    margin-right: 50px;
+}
+
+/* Product Description */
+.cartItemDescription {
+    padding-top: 10px;
+    margin-right: 60px;
+    width: 115px;
+}
+
+.cartItemDescription span {
+    display: block;
+    font-size: 18px;
+    color: #43484D;
+    font-weight: 400;
+}
+
+.cartItemDescription span:first-child {
+    margin-bottom: 5px;
+}
+
+/* Product Quantity */
+.cartItemquantity {
+    padding-top: 10px;
+    margin-right: 60px;
+}
+
+.cartItemquantity input {
+    -webkit-appearance: none;
+    border: none;
+    text-align: center;
+    width: 32px;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+}
+
+button[class*=btn] {
+    width: 30px;
+    height: 30px;
+    background-color: #E1E8EE;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.minus-btn img {
+    margin-bottom: 3px;
+}
+
+.plus-btn img {
+    margin-top: 2px;
+}
+
+.cartItemquantity button:focus,
+.cartItemquantity input:focus {
+    outline: 0;
+}
+
+/* Total Price */
+#Item-total-price {
+    width: 83px;
+    padding-top: 27px;
+    text-align: center;
+    font-size: 20px;
+    color: #43484D;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .shopping-cart {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .cartitem {
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cartItemImage img {
+        width: 50%;
+        vertical-align: middle;
+        align-content: center;
+    }
+
+    .cartItemImage,
+    .cartItemquantity,
+    .cartItemDescription {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .cartbuttons {
+        margin-right: 20px;
+    }
+}
+
+.chckout {
+    float: right;
+    width: 50%;
+    margin-top: 20px;
+}
+
+.Cartsummary {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Subtotal {
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #202020;
+    
+}
+
+#itemsCnt {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #909090;
+    line-height: 10px;
+}
+
+#total-amount {
+    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: #202020;
+}
+
+.chkoutBtn {
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    background: linear-gradient(to bottom right, #B8D7FF, #8EB7EB);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #202020;
+}
+
+/* -- Maiada: User Account -- */
+.account-settings .user-profile {
+    margin: 0 0 1rem 0;
+    text-align: center;
+}
+
+.account-settings .user-profile .user-avatar {
+    margin: 0 0 1rem 0;
+}
+
+.account-settings .user-profile .user-avatar img {
+    width: 90px;
+    height: 90px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+
+.account-settings .user-profile h5.user-name {
+    margin: 0 0 0.5rem 0;
+}
+
+.account-settings .user-profile h6.user-email {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #9fa8b9;
+}
+
+.account-settings .accountDetails {
+    margin: 2rem 0 0 0;
+    text-align: center;
+}
+
+.account-settings .accountDetails h5 {
+    margin: 0 0 15px 0;
+    color: #007ae1;
+}
+
+.account-settings .accountDetails p {
+    font-size: 0.825rem;
+}
+
+.form-control {
+    border: 1px solid #cfd1d8;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: .825rem;
+    background: #ffffff;
+    color: #2e323c;
+}
+
+.accountCard {
+    background: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 0;
+    margin-bottom: 1rem;
+}
+
+.accountBtn:active {
+    transform: scale(0.98);
+    /* Scaling button to 0.98 to its original size */
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    /* Lowering the shadow */
+}
+
+/* -- Maiada: Admin Stock Management -- */
+.stockcard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.stockcard {
+    border-radius: 15px;
+    padding-top: 10px;
+    background-color: white;
+    width: 100;
 
 }
+
+#test11:hover {
+    transform: scale(0.98);
+}
+
+

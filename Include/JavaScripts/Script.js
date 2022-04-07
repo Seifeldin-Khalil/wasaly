@@ -172,7 +172,7 @@ function addItemvalidateForm() {
     
      var x = document.forms["addItem"]["prodaccept"];
      if (!x.checked) {
-     alert("You must varify your self");
+     alert("You must verify your self");
      return false;
      }
 }
@@ -231,7 +231,7 @@ function editItemvalidateForm() {
     
      var x = document.forms["editForm"]["prodaccept"];
      if (!x.checked) {
-     alert("You must varify your self");
+     alert("You must verify your self");
      return false;
      }
 }

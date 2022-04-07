@@ -1,3 +1,6 @@
+/* -- Maiada  -- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Oswald:wght@300;500&display=swap');
+
 /* -- Maiada: Contact Us -- */
 
 /* Subscription form */
@@ -5,7 +8,7 @@
     width: 70%;
     margin-left: 70px;
     padding-top: 208.33333px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
 }
 
@@ -30,6 +33,7 @@
     text-align: center;
     font-size: 1em;
     font-weight: 300;
+    font-family: 'Oswald', sans-serif;
 }
 
 .text-input,
@@ -237,8 +241,10 @@ input[type=submit]:hover {
     padding: 50px;
     margin-left: 75px;
     margin-right: 75px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    margin-top: 50px;
     box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
 }
 
 /* Create two columns that float next to eachother */
@@ -278,6 +284,7 @@ input[type=submit]:hover {
     background-color: #f1f1f1;
     display: flex;
     flex-direction: column;
+    font-family: 'Oswald', sans-serif;
 }
 
 .carttitle {
@@ -287,7 +294,7 @@ input[type=submit]:hover {
     padding-top: 0;
     color: #5E6977;
     font-size: 25px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .cartitem {
@@ -408,6 +415,7 @@ button[class*=btn] {
     font-size: 20px;
     color: #43484D;
     font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Responsive */
@@ -457,14 +465,15 @@ button[class*=btn] {
 
 .Subtotal {
     font-size: 22px;
-    font-family: 'Open Sans';
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: #202020;
+    
 }
 
 #itemsCnt {
     font-size: 16px;
-    font-family: 'Open Sans';
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     color: #909090;
     line-height: 10px;
@@ -472,7 +481,7 @@ button[class*=btn] {
 
 #total-amount {
     font-size: 36px;
-    font-family: 'Open Sans';
+    font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     color: #202020;
 }
@@ -486,7 +495,7 @@ button[class*=btn] {
     border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
-    font-family: 'Open Sans';
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: #202020;
 }
@@ -569,4 +578,10 @@ button[class*=btn] {
     border-radius: 15px;
     padding-top: 10px;
     background-color: white;
+    width: 100;
+
+}
+
+#test11:hover {
+    transform: scale(0.98);
 }

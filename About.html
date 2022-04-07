@@ -11,13 +11,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
-    
+    <script src="Include/JavaScripts/assem.js"></script>
+     <link rel="shortcut icon" type="image/x-icon" href="imgs/Home/mini%20logo.jpg" />
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
 </style>
 
-    
-   
+
 </head>
 
 <body>
@@ -34,11 +34,11 @@
                             </div>                        
                             <div class="navbar-collapse collapse" id="mobile_menu">
                                 <ul class="nav navbar-nav">
-                                    <li class="active"><a href="#">Home</a></li>
-                                    <li><a href="#" class="dropdown-toggle">About Us</a></li>
-                                    <li><a href="#">Fruits</a></li>
-                                    <li><a href="#">Veggies</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li class="active"><a href="Home.html">Home</a></li>
+                                    <li><a href="About.html" class="dropdown-toggle">About Us</a></li>
+                                    <li><a href="User%20Fruits.html">Fruits</a></li>
+                                    <li><a href="User%20Veggies.html">Veggies</a></li>
+                                    <li><a href="contact%20us.html">Contact Us</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav">
                                     <li>
@@ -155,21 +155,38 @@ Sustainability: We are committed to sustainable business practices that ensure w
      <hr>
      <br>
      <br>
-    
+    <script>
+     $(document).ready(function(){
+    $(".about-mid").hover(function(){
+  $(this).css({"background-color": "rgba(211,211,211,0.2)", "font-size": "200%","box-shadow": "5px 10px 5px #888888"});
+  },function(){
+  $(this).css({"background-color": "white", "box-shadow": "0px 0px #000000"});
+});
+});
+     </script>
+         <script>
+     $(document).ready(function(){
+    $(".about-center").hover(function(){
+  $(this).css({"background-color": "rgba(211,211,211,0.2)", "font-size": "200%","box-shadow": "5px 10px 5px #888888"});
+  },function(){
+  $(this).css({"background-color": "white", "box-shadow": "0px 0px #000000"});
+});
+});
+     </script>
      
-   <footer class="footer-distributed">
+    <footer class="footer-distributed">
 
     <div class="footer-left">
 
         <img src="imgs/final_footer.png" alt = "footer logo">
         <p class="footer-links">
-            <a href="#" class="link-1">Home</a>
-            <a href="#">Account</a>
-            <a href="#">About us</a>
-            <a href="#">Contact up</a>
+            <a href="Home.html" class="link-1">Home</a>
+            <a href="User%20Account.html">Account</a>
+            <a href="About.html">About us</a>
+            <a href="contact%20us.html">Contact us</a>
         </p>
 
-        <p class="footer-company-name">Wasaly.mart © 2015</p>
+        <p class="footer-company-name">Wasaly.mart Â© 2015</p>
     </div>
 
     <div class="footer-center">

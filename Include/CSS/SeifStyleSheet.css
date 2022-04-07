@@ -102,10 +102,15 @@
 }
 
 .wrapper-fruits {
-    margin: 30px
+    margin: 30px;
+    height: 400px;
 }
 .product-details span{
     text-align: center;
+}
+
+.row{
+    margin: 10px;
 }
 
 .carddd {
@@ -148,9 +153,11 @@
     color: #fff;
     opacity: 0
 }
-
+.btn btn-block {
+    width: 10%;
+}
 .cart-button {
-    height: 48px
+    height: 48px;
 }
 
 .cart-button:focus {
@@ -158,11 +165,10 @@
 }
 
 .cart {
-    position: relative;
     height: 48px !important;
     width: 50px;
     margin-right: 8px;
-    display: flex;
+    display:inline-flex;
     justify-content: center;
     align-items: center;
     background-color: #fff;
@@ -170,7 +176,7 @@
     border-radius: 5px;
     font-size: 14px;
     transition: 1s ease-in-out;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .cart-button.clicked span.dot {
@@ -188,7 +194,7 @@
 .carddd:hover {
     transform: scale(1.04);
     z-index: 2;
-    overflow: hidden
+    overflow: hidden;
 }
 @keyframes item {
     0% {

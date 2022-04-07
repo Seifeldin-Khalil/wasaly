@@ -107,6 +107,15 @@ $(document).ready(function(){
     });
 });
 
+/*add product jquery*/
+$(document).ready(function(){
+  $(".addproduct").hover(function(){
+    $(this).css("background-color", "gray");
+    }, function(){
+    $(this).css("background-color", "#14b38a");
+  });
+});
+
 /* add item validation*/
 function addItemvalidateForm() {
      var x = document.forms["addItem"]["prodid"].value;

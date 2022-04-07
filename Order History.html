@@ -3,12 +3,12 @@
 
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!--page js and css-->
     <link rel="stylesheet" href="Include/CSS/stylesheet.css">
     <link rel="stylesheet" href="Include/CSS/hagrassstyle.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -16,7 +16,8 @@
 </head>
 
 <body>
-    <nav>
+
+<nav>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
         <div class="navbar2">
                 <div class="container-fluid">
@@ -24,15 +25,15 @@
                         <div class="col-lg-12">
 
                             <div class="navbar-header">
-                                <a href="#"><img class = "navimg" src = "../imgs/navbar_logo.png"></a>
+                                <a href="#"><img class = "navimg" src = "imgs/navbar_logo.png"></a>
                             </div>                        
                             <div class="navbar-collapse collapse" id="mobile_menu">
                                 <ul class="nav navbar-nav">
-                                    <li class="active"><a href="#">Home</a></li>
-                                    <li><a href="#" class="dropdown-toggle">About Us</a></li>
-                                    <li><a href="#">Fruits</a></li>
-                                    <li><a href="#">Veggies</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li class="active"><a href="Home.html">Home</a></li>
+                                    <li><a href="About.html" class="dropdown-toggle">About Us</a></li>
+                                    <li><a href="User%20Fruits.html">Fruits</a></li>
+                                    <li><a href="/User%20Veggies.html">Veggies</a></li>
+                                    <li><a href="contact%20us.html">Contact Us</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav">
                                     <li>
@@ -48,13 +49,13 @@
                                 </ul>
 
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="#">Cart</a></li>
-                                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+                                    <li><a href="cart.html">Cart</a></li>
+                                    <li><a href="/User%20Account.html"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
 
                                     <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login / Sign Up <span class="caret"></span></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="#">Login</a></li>
-                                            <li><a href="#">Sign Up</a></li>
+                                            <li><a href="Login.html">Login</a></li>
+                                            <li><a href="Sign%20Up.html">Sign us</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -66,6 +67,7 @@
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </nav>
+
     <div class = "gridorderhistory">
         
             <div class = "filter">
@@ -108,7 +110,7 @@
                         <td>
                             <a href = "#">View order details</a>
                             <br>
-                            <a href = "#">Rate &#128512;</a>
+                            <a href = "Feedback.html">Rate &#128512;</a>
                         </td>
                         <td><a href = "#">Reorder</a></td>
                     </tr>
@@ -128,7 +130,7 @@
                         <td>
                             <a href = "#">View order details</a>
                             <br>
-                            <a href = "#">Rate &#128512;</a>
+                            <a href = "Feedback.html">Rate &#128512;</a>
                         </td>
                         <td><a href = "#">Reorder</a></td>
                     </tr>
@@ -148,7 +150,7 @@
                         <td>
                             <a href = "#">View order details</a>
                             <br>
-                            <a href = "#">Rate &#128512;</a>
+                            <a href = "Feedback.html">Rate &#128512;</a>
                         </td>
                         <td><a href = "#">Reorder</a></td>
                     </tr>
@@ -168,7 +170,7 @@
                         <td>
                             <a href = "#">View order details</a>
                             <br>
-                            <a href = "#">Rate &#128512;</a>
+                            <a href = "Feedback.html">Rate &#128512;</a>
                         </td>
                         <td><a href = "#">Reorder</a></td>
                     </tr>
@@ -193,35 +195,35 @@
             <a href = "#"><h4>Apple</h4></a>
             <p>15 EGP per kilo</p>
             <p>Shipping fees 10.00 EGP</p>
-            <button class = "addtocart">Add to cart</button>
+            <button class = "addtocart" onclick="document.location='cart.html'">Add to cart</button>
         </div>
         <div class = "itemRecommend">
             <a href = "#"><img src = "imgs/Fruits&Veggies/favpng_cavendish-banana-juice-cooking-banana-fruit.png"></a>
             <a href = "#"><h4>Banana</h4></a>
             <p>25 EGP per kilo</p>
             <p>Shipping fees 12.00 EGP</p>
-            <button class = "addtocart">Add to cart</button>
+            <button class = "addtocart" onclick="document.location='cart.html'">Add to cart</button>
         </div>
         <div class = "itemRecommend">
             <a href = "#"><img src = "imgs/Fruits&Veggies/favpng_citrus-sinensis-sweet-lemon-orange-fruit-food.png"></a>
             <a href = "#"><h4>Orange</h4></a>
             <p>15 EGP per kilo</p>
             <p>Shipping fees 10.00 EGP</p>
-            <button class = "addtocart">Add to cart</button>
+            <button class = "addtocart" onclick="document.location='cart.html'">Add to cart</button>
         </div>
         <div class = "itemRecommend">
             <a href = "#"><img src = "imgs/Fruits&Veggies/Lovepik_com-401520273-tomato-splashing.png"></a>
             <a href = "#"><h4>Tomato</h4></a>
             <p>15 EGP per kilo</p>
             <p>Shipping fees 10.00 EGP</p>
-            <button class = "addtocart">Add to cart</button>
+            <button class = "addtocart" onclick="document.location='cart.html'">Add to cart</button>
         </div>
         <div class = "itemRecommend">
             <a href = "#"><img src = "imgs/Fruits&Veggies/pngaaa.com-3510282.png"></a>
             <a href = "#"><h4>Pepper</h4></a>
             <p>15 EGP per kilo</p>
             <p>Shipping fees 10.00 EGP</p>
-            <button class = "addtocart">Add to cart</button>
+            <button class = "addtocart" onclick="document.location='cart.html'">Add to cart</button>
         </div>
     </div>
     </center>
@@ -280,7 +282,5 @@
     </div>
 </footer>
 </body>
-
-
 
 </html>

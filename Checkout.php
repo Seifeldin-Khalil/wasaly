@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="Include/CSS/SeifStyleSheet.css">
     <link rel="stylesheet" href="Include/CSS/stylesheet.css">
-    <script src="Include/JavaScripts/SeifJavaScript.js"></script>
+    <script src="Include/JavaScripts/Scripts.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">

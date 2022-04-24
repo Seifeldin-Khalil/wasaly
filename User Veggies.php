@@ -6,17 +6,17 @@
 
     <link rel="stylesheet" href="Include/CSS/SeifStyleSheet.css">
     <link rel="stylesheet" href="Include/CSS/stylesheet.css">
-    <script src="Include/JavaScripts/SeifJavaScript.js">
+    <script src="Include/JavaScripts/Scripts.js">
     </script>
     <script script src="https://kit.fontawesome.com/74ca053b53.js" crossorigin="anonymous"></script>
     
       <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
     
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     

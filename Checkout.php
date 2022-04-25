@@ -1,4 +1,37 @@
-<!DOCTYPE html>
+<?php
+    try {
+        $conn = new PDO("mysql:host=localhost;dbname=wasaly_db", "root", "");
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      } catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+    }
+
+    $cityErr = $addErr = $postalErr = $cNameErr = $cvvErr = $expErr = "";
+    $city = $address = $postal = $cName = $cvv = $exp= "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["City"])) {
+    $cityErr = "City is required";
+  }
+  if (empty($_POST["Address"])) {
+    $addErr = "Address is required";
+  }
+  if (empty($_POST["postal"])) {
+    $postalErr = "postal code is required";
+  }
+  if (empty($_POST["cName"])) {
+    $cNameErr = "Credit card name is required";
+  }
+  if (empty($_POST["cvv"])) {
+    $cvvErr = "Cvv is required";
+  }
+  if (empty($_POST["Expiry"])) {
+    $expErr = "Expiry date is required";
+  }
+}
+
+?>
 <html>
 
 <head>
@@ -6,7 +39,7 @@
 
     <link rel="stylesheet" href="Include/CSS/SeifStyleSheet.css">
     <link rel="stylesheet" href="Include/CSS/stylesheet.css">
-    <script src="Include/JavaScripts/Scripts.js"></script>
+    <script src="Include/JavaScripts/Script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
@@ -68,29 +101,41 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </nav>
         <center>
-<form name="Checkout" onsubmit="return checkoutValidation()" class = "formtemplate-checkout">
+<form name="Checkout" method = "post" action=" <?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class = "formtemplate-checkout">
     <h1>Check-Out</h1>
                 Credit Card <input type="checkbox" onclick="javascript:yesnoCheck();" name="yes" id="yesCheck"> Cash <input type="checkbox" onclick="javascript:yesnoCheck();" name="no" id="noCheck"><br>
 
         <div class = "section-checkout">
                 <input name="City" placeholder="City" type="text" >
+                <span> <?php echo $cityErr;?></span>
+            <br><br>
             </div>
             <div class = "section-checkout">
                 <input name="Address" placeholder="Address" type="text" >
+                <span> <?php echo $addErr;?></span>
+            <br><br>
             </div>
             <div class = "section-checkout">
                 <input name="postal" placeholder="Post/zip code" type="text" >
+                <span> <?php echo $postalErr;?></span>
+            <br><br>
             </div>
 
     <div id="ifYes" style="visibility:hidden">
         <div class = "section-checkout">
                 <input name="cName"placeholder="Card Holder Name" type="text" >
+                <span> <?php echo $cNameErr;?></span>
+            <br><br>
             </div>
             <div class = "section-checkout">
                 <input name="cvv" placeholder="CVV" type="text" >
+                <span> <?php echo $cvvErr;?></span>
+            <br><br>
             </div>
             <div class = "section-checkout">
                 <input name="Expiry" placeholder="Expiry Date" type="text" >
+                <span> <?php echo $expErr;?></span>
+            <br><br>
             </div>
     </div>
     <div>
@@ -161,4 +206,5 @@
     </div>
 </footer>
 
-</body></html>
+</body>
+</html>

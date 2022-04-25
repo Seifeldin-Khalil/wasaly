@@ -1,4 +1,25 @@
-<!DOCTYPE html>
+<?php
+    try {
+        $conn = new PDO("mysql:host=localhost;dbname=wasaly_db", "root", "");
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      } catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+    }
+
+    $userErr = $passErr = "";
+    $username = $password = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["Username"])) {
+    $userErr = "Username is required";
+  }
+  if (empty($_POST["password"])) {
+    $passErr = "Password is required";
+  }
+}
+
+?>
 <html>
 
 <head>
@@ -67,10 +88,12 @@
         <div class="register-photo">
     <div class="form-container">
         <div class="image-holder"><img src="imgs/cart.png" alt="Shopping Cart"></div>
-        <form method="post">
+        <form method="post" action=" <?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
             <h2 class="text-center"><strong>Welcome back!</strong></h2>
             <div class="form-group"><input class="form-control" type="Username" name="Username" placeholder="Username"></div>
+            <span> <?php echo $userErr;?></span>
             <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+            <span> <?php echo $passErr;?></span>
             <div class="form-group">
                 <div class="d-flex justify-content-between">
                     <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault"> Remember me </label> </div>

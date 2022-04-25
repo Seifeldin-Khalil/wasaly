@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="Include/CSS/stylesheet.css">
     <script script src="https://kit.fontawesome.com/74ca053b53.js" crossorigin="anonymous"></script>
     
-    <script src="Include/JavaScripts/Scripts.js">
+    <script src="Include/JavaScripts/Script.js">
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>

@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="Include/CSS/SeifStyleSheet.css">
     <link rel="stylesheet" href="Include/CSS/stylesheet.css">
-    <script src="Include/JavaScripts/Scripts.js">
+    <script src="Include/JavaScripts/Script.js">
     </script>
     <script script src="https://kit.fontawesome.com/74ca053b53.js" crossorigin="anonymous"></script>
     

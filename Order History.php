@@ -1,3 +1,17 @@
+<?php 
+    require('connect.php');
+    /*session_start();
+    if (!isset($_SESSION['loggedIn'])) {
+        header("location: HomePage.php");
+    }*/
+    try {
+        $selectedorders = $conn -> query("SELECT `Order_ID`, `Order_date` FROM `order`");
+        $selecteddata = $selectedorders -> fetchAll(PDO::FETCH_ASSOC); 
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -71,7 +85,7 @@
             </div>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </nav>
+</nav>
 
     <div class = "gridorderhistory">
         
@@ -100,6 +114,32 @@
                         <th>Order status</th>
 
                     </tr>
+                    <?php
+                            foreach($selecteddata as $value){
+                                $orderid = $value['Order_ID'];
+                                try {
+                                    $selectedorderitems = $conn -> query("SELECT `Product_Name` FROM `product`, `ordered_product` WHERE `Order_ID` = $orderid AND product.Product_ID = ordered_product.Product_ID;");
+                                    $selecteditems = $selectedorderitems -> fetchAll(PDO::FETCH_ASSOC); 
+                                } catch (PDOException $e) {
+                                    echo $e->getMessage();
+                                }
+                                print_r($selecteditems);
+                                echo "<tr>";
+                                echo "<td>";
+                                foreach($selecteditems as $item){
+                                    foreach($item as $items){
+                                        echo "<p>" . $items . "</p>";
+                                    }
+                                }
+                                echo "</td>";
+                                foreach($value as $value2){
+                                    echo "<td>";
+                                    echo $value2;
+                                    echo "</td>";
+                                }
+                                echo "</tr>";
+                            }
+                    ?>
                     <tr>
                         <td>
                             <div>

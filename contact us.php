@@ -1,10 +1,19 @@
-<!DOCTYPE html>
+<?php
+    try {
+        $conn = new PDO("mysql:host=localhost;dbname=wasaly_db", "root", "");
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      } catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+    }
+
+?>
+
 <html>
 
 <head>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
 
     <script src="Include/JavaScripts/Script.js"></script>
     <script src="https://code.iconify.design/2/2.2.0/iconify.min.js"></script>
@@ -31,7 +40,6 @@
 
 <body>
     <nav>
-
         <div class="navbar2">
             <div class="container-fluid">
                 <div class="row">
@@ -79,7 +87,8 @@
         </div>
 
     </nav>
-    <div class="contactForm">
+
+  <div class="contactForm">
         <div class="contactFormrow">
             <div class="contactFormcolumn" style="text-align:center;">
                 <img src="imgs/final_footer.png" style="width:70%; float: center;" alt="App Icon">
@@ -188,3 +197,7 @@
 </body>
 
 </html>
+
+<?php
+    $conn = null; 
+?>

@@ -1,11 +1,26 @@
 <?php
-    try {
-        $conn = new PDO("mysql:host=localhost;dbname=wasaly_db", "root", "");
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      } catch(PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
-    }
+try {
+    $conn = new PDO("mysql:host=localhost;dbname=wasaly_db", "root", "");
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+
+session_start();
+$_SESSION["CustId"] = 203398;
+$_SESSION["OrderId"] = 101;
+
+$sql = "SELECT * FROM ordered_product INNER JOIN product ON product.Product_ID = ordered_product.Product_ID WHERE Order_ID = " . $_SESSION["OrderId"];
+try {
+    $proddatainsert = $conn->query($sql);
+    $insertdata = $proddatainsert->fetchAll(PDO::FETCH_ASSOC);
+
+}
+catch (PDOException $e) {
+    echo $e->getMessage();
+}
 
 ?>
 
@@ -17,7 +32,6 @@
     <meta name="robots" content="noindex,follow" />
 
     <link rel="stylesheet" href="Include/CSS/stylesheet.css">
-    <link rel="stylesheet" href="Include/CSS/MaiiStylesheet.css">
     <link rel="shortcut icon" type="image/x-icon" href="imgs/Home/mini%20logo.jpg" />
     <!-- Header Links -->
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
@@ -88,6 +102,7 @@
         </div>
 
     </nav>
+
     <div class="shopping-cart" id="cartBox">
         <!-- Title -->
         <div class="carttitle">
@@ -97,33 +112,44 @@
         </div>
 
         <!-- Product #1 -->
-        <div class="cartitem" id="item1">
-            <div class="cartbuttons">
-                <button class="delete-btn" id="deleteItem1" type="button" name="button" onclick="deleteItem(this.id)">
-                    <img src="imgs/Maii/delete-icn.svg" alt="" />
-                </button>
-            </div>
+        
+        <table class = "cartTable" >
+            <?php
+                foreach ($insertdata as $value) {
+                    echo "<tr>";
+                    
+                    echo "<td style = 'padding: 10px; '>";
+                    echo '<button style = "width: 50px;" class="delete-btn" id="deleteItem1" type="button" name="button" onclick="deleteItem(this.id)"><img src="imgs/Maii/delete-icn.svg" alt="" /></button>';
+                    echo "</td>";
 
-            <div class="cartItemImage">
-                <img src="imgs/Fruits&Veggies/redApples.kpg.jpg" alt="" />
-            </div>
+                    echo "<td style = 'padding: 10px; '> <img src='imgs/Fruits&Veggies/redApples.kpg.jpg' alt=''/></td>";
 
-            <div class="cartItemDescription">
-                <span>Sugarbee Apples</span>
-            </div>
+                    echo "<td style = 'padding: 10px; '>";
+                    echo $value["Product_Name"];
+                    echo "</td>";
 
-            <div class="cartItemquantity">
-                <button class="plus-btn" id="PlusBtn1" type="button" name="button" onclick="plusQunatity(this.id)">
-                    <img src="imgs/Maii/plus.svg" alt="" />
-                </button>
-                <input type="text" name="name" value="1" id="Qunatity" readonly>
-                <button class="minus-btn" type="button" name="button" onclick="minusQunatity()">
-                    <img src="imgs/Maii/minus.svg" alt="" />
-                </button>
-            </div>
+                    echo "<td style = 'padding: 10px; '>";
+                    echo '<button class="minus-btn" style = "width: 30px; padding-top: 5px" type="button" name="button" onclick="minusQunatity()"> <img src="imgs/Maii/minus.svg" alt="" /></button>';
+                    echo "</td>";
+                    
+                    echo "<td style = 'padding: 10px; '>";
+                    echo '<input style = "width: 40px" type="text" name="name" value=" ' . $value["Quantity"] . ' " id="Qunatity" readonly>';
+                    echo "</td>";
 
-            <div id="Item-total-price">$ 5</div>
-        </div>
+                    echo "<td style = 'padding: 10px; '>";
+                    echo "<button class='plus-btn' id='PlusBtn1' style = 'width: 30px;' type='button' name='button' onclick='plusQunatity(this.id)'><img src='imgs/Maii/plus.svg' alt=''/></button>";
+                    echo "</td>";
+
+                    echo "<td style = 'padding: 10px; '>";
+                    echo '<div id="Item-total-price">$ 5</div>';
+                    echo "</td>";
+
+                    echo "</tr>";
+
+                    
+                }
+            ?>
+        </table>
 
         <center>
             <div class="chckout" align="right">

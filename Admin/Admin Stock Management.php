@@ -1,16 +1,5 @@
-<?php
-try {
-    $conn = new PDO("mysql:host=localhost;dbname=wasaly_db", "root", "");
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
+<!DOCTYPE html>
 
-?>
-
-<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -73,7 +62,7 @@ catch (PDOException $e) {
             <p></p>
             <div class="row" style="margin-bottom: 25px;">
                 <div class="col-sm-4">
-                    <div class="stockcard" style="">
+                    <div class="stockcard">
                         <img class="card-img-top" src="../imgs/Fruits&Veggies/lemon.png" alt="Card image cap" width="128" height="200">
                         <div class="card-body">
                             <h4 class="card-title" style="text-align: center">Lemon</h4>
@@ -84,7 +73,7 @@ catch (PDOException $e) {
                     <h3></h3>
                 </div>
                 <div class="col-sm-4 col-5">
-                    <div class="stockcard" style=""> <img class="card-img-top" src="../imgs/Fruits&Veggies/pngfind.com-apple-vector-png-5952311.png" width="128" height="200">
+                    <div class="stockcard"> <img class="card-img-top" src="../imgs/Fruits&Veggies/pngfind.com-apple-vector-png-5952311.png" width="128" height="200">
                         <div class="card-body">
                             <h4 class="card-title" style="text-align: center">Apple</h4>
                             <h5 style="margin-top: 15px; margin-bottom: 20px;text-align: center">$ 32.00<br></h5>
@@ -104,7 +93,7 @@ catch (PDOException $e) {
             </div>
             <div class="row" style="margin-bottom: 25px;">
                 <div class="col-sm-4">
-                    <div class="stockcard" style=""> <img class="card-img-top" src="../imgs/Fruits&Veggies/mango.png" alt="Card image cap" width="128" height="200">
+                    <div class="stockcard"> <img class="card-img-top" src="../imgs/Fruits&Veggies/mango.png" alt="Card image cap" width="128" height="200">
                         <div class="card-body">
                             <h4 class="card-title" style="text-align: center">Mango</h4>
                             <h5 style="margin-top: 15px; margin-bottom: 20px;text-align: center">$ 65.00<br></h5>

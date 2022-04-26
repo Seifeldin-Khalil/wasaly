@@ -1,16 +1,5 @@
-<?php
-try {
-    $conn = new PDO("mysql:host=localhost;dbname=wasaly_db", "root", "");
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
+<!DOCTYPE html>
 
-?>
-
-<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -73,7 +62,7 @@ catch (PDOException $e) {
 
             <div class="row" style="margin-bottom: 25px;">
                 <div class="col-sm-4">
-                    <div class="stockcard" style=""> <img class="card-img-top" src="../imgs/Fruits&Veggies/cucumber.png" alt="Card image cap" width="128" height="200">
+                    <div class="stockcard" > <img class="card-img-top" src="../imgs/Fruits&Veggies/cucumber.png" alt="Card image cap" width="128" height="200">
                         <div class="card-body">
                             <h4 class="card-title" style="text-align: center">Cucumber</h4>
                             <h5 style="margin-top: 15px; margin-bottom: 20px;text-align: center">$ 10.00<br></h5>

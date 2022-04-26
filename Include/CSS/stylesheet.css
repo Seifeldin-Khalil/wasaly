@@ -713,7 +713,6 @@ textarea {
     padding-top: 10px;
     background-color: white;
     width: 100;
-
 }
 
 #test11:hover {
@@ -1046,10 +1045,6 @@ textarea {
     align-content: center;
 }
 
-.about-mid
-{
-    
-}
 .about-container
 {
     display: flex;
@@ -1057,7 +1052,6 @@ textarea {
 .about-img
 {
     width:auto;
-    
 }
 ----------     
 .slideshow{

@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+require "../connect.php"; 
+
+?>
+
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -61,16 +67,30 @@
 
             <p></p>
             <div class="row" style="margin-bottom: 25px;">
-                <div class="col-sm-4">
-                    <div class="stockcard">
-                        <img class="card-img-top" src="../imgs/Fruits&Veggies/lemon.png" alt="Card image cap" width="128" height="200">
-                        <div class="card-body">
-                            <h4 class="card-title" style="text-align: center">Lemon</h4>
-                            <h5 style="margin-top: 15px; margin-bottom: 20px;text-align: center">$ 28.00<br></h5>
-                            <div class="btn-group-vertical" role="group" aria-label="Basic example" style="width: 100%;"><button type="button" class="btn btn-secondary btn-sm btn-outline-info" style="font-size: 20px; width: 100%; font-weight: 200; text-align: center; float: right; margin-bottom: 10.6px;">Edit</button><button type="button" class="btn btn-secondary btn-sm btn-outline-warning" style="float: right; width: 100%; font-size: 20px;">X</button> </div>
-                        </div>
-                    </div>
-            </div>
+            <?php
+            try {
+                $proddatainsert = $conn -> query("SELECT * 
+                FROM `product`");
+                $insertdata = $proddatainsert -> fetchAll(PDO::FETCH_ASSOC); 
+            } catch (PDOException $e) 
+            {
+                echo $e->getMessage();
+            }
+            foreach($insertdata as $value)
+            {  
+                echo '<div class="col-sm-4">';
+                    echo '<div class="stockcard">';
+                        echo '<img class="card-img-top" src="../imgs/Fruits&Veggies/lemon.png" alt="Card image cap" width="128" height="200">';
+                        echo '<div class="card-body">';
+                            echo '<h4 class="card-title" style="text-align: center">'.$value['Product_Name'].'</h4>';
+                            echo '<h5 style="margin-top: 15px; margin-bottom: 20px;text-align: center">$ '.$value['Price'].'<br></h5>';
+                            echo '<div class="btn-group-vertical" role="group" aria-label="Basic example" style="width: 100%;"><button type="button" class="btn btn-secondary btn-sm btn-outline-info" style="font-size: 20px; width: 100%; font-weight: 200; text-align: center; float: right; margin-bottom: 10.6px;">Edit</button><button type="button" class="btn btn-secondary btn-sm btn-outline-warning" style="float: right; width: 100%; font-size: 20px;">X</button> </div>';
+                        echo '</div>';
+                    echo'</div>';
+            echo'</div>';
+            }   
+                     
+            ?>
         </div>
     </center>
     <footer class="footer-distributed">

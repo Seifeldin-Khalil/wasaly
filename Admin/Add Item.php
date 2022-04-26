@@ -46,7 +46,7 @@
 
     
     <center>
-        <form name="addItem" class = "formtemplate" onsubmit="return addItemvalidateForm()">
+        <form method = "post" action = "AddNewProduct.php" name="addItem" class = "formtemplate" onsubmit="return addItemvalidateForm()">
 
                 <h1 id = "pagetitle">Add product</h1>
 

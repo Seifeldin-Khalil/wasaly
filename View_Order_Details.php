@@ -81,24 +81,12 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </nav>
 
-    <div class = "gridorderhistory">
-        
-            <div class = "filter">
-                <h3 id = "filterheader">Quick Search</h3>
-                <input type="text" id="searchInput" onkeyup="searchInTable()" placeholder="Search for date..">
-                <h3 id = "filterheader">Quick Sorting</h3>
-                <input id = "filtercheck" type="radio" name = "filtername" value = "asc" style="height:15px; width:15px;"><label class = "labelfont">Higher to lower price</label>
-                <br>    
-                <input id = "filtercheck2" type="radio" name = "filtername" value = "desc" style="height:15px; width:15px;"><label class = "labelfont">Lower to higher price</label>
-                <br>
-                <button id = "sortbutton" onclick="sortTable()">Sort</button>
-            </div>
-        
             <div class = "tablecontainer">
+            <center class = "container">
                 <h3 id = "tabletitle">My orders</h3>
                 
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-                
+
                 <table id = "orderHistory">
                     <tr>
                         <th></th>
@@ -109,8 +97,9 @@
 
                     </tr>
                     <?php
+                    $ID = $_GET['ID'];
                             try {
-                                $selectedorders = $conn -> query("SELECT `Order_ID`, `Order_date`, `Order_status` FROM `order`");
+                                $selectedorders = $conn -> query("SELECT `Order_ID`, `Order_date`, `Order_status` FROM `order` WHERE Order_ID = $ID");
                                 $selecteddata = $selectedorders -> fetchAll(PDO::FETCH_ASSOC); 
                             } catch (PDOException $e) {
                                 echo $e->getMessage();
@@ -144,48 +133,62 @@
                                         echo $value['Order_status'];
                                     echo "</td>";
                                     echo '<td>';
-                                        echo "<a href=" . "View_Order_Details.php?ID=" . $value["Order_ID"] . ">View order details</a>";
+                                        echo '<a href = "#">View order details</a>';
                                     echo '<br>';
-                                        echo "<a href=" . "" . ">Rate &#128512;</a>";
+                                        echo '<a href = "Feedback.html">Rate &#128512;</a>';
                                     echo '</td>';
-                                    echo "<td><a href=" . "ReOrder.php?ID=" . $value["Order_ID"]  . ">Reorder</a></td>";
+                                    echo '<td><a href = "#">Reorder</a></td>';
                                 echo "</tr>";
 
                             }
                     ?>
                 </table>
+                </center>
             </div>
-        
-            <div class = "ads">
-                <img class = "adimage" src = "imgs/ads/ad.jfif">
-                <img class = "adimage" src = "imgs/ads/ad2.jfif">
-            </div>
-        
-    </div>
+
+
     <div id = "recommendationsTitle">
         <h3>Recommendations</h3>
         <hr style="height:2px;border-width:0;color:gray;background-color:gray">
     </div>
     <center class = "container">
     <div class = "gridRecommendation">
-        <?php 
-        try {
-            $selecteproducts = $conn -> query("SELECT `Product_Name`, `Price` FROM `product`");
-            $selecteditems = $selecteproducts -> fetchAll(PDO::FETCH_ASSOC); 
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
-        for ($i = 0; $i < 5; $i++) {
-            echo '<div class = "itemRecommend">';
-            echo "<a href = " . "#" ."><img src = " . "imgs/Fruits&Veggies/pngfind.com-apple-vector-png-5952311.png" . "></a>";
-            echo "<a href = ". "#" . "><h4>" . $selecteditems[$i]['Product_Name'] . "</h4></a>";
-            echo "<p>" . $selecteditems[$i]['Price'] . " EGP per kilo</p>";
-            echo "<p>Shipping fees 10.00 EGP</p>";
-            echo "<button class = " . "addtocart" . " onclick=" . "document.location=" . "'cart.php'" . ">Add to cart</button>";
-            echo "</div>";
-        }
-        ?>
- 
+
+        <div class = "itemRecommend">
+            <a href = "#"><img src = "imgs/Fruits&Veggies/pngfind.com-apple-vector-png-5952311.png"></a>
+            <a href = "#"><h4>Apple</h4></a>
+            <p>15 EGP per kilo</p>
+            <p>Shipping fees 10.00 EGP</p>
+            <button class = "addtocart" onclick="document.location='cart.html'">Add to cart</button>
+        </div>
+        <div class = "itemRecommend">
+            <a href = "#"><img src = "imgs/Fruits&Veggies/favpng_cavendish-banana-juice-cooking-banana-fruit.png"></a>
+            <a href = "#"><h4>Banana</h4></a>
+            <p>25 EGP per kilo</p>
+            <p>Shipping fees 12.00 EGP</p>
+            <button class = "addtocart" onclick="document.location='cart.html'">Add to cart</button>
+        </div>
+        <div class = "itemRecommend">
+            <a href = "#"><img src = "imgs/Fruits&Veggies/favpng_citrus-sinensis-sweet-lemon-orange-fruit-food.png"></a>
+            <a href = "#"><h4>Orange</h4></a>
+            <p>15 EGP per kilo</p>
+            <p>Shipping fees 10.00 EGP</p>
+            <button class = "addtocart" onclick="document.location='cart.html'">Add to cart</button>
+        </div>
+        <div class = "itemRecommend">
+            <a href = "#"><img src = "imgs/Fruits&Veggies/Lovepik_com-401520273-tomato-splashing.png"></a>
+            <a href = "#"><h4>Tomato</h4></a>
+            <p>15 EGP per kilo</p>
+            <p>Shipping fees 10.00 EGP</p>
+            <button class = "addtocart" onclick="document.location='cart.html'">Add to cart</button>
+        </div>
+        <div class = "itemRecommend">
+            <a href = "#"><img src = "imgs/Fruits&Veggies/pngaaa.com-3510282.png"></a>
+            <a href = "#"><h4>Pepper</h4></a>
+            <p>15 EGP per kilo</p>
+            <p>Shipping fees 10.00 EGP</p>
+            <button class = "addtocart" onclick="document.location='cart.html'">Add to cart</button>
+        </div>
     </div>
     </center>
     <div>

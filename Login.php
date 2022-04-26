@@ -1,4 +1,5 @@
 <?php
+    session_start();
     try {
         $conn = new PDO("mysql:host=localhost;dbname=wasaly_db", "root", "");
         // set the PDO error mode to exception
@@ -18,6 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $passErr = "Password is required";
   }
 }
+
+$_SESSION["Name"] = ["Seif"];
 
 ?>
 <html>

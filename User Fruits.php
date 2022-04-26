@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php
+    session_start();
+    try {
+        $conn = new PDO("mysql:host=localhost;dbname=wasaly_db", "root", "");
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      } catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+    }
+?>
 <html>
 
 <head>
@@ -72,6 +81,7 @@
             </div>
            
     </nav>
+    <?php echo $_SESSION["Name"]?>
         <div class="header-fruits">
         <h1 style="text-align:center">FRUITS</h1>
     </div>

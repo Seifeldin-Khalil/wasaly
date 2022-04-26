@@ -9,8 +9,8 @@ catch (PDOException $e) {
 }
 
 session_start();
-$_SESSION["CustId"] = 203398;
-$_SESSION["OrderId"] = 101;
+$_SESSION["CustId"] = 1;
+$_SESSION["OrderId"] = 1;
 
 $sql = "SELECT * FROM ordered_product INNER JOIN product ON product.Product_ID = ordered_product.Product_ID WHERE Order_ID = " . $_SESSION["OrderId"] . ";";
 try {
@@ -172,9 +172,10 @@ $conn = null;
                     }
                     
                     // remove this item from the database ordered product table
-                    $delsql = "DELETE FROM `ordered_product` WHERE Order_ID = 101 AND Product_ID = 10";
+                    $delsql = "DELETE FROM `ordered_product` WHERE Order_ID = 1 AND Product_ID = 2";
                     try {
                         $deleteproduct = $conn -> query($delsql);
+                        // refresh the page to view results 
                     }
                     catch (PDOException $e) {
                         echo $e->getMessage();
@@ -183,8 +184,6 @@ $conn = null;
                     // closing the conncetion
                     $conn = null;
                 ?>
-
-                // refresh the page 
 
 
                 // update order's total amount after orderedProduct's deletion

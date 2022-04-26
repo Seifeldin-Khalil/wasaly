@@ -106,7 +106,7 @@ catch (PDOException $e) {
     <div class="shopping-cart" id="cartBox">
         <!-- Title -->
         <div class="carttitle">
-            <span style="float:left">Shopping Bag
+            <span style="font-size: 32px; float:left">Shopping Bag
             </span>
             <button onclick="removeAllCartItems()" style="font-size: 15px; float: right; background-color: #9dc2f2; border-radius: 50px; padding: 8px 30px;font-family: 'Montserrat', sans-serif;">Remove All</button>
         </div>
@@ -118,30 +118,30 @@ catch (PDOException $e) {
                 foreach ($insertdata as $value) {
                     echo "<tr>";
                     
-                    echo "<td style = 'padding: 10px; '>";
-                    echo '<button style = "width: 50px;" class="delete-btn" id="deleteItem1" type="button" name="button" onclick="deleteItem(this.id)"><img src="imgs/Maii/delete-icn.svg" alt="" /></button>';
+                    echo "<td style = 'padding: 5px;  text-align:center'>";
+                    echo '<button style = "width: 30px; height: 40px" class="delete-btn" id="deleteItem1" type="button" name="button" onclick="deleteItem(this.id)"><img src="imgs/Maii/delete-icn.svg" alt="" /></button>';
                     echo "</td>";
 
-                    echo "<td style = 'padding: 10px; '> <img src='imgs/Fruits&Veggies/redApples.kpg.jpg' alt=''/></td>";
+                    echo "<td style = 'width: 50px; padding: 10px; text-align:center'> <img src='imgs/Fruits&Veggies/redApples.kpg.jpg' alt=''/></td>";
 
-                    echo "<td style = 'padding: 10px; '>";
-                    echo $value["Product_Name"];
+                    echo "<td style = 'padding: 5px; text-align:left; padding-left: 15px'>";
+                    echo "<h3 style = 'margin: 0px'> " . $value["Product_Name"] . "</h3>";
                     echo "</td>";
 
-                    echo "<td style = 'padding: 10px; '>";
-                    echo '<button class="minus-btn" style = "width: 30px; padding-top: 5px" type="button" name="button" onclick="minusQunatity()"> <img src="imgs/Maii/minus.svg" alt="" /></button>';
+                    echo "<td style = 'padding: 5px;  text-align:center'>";
+                    echo '<button class="minus-btn" style = "width: 30px; height: 40px"; padding-top: 5px" type="button" name="button" onclick="minusQunatity()"> <img src="imgs/Maii/minus.svg" alt="" /></button>';
                     echo "</td>";
                     
-                    echo "<td style = 'padding: 10px; '>";
-                    echo '<input style = "width: 40px" type="text" name="name" value=" ' . $value["Quantity"] . ' " id="Qunatity" readonly>';
+                    echo "<td style = 'padding: 5px;  text-align:center'>";
+                    echo '<input style = " text-align:center; width: 40px; height: 40px" type="text" name="name" value=" ' . $value["Quantity"] . ' " id="Qunatity" readonly>';
                     echo "</td>";
 
-                    echo "<td style = 'padding: 10px; '>";
-                    echo "<button class='plus-btn' id='PlusBtn1' style = 'width: 30px;' type='button' name='button' onclick='plusQunatity(this.id)'><img src='imgs/Maii/plus.svg' alt=''/></button>";
+                    echo "<td style = 'padding: 5px;  text-align:center'>";
+                    echo "<button class='plus-btn' id='PlusBtn1' style = 'width: 30px; height: 40px' type='button' name='button' onclick='plusQunatity(this.id)'><img src='imgs/Maii/plus.svg' alt=''/></button>";
                     echo "</td>";
 
-                    echo "<td style = 'padding: 10px; '>";
-                    echo '<div id="Item-total-price">$ 5</div>';
+                    echo "<td style = 'padding: 5px; text-align:center'>";
+                    echo "<h3 style = 'margin: 0px'><div id='Item-total-price'>$ 5</div> </h3>"; 
                     echo "</td>";
 
                     echo "</tr>";
@@ -156,7 +156,6 @@ catch (PDOException $e) {
                 <div class="Cartsummary">
                     <div>
                         <div class="Subtotal">Sub-Total</div>
-                        <div id="itemsCnt">1 item</div>
                     </div>
                     <div id="total-amount">$ 5</div>
                 </div>

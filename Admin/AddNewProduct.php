@@ -21,7 +21,7 @@ if (!isset($_SESSION['loggedIn'])) {
         }
     }
     if(!$insertindb){
-        header('Location: Add Item.php');
+        header('Location: Admin Stock Management.php');
     }
  
 ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2022 at 02:12 AM
+-- Generation Time: Apr 26, 2022 at 03:53 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -39,6 +39,13 @@ CREATE TABLE `admin` (
   `Phone_Number` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`Admin_ID`, `F_name`, `L_name`, `Gender`, `Address`, `Mail`, `Username`, `Password`, `Phone_Number`) VALUES
+(1, 'abdelrahman', 'hagrass', 'male', 'rgerg', 'rgrew', 'hagrass', 'hagrass', 1013700990);
+
 -- --------------------------------------------------------
 
 --
@@ -57,6 +64,13 @@ CREATE TABLE `customer` (
   `Phone_Number` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`Customer_ID`, `F_name`, `L_name`, `Gender`, `Address`, `Mail`, `Username`, `Password`, `Phone_Number`) VALUES
+(1, 'abdelrahman', 'hagrass', 'male', 'hhhlkkk', 'abdelrahman.hagrass@gmail.com', 'hagrass', 'hagrass', 1013700990);
+
 -- --------------------------------------------------------
 
 --
@@ -66,9 +80,11 @@ CREATE TABLE `customer` (
 CREATE TABLE `feedback` (
   `Feedback_ID` int(11) NOT NULL,
   `Description` varchar(150) NOT NULL,
-  `Rating` int(11) NOT NULL,
-  `Customer_ID` int(11) NOT NULL,
-  `Admin_ID` int(11) NOT NULL
+  `Rating` int(11) DEFAULT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` int(11) NOT NULL,
+  `Order_ID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -80,8 +96,20 @@ CREATE TABLE `feedback` (
 CREATE TABLE `order` (
   `Order_ID` int(11) NOT NULL,
   `Order_date` varchar(50) NOT NULL,
+  `Order_status` varchar(50) NOT NULL,
   `Customer_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`Order_ID`, `Order_date`, `Order_status`, `Customer_ID`) VALUES
+(1, '12/3/2022', 'Delivered', 1),
+(2, '12/3/2023', 'Delivered', 1),
+(3, '12/3/2024', 'Delivered', 1),
+(2002, '12/3/2022', 'Pending', 1),
+(2003, '12/3/2023', 'Pending', 1);
 
 -- --------------------------------------------------------
 
@@ -90,10 +118,27 @@ CREATE TABLE `order` (
 --
 
 CREATE TABLE `ordered_product` (
+  `Ordered_product_ID` int(11) NOT NULL,
   `Order_ID` int(11) NOT NULL,
   `Product_ID` int(11) NOT NULL,
   `Quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ordered_product`
+--
+
+INSERT INTO `ordered_product` (`Ordered_product_ID`, `Order_ID`, `Product_ID`, `Quantity`) VALUES
+(1, 1, 1, 20),
+(2, 1, 2, 33),
+(3, 2, 1, 500),
+(4, 2, 2, 300),
+(5, 3, 1, 9),
+(6, 3, 2, 96),
+(19, 2002, 1, 20),
+(20, 2002, 2, 33),
+(21, 2003, 1, 500),
+(22, 2003, 2, 300);
 
 -- --------------------------------------------------------
 
@@ -117,8 +162,19 @@ CREATE TABLE `product` (
   `Product_Name` varchar(50) NOT NULL,
   `Category` varchar(50) NOT NULL,
   `Amount` int(11) NOT NULL,
-  `Price` float NOT NULL
+  `Price` float NOT NULL,
+  `Image` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`Product_ID`, `Product_Name`, `Category`, `Amount`, `Price`, `Image`) VALUES
+(1, 'apple', 'fruits', 200, 15.5, ''),
+(2, 'banana', 'fruits', 300, 12, ''),
+(500, 'hh', '2000', 2000, 30, ''),
+(501, 'hh', '2000', 2000, 30, '');
 
 -- --------------------------------------------------------
 
@@ -153,8 +209,7 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `feedback`
   ADD PRIMARY KEY (`Feedback_ID`),
-  ADD KEY `cust_feedback_fk` (`Customer_ID`),
-  ADD KEY `Admin_feedback_fk` (`Admin_ID`);
+  ADD KEY `rate_order_fk` (`Order_ID`);
 
 --
 -- Indexes for table `order`
@@ -167,8 +222,9 @@ ALTER TABLE `order`
 -- Indexes for table `ordered_product`
 --
 ALTER TABLE `ordered_product`
-  ADD PRIMARY KEY (`Order_ID`),
-  ADD KEY `Product_Item_FK` (`Product_ID`);
+  ADD PRIMARY KEY (`Ordered_product_ID`),
+  ADD KEY `Orderede_Items_FK` (`Order_ID`),
+  ADD KEY `product_ordereditem_FK` (`Product_ID`);
 
 --
 -- Indexes for table `order_history`
@@ -198,13 +254,13 @@ ALTER TABLE `stock`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `Admin_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Admin_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `Customer_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Customer_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `feedback`
@@ -213,16 +269,10 @@ ALTER TABLE `feedback`
   MODIFY `Feedback_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `order`
+-- AUTO_INCREMENT for table `ordered_product`
 --
-ALTER TABLE `order`
-  MODIFY `Order_ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `product`
---
-ALTER TABLE `product`
-  MODIFY `Product_ID` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `ordered_product`
+  MODIFY `Ordered_product_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `stock`
@@ -238,8 +288,7 @@ ALTER TABLE `stock`
 -- Constraints for table `feedback`
 --
 ALTER TABLE `feedback`
-  ADD CONSTRAINT `Admin_feedback_fk` FOREIGN KEY (`Admin_ID`) REFERENCES `admin` (`Admin_ID`),
-  ADD CONSTRAINT `cust_feedback_fk` FOREIGN KEY (`Customer_ID`) REFERENCES `customer` (`Customer_ID`);
+  ADD CONSTRAINT `rate_order_fk` FOREIGN KEY (`Order_ID`) REFERENCES `order` (`Order_ID`);
 
 --
 -- Constraints for table `order`
@@ -252,7 +301,7 @@ ALTER TABLE `order`
 --
 ALTER TABLE `ordered_product`
   ADD CONSTRAINT `Orderede_Items_FK` FOREIGN KEY (`Order_ID`) REFERENCES `order` (`Order_ID`),
-  ADD CONSTRAINT `Product_Item_FK` FOREIGN KEY (`Product_ID`) REFERENCES `product` (`Product_ID`);
+  ADD CONSTRAINT `product_ordereditem_FK` FOREIGN KEY (`Product_ID`) REFERENCES `product` (`Product_ID`);
 
 --
 -- Constraints for table `order_history`

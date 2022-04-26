@@ -1,6 +1,26 @@
+<?php
+require_once "connect.php"; 
+if(isset($_POST ["submit"]))
+{
+    $feedback_description = $_POST['message'];
+    $feedback_email = $_POST['email'];
+    $feedback_name = $_POST['name'];
+    $feedback_phone = $_POST['phone'];
+    $feedback_rating = $_POST['rating'];
+    
+
+    try
+    {
+        $insertindb = $conn -> query("INSERT INTO `feedback`(`Description`, `Rating`, `name`, `email`, `phone`, `Order_ID`) VALUES ('$feedback_description','$feedback_rating','$feedback_name','$feedback_email','$feedback_phone','3')");
+    }
+    catch(PDOException $e)
+        {
+           echo 'error while inserting feedback into database';
+        }
+}
+?>
 <!DOCTYPE html>
 <html>
-
 <head>
 
     <link rel="stylesheet" href="Include/CSS/stylesheet.css">
@@ -15,7 +35,7 @@
    
        
 
-    <script src = "Include/JavaScripts/assem.js"> </script>
+    <script src = "Include/JavaScripts/Script.js"> </script>
      <link rel="shortcut icon" type="image/x-icon" href="imgs/Home/mini%20logo.jpg" />
 </head>
 
@@ -82,7 +102,7 @@
 			<div class="right">
 				<h2>Give us your feedback</h2>
                 <h3>On Order #1111</h3>
-                <form name = "feedback" onsubmit="return validateForm()">
+                <form name = "feedback" method = "post" action = "Feedback.php" onsubmit="return validateForm()">
 				<input name = "name"  type="text" class="field" placeholder="Your Name">
 				<input name = "email" type="text" class="field" placeholder="Your Email">
 				<input name = "phone" type="text" class="field" placeholder="Phone">
@@ -98,7 +118,7 @@
                     <option value="5 Star">5</option>
                 </select>
                
-				<input type = "submit" class="btn" value = "Send">
+				<input name = "submit" type = "submit" class="btn" value = "Send">
                     </form>
               
 			</div>

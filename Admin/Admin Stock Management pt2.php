@@ -70,12 +70,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4 col-5">
-
-                </div>
-                <div class="col-sm-4" style="text-decoration-style: dashed;">
-
-                </div>
             </div>
         </div>
     </center>

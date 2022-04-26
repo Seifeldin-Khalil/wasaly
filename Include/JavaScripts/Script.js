@@ -407,7 +407,7 @@ function contactUsFormValidation() {
 }
 
 /* -- Maiada: Cart -- */
-
+/*
 function removeAllCartItems() {
     var container = document.getElementById("cartBox");
     var elements = container.getElementsByClassName("cartitem");
@@ -418,7 +418,7 @@ function removeAllCartItems() {
 
     document.getElementById("total-amount").innerHTML = "$ 0";
     document.getElementById("itemsCnt").innerHTML = "0 items";
-}
+}*/
 
 /*function deleteItem(idd) {
     document.getElementById(idd).parentNode.parentNode.remove();
@@ -429,6 +429,7 @@ function removeAllCartItems() {
     document.getElementById("itemsCnt").innerHTML = "0 items";
 }*/
 
+/*
 function minusQunatity() {
     // Selecting the input element and get its value 
     var inputVal = document.getElementById("Qunatity").value;
@@ -468,8 +469,8 @@ function minusQunatity() {
         document.getElementById("total-amount").innerHTML = "$ " + updatedTotal;
     }
 }
-
-
+*/
+/*
 function plusQunatity() {
     // Selecting the input element and get its value 
     var inputVal = document.getElementById("Qunatity").value;
@@ -511,6 +512,7 @@ function plusQunatity() {
     // - itemPrice
     document.getElementById("total-amount").innerHTML = "$ " + updatedTotal;
 }
+*/
 
 /* -- Maiada: User Account -- */
 

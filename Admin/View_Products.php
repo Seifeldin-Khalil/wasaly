@@ -4,6 +4,12 @@
     if (!isset($_SESSION['loggedIn'])) {
         header("location: HomePage.php");
     }*/
+    try {
+        $proddatainsert = $conn -> query("SELECT * FROM product");
+        $insertdata = $proddatainsert -> fetchAll(PDO::FETCH_ASSOC); 
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,6 +36,7 @@
     #viewproduct {
     font-family: Montserrat;
     border-collapse: collapse;
+    width: 70%;
 }
 #viewproduct th, #viewproduct td{
     font-size: 15px;
@@ -42,6 +49,11 @@
 }
 #viewproduct tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+#tabletitle3{
+    font-weight: bold;
+    margin: 10px 0 0 10px;
+    font-family: Copperplate Gothic Light;
 }
 </style>
 <body class = "bodystyle">
@@ -69,63 +81,33 @@
 
 
 <center>
-                <h3 id = "tabletitle">My orders</h3>
+                <h3 id = "tabletitle3">Products</h3>
                 
-                <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                <hr style="height:2px;border-width:0;color:gray;background-color:gray;width: 70%">
 
                 <table id = "viewproduct">
                     <tr>
-                        <th></th>
-                        <th>Order number</th>
-                        <th>Order date</th>
-                        <th>Total Price</th>
-                        <th>Order status</th>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Price</th>
 
                     </tr>
                     <?php
-
-                            try {
-                                $selectedorders = $conn -> query("SELECT `Order_ID`, `Order_date`, `Order_status` FROM `order` WHERE Order_ID = 1");
-                                $selecteddata = $selectedorders -> fetchAll(PDO::FETCH_ASSOC); 
-                            } catch (PDOException $e) {
-                                echo $e->getMessage();
-                            }
-                            foreach($selecteddata as $value){
-                                $totalprice = 0;
-                                $orderid = $value['Order_ID'];
-                                try {
-                                    $selectedorderitems = $conn -> query("SELECT `Product_Name`, `Price` , `Quantity` FROM `product`, `ordered_product` WHERE `Order_ID` = $orderid AND product.Product_ID = ordered_product.Product_ID;");
-                                    $selecteditems = $selectedorderitems -> fetchAll(PDO::FETCH_ASSOC); 
-                                } catch (PDOException $e) {
-                                    echo $e->getMessage();
-                                }
+                            foreach($insertdata as $value){
                                 echo "<tr>";
+                                foreach($value as $value2){
                                     echo "<td>";
-                                    echo "<div>";
-                                    foreach($selecteditems as $item){
-                                        $totalprice += ($item['Price']*$item['Quantity']); 
-                                        echo "<p>" . $item['Product_Name'] . " x" . $item['Quantity'] . "</p>";
-                                    }
-                                    echo "</div>";
-                                    echo "<td>";
-                                        echo $value['Order_ID'];
+                                    echo $value2;
                                     echo "</td>";
-                                    echo "<td>";
-                                        echo $value['Order_date'];
-                                    echo "<td>";
-                                        echo $totalprice;
-                                    echo "</td>";
-                                    echo '<td>';
-                                        echo $value['Order_status'];
-                                    echo "</td>";
-                                    echo '<td>';
-                                        echo '<a href = "#">View order details</a>';
-                                    echo '<br>';
-                                        echo '<a href = "Feedback.html">Rate &#128512;</a>';
-                                    echo '</td>';
-                                    echo '<td><a href = "#">Reorder</a></td>';
+                                }
+                                echo "<td>";
+                                echo "<a href=" . "EditItem.php?ID=" . $value["Product_ID"] . ">Edit</a>";
+                                echo "<br>";
+                                echo "<a href=" . "deleteproduct.php?ID=" . $value["Product_ID"] . ">Delete</a>";
+                                echo "</td>";
                                 echo "</tr>";
-
                             }
                     ?>
                 </table>

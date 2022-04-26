@@ -1,3 +1,35 @@
+<?php
+/*session_start();
+if (!isset($_SESSION['loggedIn'])) {
+    header("location: HomePage.php");
+}*/
+$ID = $_GET['ID'];
+require('../connect.php');
+try {
+        $editproduct = $conn -> query("SELECT * FROM `Product` WHERE Product_ID = $ID");
+        $editdata = $editproduct -> fetch(PDO::FETCH_ASSOC); 
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+
+    if (isset($_POST['submit'])) {
+        $ID = $_GET['ID'];
+echo $ID;
+        $productID = $_POST['prodid'];
+        $productName = $_POST['prodname'];
+        $productCategory = $_POST['prodcat'];
+        $productAmount = $_POST['prodamount'];
+        $productPrice = $_POST['prodprice'];
+
+        try {
+            $editinsert = $conn -> query("UPDATE `product` SET `Product_ID`='$productID',`Product_Name`='$productName',`Category`='$productCategory',`Amount`='$productAmount',`Price`='$productPrice' WHERE Product_ID = $ID");
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+            if($editinsert){header("location: View_Products.php");
+            }
+    }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -40,28 +72,28 @@
                 <li class="navv"> <a href="Attractions.html"><span class="iconify icon:mdi-ferris-wheel icon-inline:false"></span> Add Product </a></li>
             </ul>
         </div>
-        </nav>
+</nav>
 
     
     <center>
-        <form class = "formtemplate" name = "editForm" onsubmit="return editItemvalidateForm()">
+        <form method = "post" class = "formtemplate" name = "editForm" onsubmit="return editItemvalidateForm()">
 
                 <h1 id = "pagetitle">Edit product</h1>
 
                 <div class = "section">
-                    <input name = "prodid" type="text" value = "100">
+                    <input name = "prodid" type="text" value = "<?php echo $editdata['Product_ID'];?>">
                 </div>
                 <div class = "section">
-                    <input name = "prodname" type="text" value = "apple">
+                    <input name = "prodname" type="text" value = "<?php echo $editdata['Product_Name'];?>">
                 </div>
                 <div class = "section">
-                    <input name = "prodcat"  type="text" value = "fruits">
+                    <input name = "prodcat"  type="text" value = "<?php echo $editdata['Category'];?>">
                 </div>
                 <div class = "section">
-                    <input name = "prodamount"  type="text" value = "100">
+                    <input name = "prodamount"  type="text" value = "<?php echo $editdata['Amount'];?>">
                 </div>
                 <div class = "section">
-                    <input name = "prodprice" type="text" value = "10.50 EGP">
+                    <input name = "prodprice" type="text" value = "<?php echo $editdata['Price'];?>">
                 </div>
                 <div class = "insertfile">
                     <input  type="file" >

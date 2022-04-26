@@ -70,15 +70,18 @@
             </div>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </nav>
+</nav>
     <center>
-        <form class = "formtemplate" name = "signup" onsubmit = "return signupvalidateForm()">
+        <form method = "post" action = "AddNewAccount.php" class = "formtemplate" name = "signup" onsubmit = "return signupvalidateForm()">
 
             <h1 id = "pagetitle">Sign Up</h1>
 
             <div class = "section1">
                 <input placeholder="First name" name = "fname" type="text" >
                 <input placeholder="Last name" name = "lname" type="text" >
+            </div>
+            <div class = "section">
+                <input placeholder="Gender" name = "gender" type="text" >
             </div>
             <div class = "section">
                 <input placeholder="E-mail" name = "email" type="email" >
@@ -93,7 +96,7 @@
                 <input placeholder="Age" name = "age" type="text" >
             </div>
             <div class = "section">
-                <input placeholder="User Name" name = "username" type="text" >
+                <input placeholder="UserName" name = "username" type="text" >
             </div>
             <div class = "section">
                 <input placeholder="Password" name = "password" type="password" >
@@ -106,7 +109,7 @@
                 <label for = "accept">I accept the <a href="#">Terms & Conditions</a></label>
             </div>
             <div>
-                <input class="signup" type="submit" name="Sign up" value = "Sign Up" save>
+                <input class="signup" type="submit" name="submit" value = "Sign Up" save>
             </div>
             <div class="form-btns">
 

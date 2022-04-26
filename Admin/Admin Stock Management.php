@@ -70,46 +70,6 @@
                             <div class="btn-group-vertical" role="group" aria-label="Basic example" style="width: 100%;"><button type="button" class="btn btn-secondary btn-sm btn-outline-info" style="font-size: 20px; width: 100%; font-weight: 200; text-align: center; float: right; margin-bottom: 10.6px;">Edit</button><button type="button" class="btn btn-secondary btn-sm btn-outline-warning" style="float: right; width: 100%; font-size: 20px;">X</button> </div>
                         </div>
                     </div>
-                    <h3></h3>
-                </div>
-                <div class="col-sm-4 col-5">
-                    <div class="stockcard"> <img class="card-img-top" src="../imgs/Fruits&Veggies/pngfind.com-apple-vector-png-5952311.png" width="128" height="200">
-                        <div class="card-body">
-                            <h4 class="card-title" style="text-align: center">Apple</h4>
-                            <h5 style="margin-top: 15px; margin-bottom: 20px;text-align: center">$ 32.00<br></h5>
-                            <div class="btn-group-vertical" role="group" aria-label="Basic example" style="width: 100%;"><button type="button" class="btn btn-secondary btn-sm btn-outline-info" style="font-size: 20px; width: 100%; font-weight: 200; text-align: center; float: right; margin-bottom: 10.6px;">Edit</button><button type="button" class="btn btn-secondary btn-sm btn-outline-warning" style="float: right; width: 100%; font-size: 20px;">X</button> </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4" style="text-decoration-style: dashed;">
-                    <div class="stockcard" style="text-decoration-line: none; text-decoration-style: wavy;"> <img class="card-img-top" src="../imgs/Fruits&Veggies/favpng_cavendish-banana-juice-cooking-banana-fruit.png" alt="Card image cap" width="128" height="200">
-                        <div class="card-body">
-                            <h4 class="card-title" style="text-align: center">Banana</h4>
-                            <h5 style="margin-top: 15px; margin-bottom: 20px;text-align: center">$ 12.00<br></h5>
-                            <div class="btn-group-vertical" role="group" aria-label="Basic example" style="width: 100%;"><button type="button" class="btn btn-secondary btn-sm btn-outline-info" style="font-size: 20px; width: 100%; font-weight: 200; text-align: center; float: right; margin-bottom: 10.6px;">Edit</button><button type="button" class="btn btn-secondary btn-sm btn-outline-warning" style="float: right; width: 100%; font-size: 20px;">X</button> </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row" style="margin-bottom: 25px;">
-                <div class="col-sm-4">
-                    <div class="stockcard"> <img class="card-img-top" src="../imgs/Fruits&Veggies/mango.png" alt="Card image cap" width="128" height="200">
-                        <div class="card-body">
-                            <h4 class="card-title" style="text-align: center">Mango</h4>
-                            <h5 style="margin-top: 15px; margin-bottom: 20px;text-align: center">$ 65.00<br></h5>
-                            <div class="btn-group-vertical" role="group" aria-label="Basic example" style="width: 100%;"><button type="button" class="btn btn-secondary btn-sm btn-outline-info" style="font-size: 20px; width: 100%; font-weight: 200; text-align: center; float: right; margin-bottom: 10.6px;">Edit</button><button type="button" class="btn btn-secondary btn-sm btn-outline-warning" style="float: right; width: 100%; font-size: 20px;">X</button> </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-5">
-                    <div class="stockcard" style="text-decoration-line: none; text-decoration-style: wavy;"> <img class="card-img-top" src="../imgs/Fruits&Veggies/strawberry.png" alt="Card image cap" width="128" height="200">
-                        <div class="card-body">
-                            <h4 class="card-title" style="text-align: center">Strawberry</h4>
-                            <h5 style="margin-top: 15px; margin-bottom: 20px;text-align: center">$ 23.00<br></h5>
-                            <div class="btn-group-vertical" role="group" aria-label="Basic example" style="width: 100%;"><button type="button" class="btn btn-secondary btn-sm btn-outline-info" style="font-size: 20px; width: 100%; font-weight: 200; text-align: center; float: right; margin-bottom: 10.6px;">Edit</button><button type="button" class="btn btn-secondary btn-sm btn-outline-warning" style="float: right; width: 100%; font-size: 20px;">X</button> </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </center>

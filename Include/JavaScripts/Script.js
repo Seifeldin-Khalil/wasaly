@@ -420,14 +420,14 @@ function removeAllCartItems() {
     document.getElementById("itemsCnt").innerHTML = "0 items";
 }
 
-function deleteItem(idd) {
+/*function deleteItem(idd) {
     document.getElementById(idd).parentNode.parentNode.remove();
 
     // Update checkout summary
     // should have deduced the item's total price  from the total order price according to the selected  item to be deleted but will be fixed in phase 2 with database but for now...
     document.getElementById("total-amount").innerHTML = "$ 0";
     document.getElementById("itemsCnt").innerHTML = "0 items";
-}
+}*/
 
 function minusQunatity() {
     // Selecting the input element and get its value 

@@ -12,7 +12,7 @@ session_start();
 $_SESSION["CustId"] = 203398;
 $_SESSION["OrderId"] = 101;
 
-$sql = "SELECT * FROM ordered_product INNER JOIN product ON product.Product_ID = ordered_product.Product_ID WHERE Order_ID = " . $_SESSION["OrderId"];
+$sql = "SELECT * FROM ordered_product INNER JOIN product ON product.Product_ID = ordered_product.Product_ID WHERE Order_ID = " . $_SESSION["OrderId"] . ";";
 try {
     $proddatainsert = $conn->query($sql);
     $insertdata = $proddatainsert->fetchAll(PDO::FETCH_ASSOC);
@@ -21,7 +21,7 @@ try {
 catch (PDOException $e) {
     echo $e->getMessage();
 }
-
+$conn = null;
 ?>
 
 <html>
@@ -115,11 +115,14 @@ catch (PDOException $e) {
         
         <table class = "cartTable" >
             <?php
+               
                 foreach ($insertdata as $value) {
-                    echo "<tr>";
+                    $rowNum = $value["Product_ID"] ;
+
+                    echo "<tr id = " . $rowNum . " >";
                     
                     echo "<td style = 'padding: 5px;  text-align:center'>";
-                    echo '<button style = "width: 30px; height: 40px" class="delete-btn" id="deleteItem1" type="button" name="button" onclick="deleteItem(this.id)"><img src="imgs/Maii/delete-icn.svg" alt="" /></button>';
+                    echo '<button style = "width: 30px; height: 40px" class="delete-btn" id = ' . $rowNum . ' type="button" name="button" onclick="deleteItem(this.id)"><img src="imgs/Maii/delete-icn.svg" alt="" /></button>';
                     echo "</td>";
 
                     echo "<td style = 'width: 50px; padding: 10px; text-align:center'> <img src='imgs/Fruits&Veggies/redApples.kpg.jpg' alt=''/></td>";
@@ -141,15 +144,54 @@ catch (PDOException $e) {
                     echo "</td>";
 
                     echo "<td style = 'padding: 5px; text-align:center'>";
-                    echo "<h3 style = 'margin: 0px'><div id='Item-total-price'>$ 5</div> </h3>"; 
+                    echo "<h3 style = 'margin: 0px'><div id='Item-total-price'> $ " . $value["Price"] * $value["Quantity"] . " </div> </h3>"; 
                     echo "</td>";
 
                     echo "</tr>";
-
-                    
                 }
             ?>
         </table>
+
+        <script>
+            function deleteItem(idd) {
+                // passing the product id from javascript to php through the get method form the url
+                var oldUrl = window.location.href;
+                window.location.href = "" + window.location.href + "?ptd=" + idd;
+                <?php 
+                    $prodToDel = $_GET["ptd"];
+                    $orderID = $_SESSION["OrderId"];
+
+                    // setting the connection
+                    try {
+                        $conn = new PDO("mysql:host=localhost;dbname=wasaly_db", "root", "");
+                        // set the PDO error mode to exception
+                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    }
+                    catch (PDOException $e) {
+                        echo "Connection failed: " . $e->getMessage();
+                    }
+                    
+                    // remove this item from the database ordered product table
+                    $delsql = "DELETE FROM `ordered_product` WHERE Order_ID = 101 AND Product_ID = 10";
+                    try {
+                        $deleteproduct = $conn -> query($delsql);
+                    }
+                    catch (PDOException $e) {
+                        echo $e->getMessage();
+                    }
+
+                    // closing the conncetion
+                    $conn = null;
+                ?>
+
+                // refresh the page 
+
+
+                // update order's total amount after orderedProduct's deletion
+                window.location.href = "" + oldUrl;
+                
+            }
+        </script>
 
         <center>
             <div class="chckout" align="right">

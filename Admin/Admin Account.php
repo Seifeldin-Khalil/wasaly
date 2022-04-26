@@ -35,8 +35,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 
     <script src="Include/JavaScripts/Script.js"></script>
-    
-    
+
+
     <title>Manage Account</title>
 </head>
 
@@ -56,9 +56,12 @@
 
         <div id="navigation">
             <ul class="nav2" id="nav">
-                <li class="navv"> <a class="active" href="Admin%20Stock%20Management.html"><span class="iconify icon:ic:baseline-flight icon-inline:false"></span> Fruits </a></li>
-                <li class="navv"> <a href="Admin%20Stock%20Management%20pt2.html"><span class="iconify icon:fa-solid:hotel icon-inline:false"></span> Vegetables</a></li>
-                <li class="navv"> <a href="Add%20Item.html"><span class="iconify icon:mdi-ferris-wheel icon-inline:false"></span> Add Product </a></li>
+                <li class="navv"> <a class="active" href="Admin%20Stock%20Management.html"><span
+                            class="iconify icon:ic:baseline-flight icon-inline:false"></span> Fruits </a></li>
+                <li class="navv"> <a href="Admin%20Stock%20Management%20pt2.html"><span
+                            class="iconify icon:fa-solid:hotel icon-inline:false"></span> Vegetables</a></li>
+                <li class="navv"> <a href="Add%20Item.html"><span
+                            class="iconify icon:mdi-ferris-wheel icon-inline:false"></span> Add Product </a></li>
             </ul>
         </div>
     </nav>
@@ -77,23 +80,32 @@
                                 <h5 class="user-name">Admin Acc #203398</h5>
                             </div>
                             <div class="accountDetails">
-                                <button class="accountBtn" style="border-radius: 10px; width:100%; margin-bottom: 10px;" onclick="document.location='Admin Stock Management.html'">
-                                    <span class="iconify" data-icon="el:home-alt" style="color: green;"></span> Manage Stock
+                                <button class="accountBtn" style="border-radius: 10px; width:100%; margin-bottom: 10px;"
+                                    onclick="document.location='Admin Stock Management.html'">
+                                    <span class="iconify" data-icon="el:home-alt" style="color: green;"></span> Manage
+                                    Stock
                                 </button>
                                 <br>
-                                <button class="accountBtn" style="background-color: grey; border-radius: 10px; width:100%; margin-bottom: 10px;" disabled>
-                                    <span class="iconify" data-icon="fluent:inprivate-account-28-filled" style="color: midnightblue;"></span> Account Details
+                                <button class="accountBtn"
+                                    style="background-color: grey; border-radius: 10px; width:100%; margin-bottom: 10px;"
+                                    disabled>
+                                    <span class="iconify" data-icon="fluent:inprivate-account-28-filled"
+                                        style="color: midnightblue;"></span> Account Details
                                 </button>
                                 <br>
-                                <button class="accountBtn" style="border-radius: 10px; width:100%; margin-bottom: 10px;">
+                                <button class="accountBtn"
+                                    style="border-radius: 10px; width:100%; margin-bottom: 10px;">
                                     <span class="iconify" data-icon="flat-color-icons:feedback"></span> Feedbacks
                                 </button>
                                 <br>
-                                <button class="accountBtn" style="border-radius: 10px; width:100%; margin-bottom: 10px;">
-                                    <span class="iconify" data-icon="ic:baseline-connect-without-contact" style="color: indigo;"></span> Contact Reqs
+                                <button class="accountBtn"
+                                    style="border-radius: 10px; width:100%; margin-bottom: 10px;">
+                                    <span class="iconify" data-icon="ic:baseline-connect-without-contact"
+                                        style="color: indigo;"></span> Contact Reqs
                                 </button>
                                 <br>
-                                <button class="accountBtn" style="border-radius: 10px; width:100%; margin-bottom: 10px" onclick="document.location='../Login.html'">
+                                <button class="accountBtn" style="border-radius: 10px; width:100%; margin-bottom: 10px"
+                                    onclick="document.location='../Login.html'">
                                     <span class="iconify" data-icon="icon-park:logout"></span> Logout
                                 </button>
                             </div>
@@ -112,19 +124,22 @@
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="fullName">Full Name</label>
-                                        <input type="text" class="form-control" id="fullName" name="Fullname" placeholder="Enter full name">
+                                        <input type="text" class="form-control" id="fullName" name="Fullname"
+                                            placeholder="Enter full name">
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="eMail">Email</label>
-                                        <input type="email" class="form-control" id="eMail" style="height: 45px" name="Email" placeholder="Enter email ID">
+                                        <input type="email" class="form-control" id="eMail" style="height: 45px"
+                                            name="Email" placeholder="Enter email ID">
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="phone">Phone</label>
-                                        <input type="text" class="form-control" id="phone" placeholder="Enter phone number" name="Phone">
+                                        <input type="text" class="form-control" id="phone"
+                                            placeholder="Enter phone number" name="Phone">
                                     </div>
                                 </div>
                             </div>
@@ -136,13 +151,15 @@
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="Street">Old Password</label>
-                                        <input type="name" class="form-control" id="Street" placeholder="Enter Street" name="Pass">
+                                        <input type="name" class="form-control" id="Street" placeholder="Enter Street"
+                                            name="Pass">
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="ciTy">New Password</label>
-                                        <input type="name" class="form-control" id="ciTy" placeholder="Enter City" name="newPass">
+                                        <input type="name" class="form-control" id="ciTy" placeholder="Enter City"
+                                            name="newPass">
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -151,7 +168,8 @@
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="zIp">Confirm New Password</label>
-                                        <input type="text" class="form-control" id="zIp" placeholder="Zip Code" name="confirmPass">
+                                        <input type="text" class="form-control" id="zIp" placeholder="Zip Code"
+                                            name="confirmPass">
                                     </div>
                                 </div>
                             </div>
@@ -159,7 +177,10 @@
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                     <div class="text-right">
                                         <hr>
-                                        <button style="background-color: limegreen; width: 100%; margin-bottom: 15px;margin-top: 15px; padding-bottom: 30px; padding-top : 10px;" type="button" id="submit" name="submit" class="btn btn-primary" onClick="return AdminAccFormValidation()">
+                                        <button
+                                            style="background-color: limegreen; width: 100%; margin-bottom: 15px;margin-top: 15px; padding-bottom: 30px; padding-top : 10px;"
+                                            type="button" id="submit" name="submit" class="btn btn-primary"
+                                            onClick="return AdminAccFormValidation()">
                                             Save Changes</button>
                                     </div>
                                 </div>
@@ -209,7 +230,9 @@
 
             <p class="footer-company-about">
                 <span>About wasaly.mart</span>
-                Egyptian based company established to enhance the lifestyle and health of the Egyptian community. Our main goal is to provide you with the best quality fruits and vegetables from the comfort of your own home. Your health is our priority.
+                Egyptian based company established to enhance the lifestyle and health of the Egyptian community. Our
+                main goal is to provide you with the best quality fruits and vegetables from the comfort of your own
+                home. Your health is our priority.
             </p>
 
             <div class="footer-icons">

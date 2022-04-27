@@ -110,7 +110,7 @@
                         echo "<tr>";
                         
                         echo "<td style = 'padding: 5px;  text-align:center'>";
-                        echo '<a href = "http://localhost/wasaly/delete.php?ptd='.$rowNum.'&oid='.$order.'">
+                        echo '<a href = "http://localhost/wasaly/deleteCartItem.php?ptd='.$rowNum.'&oid='.$order.'">
                         <button style = "width: 30px; height: 40px" class="delete-btn" type="button" name="button">
                             <img src="imgs/Maii/delete-icn.svg" alt="" /></button>';
                         echo "</td>";
@@ -121,16 +121,20 @@
                         echo "<h3 style = 'margin: 0px'> " . $row["Product_Name"] . "</h3>";
                         echo "</td>";
 
+                        $sign = "minus";
                         echo "<td style = 'padding: 5px;  text-align:center'>";
-                        echo '<button class="minus-btn" style = "width: 30px; height: 40px"; padding-top: 5px" type="button" name="button" onclick="minusQunatity()"> <img src="imgs/Maii/minus.svg" alt="" /></button>';
+                        echo '<a href = "http://localhost/wasaly/cartCalcs.php?ptd='.$rowNum.'&sign='.$sign.'&amt='.$row["Quantity"].'&oid='.$order.'">
+                        <button class="minus-btn" style = "width: 30px; height: 40px"; padding-top: 5px" type="button" name="button"> <img src="imgs/Maii/minus.svg" alt="" /></button>';
                         echo "</td>";
                         
                         echo "<td style = 'padding: 5px;  text-align:center'>";
-                        echo '<input style = " text-align:center; width: 40px; height: 40px" type="text" name="name" value=" ' . $row["Quantity"] . ' " id="Q' . $rowNum . ' " readonly>';
+                        echo '<input id = "Q'.$rowNum.'" style = " text-align:center; width: 40px; height: 40px" type="text" name="name" value=" ' . $row["Quantity"] . ' " id="Q' . $rowNum . ' " readonly>';
                         echo "</td>";
 
+                        $sign = "plus";
                         echo "<td style = 'padding: 5px;  text-align:center'>";
-                        echo "<button class='plus-btn'  id = '" . $rowNum . "' style = 'width: 30px; height: 40px' type='button' name='button' onclick='plusQunatity(this.id)'><img src='imgs/Maii/plus.svg' alt=''/></button>";
+                        echo '<a href = "http://localhost/wasaly/cartCalcs.php?ptd='.$rowNum.'&sign='.$sign.'&amt='.$row["Quantity"].'&oid='.$order.'">';
+                        echo "<button class='plus-btn' style = 'width: 30px; height: 40px' type='button' name='button'><img src='imgs/Maii/plus.svg' alt=''/></button>";
                         echo "</td>";
 
 
@@ -151,72 +155,21 @@
                                     echo "$ " . $totalOrderPrice ; 
                         echo '</div>
                             </div>
+                            <a href = "http://localhost/wasaly/Checkout.php?total='.$totalOrderPrice.'">
                             <button class="chkoutBtn" onclick="document.location="Checkout.html"">Checkout</button>
                         </div>
                     </center></div>';
                 }else{
                     $totalOrderPrice = 0;
                     echo "<table><tr><td style = 'padding: 50px;  text-align:right'> <h3> Your cart is empty </h3></td>";
-                    echo "<td style = 'padding: 50px;  text-align:left'><button style='background-color: #9dc2f2;
+                    echo "<td style = 'padding: 50px;  text-align:left'>
+                    <a href = 'http://localhost/wasaly/Home(assem).php?total=".$totalOrderPrice."'>
+                    <button style='background-color: #9dc2f2;
                     border-radius: 50px; padding: 4px 15px;font-size: 16px; font-weight: 400;
                     color: #202020;' onclick='document.location='Home(assem).php''>Sart Shopping Now</button></td></tr> </table> </div>";
                 }
                
             ?>
-    <script>
-
-
-            function plusQunatity(idd) {
-                // passing the product id from javascript to php through the get method form the url
-                var oldUrl = "http://localhost/wasaly/cart.php";
-                
-                var text1 = "Q";
-                var quantityId = text1.concat("", String(idd));
-
-                var oldVal = parseInt(document.getElementById(quantityId).value);
-                var val = oldVal + 1;
-                
-                window.location.href = oldUrl + "?ptd=" + idd + "&newQ=" + val ;
-                document.getElementById(quantityId).value = val;
-
-                <?php 
-                    $theProd = $_GET["ptd"];
-                    $theQ = $_GET["newQ"];
-
-                    // setting the connection
-                    try {
-                        $conn = new PDO("mysql:host=localhost;dbname=wasaly_db", "root", "");
-                        // set the PDO error mode to exception
-                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                        
-                        // remove this item from the database ordered product table
-                        $stmt = $conn->prepare("UPDATE `ordered_product` SET `Quantity` = :q 
-                        WHERE `ordered_product`.`Ordered_product_ID` = 
-                        (SELECT `ordered_product`.`Ordered_product_ID` FROM `ordered_product`
-                         WHERE `ordered_product`.`Product_ID` = :prod AND `ordered_product`.`Order_ID` = :order
-                        );");
-                        
-                        $stmt->bindParam(':order', $orderID);
-                        $stmt->bindParam(':prod', $prodToEdit);
-                        $stmt->bindParam(':q',  $QUpdate);
-                        
-                        //////*****!!!! STATIC !!!!*****////////
-                        $orderID = $theOrder;
-                        $prodToEdit = 500;
-                        $QUpdate = $theQ;
-                        $stmt->execute();
-
-                    }
-                    catch (PDOException $e) {
-                        echo "Connection failed: " . $e->getMessage();
-                    }
-
-                    // closing the conncetion
-                    $conn = null;
-                ?>
-                
-            }
-        </script>*/
 
     <footer class="footer-distributed">
 

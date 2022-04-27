@@ -10,12 +10,12 @@ if (!isset($_SESSION['loggedIn'])) {
         $productID = $_POST['prodid'];
         $productName = $_POST['prodname'];
         $productCategory = $_POST['prodcat'];
-        $productCategory = $_POST['prodamount'];
+        $productamount = $_POST['prodamount'];
         $productPrice = $_POST['prodprice'];
         $empId =  1;
         
         try{
-            $insertindb = $conn -> query("INSERT INTO `product`(`Product_ID`, `Product_Name`, `Category`, `Amount`, `Price`) VALUES ('$productID','$productName','$productCategory','$productCategory','$productPrice')");
+            $insertindb = $conn -> query("INSERT INTO `product`(`Product_ID`, `Product_Name`, `Category`, `Amount`, `Price`) VALUES ('$productID','$productName','$productCategory','$productamount','$productPrice')");
         }catch(PDOException $e){
            echo 'error to insert the product!!!!';
         }

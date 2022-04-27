@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
 require "../connect.php"; 
-
 ?>
 
 <html>
@@ -69,8 +68,7 @@ require "../connect.php";
             <div class="row" style="margin-bottom: 25px;">
             <?php
             try {
-                $proddatainsert = $conn -> query("SELECT * 
-                FROM `product`");
+                $proddatainsert = $conn -> query("SELECT * FROM `product` WHERE `Category` = 'fruits'");
                 $insertdata = $proddatainsert -> fetchAll(PDO::FETCH_ASSOC); 
             } catch (PDOException $e) 
             {
@@ -84,12 +82,25 @@ require "../connect.php";
                         echo '<div class="card-body">';
                             echo '<h4 class="card-title" style="text-align: center">'.$value['Product_Name'].'</h4>';
                             echo '<h5 style="margin-top: 15px; margin-bottom: 20px;text-align: center">$ '.$value['Price'].'<br></h5>';
-                            echo '<div class="btn-group-vertical" role="group" aria-label="Basic example" style="width: 100%;"><button type="button" class="btn btn-secondary btn-sm btn-outline-info" style="font-size: 20px; width: 100%; font-weight: 200; text-align: center; float: right; margin-bottom: 10.6px;">Edit</button><button type="button" class="btn btn-secondary btn-sm btn-outline-warning" style="float: right; width: 100%; font-size: 20px;">X</button> </div>';
+                            echo '<div class="btn-group-vertical" role="group" aria-label="Basic example" style="width: 100%;"><button type="button" class="btn btn-secondary btn-sm btn-outline-info" style="font-size: 20px; width: 100%; font-weight: 200; text-align: center; float: right; margin-bottom: 10.6px;">Edit</button>';
+                             echo '<button onclick = "' ."delete(".$value['Product_ID'].') "type="button" name = "delete-button" class="btn btn-secondary btn-sm btn-outline-warning" style="float: right; width: 100%; font-size: 20px;">X Delete Product X</button> </div>';
                         echo '</div>';
                     echo'</div>';
             echo'</div>';
-            }   
-                     
+            }        
+            ?>
+            <?php
+            function delete($prodid)
+            {
+                try {
+                     $deleteproduct = $conn -> query("DELETE FROM `Product` WHERE Product_ID = $prodid");
+                    } 
+                    catch (PDOException $e) 
+                    {
+                    echo $e->getMessage();
+                    }
+            }
+          
             ?>
         </div>
     </center>

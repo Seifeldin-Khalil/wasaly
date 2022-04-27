@@ -1,23 +1,5 @@
 <?php
 require_once "connect.php"; 
-if(isset($_POST ["submit"]))
-{
-    $feedback_description = $_POST['message'];
-    $feedback_email = $_POST['email'];
-    $feedback_name = $_POST['name'];
-    $feedback_phone = $_POST['phone'];
-    $feedback_rating = $_POST['rating'];
-    
-
-    try
-    {
-        $insertindb = $conn -> query("INSERT INTO `feedback`(`Description`, `Rating`, `name`, `email`, `phone`, `Order_ID`) VALUES ('$feedback_description','$feedback_rating','$feedback_name','$feedback_email','$feedback_phone','3')");
-    }
-    catch(PDOException $e)
-        {
-           echo 'error while inserting feedback into database';
-        }
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +17,7 @@ if(isset($_POST ["submit"]))
    
        
 
-    <script src = "Include/JavaScripts/Script.js"> </script>
+          
      <link rel="shortcut icon" type="image/x-icon" href="imgs/Home/mini%20logo.jpg" />
 </head>
 
@@ -93,7 +75,60 @@ if(isset($_POST ["submit"]))
    <div id="content-wrap">
      <!-- all other page content -->
    </div>
-         
+   <?php
+      $name = " ";
+      $email = " ";
+      $phone = " ";
+      $message = " "; 
+      $rating = " ";
+      if ($_SERVER["REQUEST_METHOD"] == "POST") 
+      {
+          if (empty($_POST["name"]))
+          {
+              $name = "Name is required.";
+              if (empty($_POST["email"])) 
+              {
+                  $email = "Email is required.";
+                  if (empty($_POST["phone"])) 
+                  {
+                      $phone = "Phone Number is required.";
+                      if (empty($_POST["message"])) 
+                      {
+                          $message = "Message is required.";
+                          if (empty($_POST["message"])) 
+                          {
+                              $message = "Message is required.";
+                              if($_POST["rating"]== "No Rating")
+                              {
+                                  $rating = "You must rate your order.";
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+       }    
+   ?>
+<?php
+if(isset($_POST ["submit"]))
+{
+ 
+        $feedback_description = $_POST['message'];
+        $feedback_email = $_POST['email'];
+        $feedback_name = $_POST['name'];
+        $feedback_phone = $_POST['phone'];
+        $feedback_rating = $_POST['rating'];
+        
+        try
+        {
+            $insertindb = $conn -> query("INSERT INTO `feedback`(`Description`, `Rating`, `name`, `email`, `phone`, `Order_ID`) VALUES ('$feedback_description','$feedback_rating','$feedback_name','$feedback_email','$feedback_phone','3')");
+        }
+        catch(PDOException $e)
+            {
+               echo 'error while inserting feedback into database';
+            }    
+}
+?>
      	<div class="container">
 		<div class="contact-box">
 			<div class="left">
@@ -102,15 +137,36 @@ if(isset($_POST ["submit"]))
 			<div class="right">
 				<h2>Give us your feedback</h2>
                 <h3>On Order #1111</h3>
-                <form name = "feedback" method = "post" action = "Feedback.php" onsubmit="return validateForm()">
+                <form name = "feedback" method = "POST" action=" <?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 				<input name = "name"  type="text" class="field" placeholder="Your Name">
+
+
+                <span> <?php echo $name ?> </span>
+
+
 				<input name = "email" type="text" class="field" placeholder="Your Email">
+
+
+                <span> <?php echo $email ?> </span>
+
+
 				<input name = "phone" type="text" class="field" placeholder="Phone">
+
+
+                <span> <?php echo $phone ?> </span>
+
+
 				<textarea name = "message" placeholder="Message" class="field"></textarea>
+
+
+                <span> <?php echo $message ?> </span>
+
+                
                 
                 <h5>Rate your order</h5>   
                 <select class = "field" name = "rating"> 
                     <option value="no rating">No Rating</option>
+                    <span> <?php echo $rating ?> </span>
                     <option value="1 Star">1</option>
                     <option value="2 Star">2</option>
                     <option value="3 Star">3</option>
@@ -121,6 +177,7 @@ if(isset($_POST ["submit"]))
 				<input name = "submit" type = "submit" class="btn" value = "Send">
                     </form>
               
+                    
 			</div>
 		</div>
 	</div>
@@ -128,8 +185,7 @@ if(isset($_POST ["submit"]))
      <br>
      <br>
       <br>
-   
-
+      
      
    <footer class="footer-distributed">
 

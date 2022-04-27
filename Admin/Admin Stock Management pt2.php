@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+require "../connect.php"; 
+?>
+
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -7,17 +12,18 @@
     <meta name="author" content="">
 
     <link rel="shortcut icon" type="image/x-icon" href="../imgs/Home/mini%20logo.jpg" />
+    <link rel="shortcut icon" type="image/x-icon" href="imgs/Home/mini%20logo.jpg" />
     <link rel="icon" href="../../../../favicon.ico">
     <link rel="stylesheet" href="../Include/CSS/MaiiStylesheet.css">
     <link rel="stylesheet" href="../Include/CSS/stylesheet.css">
-    <link rel="shortcut icon" type="image/x-icon" href="imgs/Home/mini%20logo.jpg" />
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link href="narrow-jumbotron.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="Include/JavaScripts/Script.js"></script>
-    
+
     
     <title>Stock Management</title>
 </head>
@@ -50,30 +56,41 @@
     <center>
         <div class="jumbotron" style="width: 70%; margin-top: 30px;">
             <center>
-                <span class="badge badge-light" style="text-align: center; padding-right: 20px; width: 45%; margin-bottom: 50px; float:left; margin-left: 30px;" onclick="document.location='Admin Stock Management.html'" id="test11">
-                    <h1 style="text-align: center; letter-spacing: 8px">&nbsp; Fruits</h1>
+                <span class="badge badge-light" style="text-align: center; padding-right: 20px; width: 45%; margin-bottom: 50px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);" onclick="document.location='Admin Stock Management pt2.html'" id="test11">
+                    <h1 style="padding-right: 0px; text-align: center; letter-spacing: 8px;">&nbsp; Fruits</h1>
                 </span>
-                <span class="badge badge-dark" style="text-align: center; padding-right: 20px; width: 45%; margin-bottom: 50px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
-                    <h1 style="padding-right: 0px; text-align: center; letter-spacing: 8px;">&nbsp; Vegetables</h1>
+                <span class="badge badge-dark" style="text-align: center; padding-right: 20px; width: 45%; margin-bottom: 50px; float:left; margin-left: 30px;">
+                    <h1 style="text-align: center; letter-spacing: 8px">&nbsp; Vegetables</h1>
                 </span>
             </center>
 
             <p></p>
-
             <div class="row" style="margin-bottom: 25px;">
-                <div class="col-sm-4">
-                    <div class="stockcard" > <img class="card-img-top" src="../imgs/Fruits&Veggies/cucumber.png" alt="Card image cap" width="128" height="200">
-                        <div class="card-body">
-                            <h4 class="card-title" style="text-align: center">Cucumber</h4>
-                            <h5 style="margin-top: 15px; margin-bottom: 20px;text-align: center">$ 10.00<br></h5>
-                            <div class="btn-group-vertical" role="group" aria-label="Basic example" style="width: 100%;"><button type="button" class="btn btn-secondary btn-sm btn-outline-info" style="font-size: 20px; width: 100%; font-weight: 200; text-align: center; float: right; margin-bottom: 10.6px;">Edit</button><button type="button" class="btn btn-secondary btn-sm btn-outline-warning" style="float: right; width: 100%; font-size: 20px;">X</button> </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php
+            try {
+                $proddatainsert = $conn -> query("SELECT * FROM `product` WHERE `Category` = 'fruits'");
+                $insertdata = $proddatainsert -> fetchAll(PDO::FETCH_ASSOC); 
+            } catch (PDOException $e) 
+            {
+                echo $e->getMessage();
+            }
+            foreach($insertdata as $value)
+            {  echo '<div class="col-sm-4">';
+                echo '<div class="stockcard">';
+                    echo '<img class="card-img-top" src="../imgs/Fruits&Veggies/lemon.png" alt="Card image cap" width="128" height="200">';
+                    echo '<div class="card-body">';
+                        echo '<h4 class="card-title" style="text-align: center">'.$value['Product_Name'].'</h4>';
+                        echo '<h5 style="margin-top: 15px; margin-bottom: 20px;text-align: center">$ '.$value['Price'].'<br></h5>';
+                        echo '<div class="btn-group-vertical" role="group" aria-label="Basic example" style="width: 100%;"><button type="button" class="btn btn-secondary btn-sm btn-outline-info" style="font-size: 20px; width: 100%; font-weight: 200; text-align: center; float: right; margin-bottom: 10.6px;">Edit</button>';
+                         echo "<a href=" . "deleteproduct.php?ID=" . $value["Product_ID"] .'  name = "delete-button" class="btn btn-secondary btn-sm btn-outline-warning" style="float: right; width: 100%; font-size: 20px;">X </a> </div>';
+                    echo '</div>';
+                echo'</div>';
+        echo'</div>';
+            }        
+            ?>
+          
         </div>
     </center>
-
     <footer class="footer-distributed">
 
         <div class="footer-left">
@@ -125,6 +142,7 @@
             </div>
         </div>
     </footer>
+
 
 </body>
 

@@ -1,11 +1,6 @@
 <?php
-    try {
-        $conn = new PDO("mysql:host=localhost;dbname=wasaly_db", "root", "");
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      } catch(PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
-    }
+    session_start();
+    require('connect.php');
 ?>
 <html>
 
@@ -86,103 +81,27 @@
 
     <div class="wrapper-fruits">
         <div class="container">
-            <div class="rowww g-1">
-                <div class="col-md-3">
-                    <div class="carddd p-3">
-                        <div class="text-center"> <img src="imgs/Fruits&Veggies/cucumber.png" width="200"> </div>
-                        <div class="product-details"> <span class="font-weight-bold d-block"><center>$ 2.99/kg</center></span> <center><span>Cucumber</span> </center>
-                            <div class="buttttons d-flex flex-row">
-                                <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Add to cart </button>
-                            </div>
-                            <center>
-                                <div class="weight"> <small>1 kg = 5 pieces</small> </div></center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="carddd p-3">
-                        <div class="text-center"> <img src="imgs/Fruits&Veggies/carrots.png" width="200"> </div>
-                        <div class="product-details"> <span class="font-weight-bold d-block"><center>$ 1.50/kg</center></span> <center><span>Carrot</span></center>
-                            <div class="buttttons d-flex flex-row">
-                                <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Add to cart </button>
-                            </div>
-                            <center><div class="weight"> <small>1 kg = 3 pieces</small> </div> </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="carddd p-3">
-                        <div class="text-center"> <img src="imgs/Fruits&Veggies/chilli.png" width="200"> </div>
-                        <div class="product-details"> <span class="font-weight-bold d-block"><center>$3.99/kg</center></span> <center><span>Chilli</span></center>
-                            <div class="buttttons d-flex flex-row">
-                                <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Add to cart </button>
-                            </div>
-                            <div class="weight"> <center><small>1 kg = 3 pieces</small></center> </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="carddd p-3">
-                        <div class="text-center"> <img src="imgs/Fruits&Veggies/tomato.jpg" width="200"> </div>
-                        <div class="product-details"> <span class="font-weight-bold d-block"><center>$ 5.99/kg</center></span> <center><span>Tomato</span> </center>
-                            <div class="buttttons d-flex flex-row">
-                                <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Add to cart </button>
-                            </div>
-                            <div class="weight"> <center> <small>1 kg = 4 pieces</small> </center> </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="wrapper-fruits">
-        <div class="container">
             <div class="row g-1">
-                <div class="col-md-3">
-                    <div class="carddd p-3">
-                        <div class="text-center"> <img src="imgs/Fruits&Veggies/corn.jpg" width="200"> </div>
-                        <div class="product-details"> <span class="font-weight-bold d-block"><center>$ 2.50/kg </center></span> <center><span>Corn</span></center>
-                            <div class="buttttons d-flex flex-row">
-                                <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Add to cart </button>
-                            </div>
-                            <div class="weight"> <center><small>1 kg = 4 pieces</small></center> </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="carddd p-3">
-                        <div class="text-center"> <img src="imgs/Fruits&Veggies/potatoe.jpg" width="200"> </div>
-                        <div class="product-details"> <span class="font-weight-bold d-block"><center>$ 6.99/kg</center></span> <center><span>Potato</span></center>
-                            <div class="buttttons d-flex flex-row">
-                                <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Add to cart </button>
-                            </div>
-                            <div class="weight"> <center><small>1 kg = 15-20 pieces</small></center></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="carddd p-3">
-                        <div class="text-center"> <img src="imgs/Fruits&Veggies/onion.jpg" width="200"> </div>
-                        <div class="product-details"> <span class="font-weight-bold d-block"><center>$ 1.99/kg</center></span> <center><span>Onion</span></center>
-                            <div class="buttttons d-flex flex-row">
-                                <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Add to cart </button>
-                            </div>
-                            <div class="weight"> <center><small>1kg = 7-10 pieces</small></center> </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="carddd p-3">
-                        <div class="text-center"> <img src="imgs/Fruits&Veggies/broccoli.jpg" width="200"> </div>
-                        <div class="product-details"> <span class="font-weight-bold d-block"><center>$ 6.99/kg</center></span> <center><span>Broccoli</span></center>
-                            <div class="buttttons d-flex flex-row">
-                                <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Add to cart </button>
-                            </div>
-                            <div class="weight"> <center><small>1kg = 2 pieces</small></center> </div>
-                        </div>
-                    </div>
-                </div>
+            <?php
+                 try {
+                    $selecteproducts = $conn -> query("SELECT `Product_Name`, `Price` FROM `product` WHERE Category = 'Vegetables' ");
+                    $selecteditems = $selecteproducts -> fetchAll(PDO::FETCH_ASSOC); 
+                } catch (PDOException $e) {
+                    echo $e->getMessage();
+                }
+                foreach ( $selecteditems as $Vegetable) {
+                echo '<div class="col-md-3">';
+                echo    '<div class="carddd p-3">';
+                echo        '<div class="text-center"> <img src="imgs/Fruits&Veggies/favpng_cavendish-banana-juice-cooking-banana-fruit.png" width="200"> </div>';
+                echo        '<div class="product-details"> <span class="font-weight-bold d-block"><center>$' . $Vegetable['Price'] .'/kg</center></span> <center><span>' . $Vegetable['Product_Name'] . '</span></center>';
+                echo            '<div class="buttttons d-flex flex-row">';
+                echo               '<div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">' . 1 .'</span>Add to cart </button>';
+                echo           '</div>';
+                echo       '</div>';
+                echo   '</div>';
+                echo '</div>';
+                }
+                ?>
             </div>
         </div>
     </div>

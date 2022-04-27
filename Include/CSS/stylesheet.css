@@ -1360,7 +1360,7 @@ textarea {
 
 .wrapper-fruits {
     margin: 30px;
-    height: 400px;
+    height: auto;
 }
 .product-details span{
     text-align: center;
@@ -1372,7 +1372,8 @@ textarea {
 
 .carddd {
     border: 1px solid #eee;
-    cursor: pointer
+    cursor: pointer;
+    margin: 10px;
 }
 
 .weight {

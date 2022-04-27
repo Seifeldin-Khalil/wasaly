@@ -1,0 +1,114 @@
+{
+    "customers":[
+        {
+            "Customer_ID": "1",
+            "F_name": "Seif",
+            "L_name": "Khalil",
+            "Gender": "M",
+            "Address": "Maadi",
+            "Mail": "seif@gmail.com",
+            "Username": "Seifeldin",
+            "Password": "Seif123",
+            "Phone_Number": "123456"
+        },
+        {
+            "Customer_ID": "2",
+            "F_name": "Mahmoud",
+            "L_name": "Assem",
+            "Gender": "M",
+            "Address": "Nozha",
+            "Mail": "mahmoud@gmail.com",
+            "Username": "Mahmoud",
+            "Password": "Mahmoud123",
+            "Phone_Number": "123456789"
+        },
+        {
+            "Customer_ID": "3",
+            "F_name": "Maiada",
+            "L_name": "Khaled",
+            "Gender": "F",
+            "Address": "Rehab",
+            "Mail": "maiada@gmail.com",
+            "Username": "Maiada",
+            "Password": "Maiada123",
+            "Phone_Number": "654321"
+        },
+        {
+            "Customer_ID": "4",
+            "F_name": "Abdelrahman",
+            "L_name": "Hagrass",
+            "Gender": "M",
+            "Address": "Zatoon",
+            "Mail": "abdelrahman@gmail.com",
+            "Username": "Abdelrahman",
+            "Password": "Abdelrahman123",
+            "Phone_Number": "987654321"
+        },
+        {
+            "Customer_ID": "5",
+            "F_name": "Ahmed",
+            "L_name": "Yehia",
+            "Gender": "M",
+            "Address": "Tagamo3",
+            "Mail": "ahmed@gmail.com",
+            "Username": "Ahmed",
+            "Password": "Ahmed123",
+            "Phone_Number": "61283648"
+        },
+        {
+            "Customer_ID": "6",
+            "F_name": "Sara",
+            "L_name": "Youssef",
+            "Gender": "F",
+            "Address": "Helioplis",
+            "Mail": "sara@gmail.com",
+            "Username": "Sara",
+            "Password": "Sara123",
+            "Phone_Number": "712836193"
+        },
+        {
+            "Customer_ID": "7",
+            "F_name": "Omar",
+            "L_name": "Hosny",
+            "Gender": "M",
+            "Address": "6th of October",
+            "Mail": "omar@gmail.com",
+            "Username": "Omar",
+            "Password": "Omar123",
+            "Phone_Number": "619027941"
+        },
+        {
+            "Customer_ID": "8",
+            "F_name": "Youssef",
+            "L_name": "Ali",
+            "Gender": "M",
+            "Address": "Nasr City",
+            "Mail": "youssef@gmail.com",
+            "Username": "Youssef",
+            "Password": "Youssef123",
+            "Phone_Number": "987194691"
+        },
+        {
+            "Customer_ID": "9",
+            "F_name": "Nour",
+            "L_name": "Mohammed",
+            "Gender": "F",
+            "Address": "Maadi",
+            "Mail": "nour@gmail.com",
+            "Username": "Nour",
+            "Password": "Nour123",
+            "Phone_Number": "687123896"
+        },
+        {
+            "Customer_ID": "10",
+            "F_name": "Mohamed",
+            "L_name": "Khalifa",
+            "Gender": "M",
+            "Address": "Maadi",
+            "Mail": "mohamed@gmail.com",
+            "Username": "Mohamed",
+            "Password": "Mohamed123",
+            "Phone_Number": "1234567"
+        }
+    ]
+}

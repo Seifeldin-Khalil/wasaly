@@ -142,8 +142,10 @@ function loadValues() {
         <h1 class = "about-title"> OUR MISSION</h1>
         <div id = "mission">
             <center>
-        <button onclick = "loadMission()"> Read More ! </button>
+                <br>
+        <button class = "btn" onclick = "loadMission()"> Read More ! </button>
 </div>
+
 </center>
      </div>
         <img class = "about-img" src = "imgs/Home/ourmission.jpg">
@@ -159,8 +161,9 @@ function loadValues() {
      <div class = "about-mid">
         <h1 class = "about-title"> OUR VISION</h1>
         <div id = "vision">
+            <br>
             <center>
-        <button onclick = "loadVision()"> Read More ! </button>
+        <button class ="btn" onclick = "loadVision()"> Read More ! </button>
 </div>
 </center>
      </div>
@@ -175,8 +178,9 @@ function loadValues() {
      <div class = "about-mid">
         <h1 class = "about-title">  OUR VALUES </h1>
         <div id = "values">
+            <br>
             <center>
-        <button onclick = "loadValues()"> Read More ! </button>
+        <button class = "btn" onclick = "loadValues()"> Read More ! </button>
 </div>
 </center>
      </div>
@@ -271,7 +275,25 @@ function loadValues() {
  </div>
 </body>
 
-<style>
 
+<style>
+    .btn{
+	width: 30%;
+	padding: 0.5rem 1rem;
+	background-color: black;
+	color: #fff;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size:20px;
+}
+
+.btn:hover{
+    background-color: #43be9e;
+}
     </style>
 </html>

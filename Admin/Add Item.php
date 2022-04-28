@@ -1,4 +1,11 @@
 <?php 
+    require('../connect.php');
+    session_start();
+    if (!isset($_SESSION ['admin_ID'] )) {
+        header("location: ../Login.php");
+    }
+?>
+<?php 
         if(!empty($_GET['error'])){
             //echo "<script> console.log(". '"Message here"'.") </script>";
             echo '<script>alert("'.$_GET['error'].'")</script>';

@@ -5,7 +5,6 @@
         header("location: Login.php");
     }
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -27,7 +26,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="Include/JavaScripts/Script.js"></script>
 </head>
-
 <body>
 
 <nav>
@@ -145,13 +143,12 @@
                                         echo $value['Order_status'];
                                     echo "</td>";
                                     echo '<td>';
-                                        echo "<a href=" . "View_Order_Details.php?ID=" . $value["Order_ID"] . ">View order details</a>";
+                                        echo '<a  onclick = ' . "show_order_history(" .$value['Order_ID'] .")" . '>View order details</a>';
                                     echo '<br>';
                                         echo "<a href=" . "" . ">Rate &#128512;</a>";
                                     echo '</td>';
                                     echo "<td><a href=" . "ReOrder.php?ID=" . $value["Order_ID"]  . ">Reorder</a></td>";
                                 echo "</tr>";
-
                             }
                     ?>
                 </table>
@@ -171,14 +168,14 @@
     <div class = "gridRecommendation">
         <?php 
         try {
-            $selecteproducts = $conn -> query("SELECT `Product_Name`, `Price` FROM `product`");
+            $selecteproducts = $conn -> query("SELECT `Product_Name`, `Price`, `Image` FROM `product`");
             $selecteditems = $selecteproducts -> fetchAll(PDO::FETCH_ASSOC); 
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
         for ($i = 0; $i < 5; $i++) {
             echo '<div class = "itemRecommend">';
-            echo "<a href = " . "#" ."><img src = " . "imgs/Fruits&Veggies/pngfind.com-apple-vector-png-5952311.png" . "></a>";
+            echo "<a href = " . "#" ."><img src = " . "imgs/Fruits&Veggies/". $selecteditems[$i]['Image'] ."></a>";
             echo "<a href = ". "#" . "><h4>" . $selecteditems[$i]['Product_Name'] . "</h4></a>";
             echo "<p>" . $selecteditems[$i]['Price'] . " EGP per kilo</p>";
             echo "<p>Shipping fees 10.00 EGP</p>";
@@ -246,3 +243,15 @@
 </body>
 
 </html>
+<script>
+function show_order_history(ID) {
+
+  const xhttp = new XMLHttpRequest();
+  
+  xhttp.onload = function() {
+    document.getElementById("orderHistory").innerHTML = this.responseText;
+  }
+  xhttp.open("GET", "View_Order_Details.php?q="+ID);
+  xhttp.send();
+}
+</script>

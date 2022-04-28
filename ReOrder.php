@@ -36,7 +36,7 @@
         echo 'error to insert the Order Items!!!!';
         }
     }
-    if ($insertOrder && $insertOrdered_Items) {
+    if ($insertOrder ) {
         header("location: Order History.php");
     }  
 ?>

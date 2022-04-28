@@ -1,9 +1,9 @@
-<?php
-require_once "../connect.php";
-/*session_start();
-if (!isset($_SESSION['loggedIn'])) {
-    header("location: HomePage.php");
-}*/
+<?php 
+    require('../connect.php');
+    session_start();
+    if (!isset($_SESSION ['admin_ID'] )) {
+        header("location: ../Login.php");
+    }
 
     if(isset($_POST['submit'])){
         
@@ -12,6 +12,8 @@ if (!isset($_SESSION['loggedIn'])) {
         $productCategory = $_POST['prodcat'];
         $productamount = $_POST['prodamount'];
         $productPrice = $_POST['prodprice'];
+        $image = $_POST['prodimg'];
+        
         $error = "";
         try{
             $formisvalid = true;
@@ -61,7 +63,7 @@ if (!isset($_SESSION['loggedIn'])) {
                 $formisvalid = false;
             }    
             if($formisvalid){
-                $insertindb = $conn -> query("INSERT INTO `product`(`Product_ID`, `Product_Name`, `Category`, `Amount`, `Price`) VALUES ('$productID','$productName','$productCategory','$productamount','$productPrice')");
+                $insertindb = $conn -> query("INSERT INTO `product`(`Product_ID`, `Product_Name`, `Category`, `Amount`, `Price`, `Image`) VALUES ('$productID','$productName','$productCategory','$productamount','$productPrice', '$image')");
                 if($insertindb){
                     header('Location: Admin Stock Management.php');
                 }

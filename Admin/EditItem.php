@@ -1,8 +1,9 @@
-<?php
-/*session_start();
-if (!isset($_SESSION['loggedIn'])) {
-    header("location: HomePage.php");
-}*/
+<?php 
+    session_start();
+    if (!isset($_SESSION ['admin_ID'] )) {
+        header("location: ../Login.php");
+    }
+
 $ID = $_GET['ID'];
 require('../connect.php');
 try {
@@ -22,6 +23,7 @@ try {
         $productCategory = $_POST['prodcat'];
         $productAmount = $_POST['prodamount'];
         $productPrice = $_POST['prodprice'];
+        $image = $_POST['prodimg'];
         $error = "";
         try{
             $formisvalid = true;
@@ -71,7 +73,7 @@ try {
                 $formisvalid = false;
             }    
             if($formisvalid){
-            $editinsert = $conn -> query("UPDATE `product` SET `Product_ID`='$productID',`Product_Name`='$productName',`Category`='$productCategory',`Amount`='$productAmount',`Price`='$productPrice' WHERE Product_ID = $ID");
+            $editinsert = $conn -> query("UPDATE `product` SET `Product_ID`='$productID',`Product_Name`='$productName',`Category`='$productCategory',`Amount`='$productAmount',`Price`='$productPrice', `Image`='$image' WHERE Product_ID = $ID");
                 if($editinsert){header("location: View_Products.php");
                 }
             }
@@ -147,7 +149,7 @@ try {
                     <input name = "prodprice" type="text" value = "<?php echo $editdata['Price'];?>">
                 </div>
                 <div class = "insertfile">
-                    <input  type="file" >
+                    <input  type="file" name = "prodimg">
                 </div>
                 <div class="accept-box">
                     <input type="checkbox" name="prodaccept" id="accept">

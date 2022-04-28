@@ -1,14 +1,15 @@
 <?php 
-/* test */
     $conn = mysqli_connect("localhost", "root", "", "wasaly_db");
+    session_start();
+    if (!isset($_SESSION['cust_ID'])) {
+        header("location: Login.php");
+    }
 
-    $_SESSION["Customer_ID"] = 1;
-    $AID = $_SESSION["Customer_ID"];
+    $cust = $_SESSION['cust_ID'];
 
-    $sql = "SELECT * FROM customer WHERE Customer_ID = $AID";
+    $sql = "SELECT * FROM customer WHERE Customer_ID = $cust";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
-
 ?>
 <html>
 

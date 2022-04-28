@@ -4,8 +4,7 @@
     // Loading original data from database 
     $conn = mysqli_connect("localhost", "root", "", "wasaly_db");
 
-    $_SESSION["Customer_ID"] = 1;
-    $AID = $_SESSION["Customer_ID"];
+    $AID = $_SESSION["cust_ID"];
     
     $sql = "SELECT * FROM customer WHERE Customer_ID = $AID";
     $result = mysqli_query($conn, $sql);

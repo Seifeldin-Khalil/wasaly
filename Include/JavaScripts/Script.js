@@ -368,7 +368,8 @@ $(document).ready(function(){
 });
 
     
- /*maiada*/
+/*maiada*/ 
+/* Phase 3 Scripts are embedded in php files' script tags */
 /* -- Maiada: Contact Us -- */
 
 $(document).ready(function () {
@@ -407,6 +408,7 @@ function contactUsFormValidation() {
 }
 
 /* -- Maiada: Cart -- */
+/* Phase 3 Scripts are embedded in php files' script tags */
 /*
 function removeAllCartItems() {
     var container = document.getElementById("cartBox");
@@ -515,8 +517,9 @@ function plusQunatity() {
 */
 
 /* -- Maiada: User Account -- */
+/* Phase 3 Scripts are embedded in php files' script tags */
 
-function UserAccFormValidation() {
+/*function UserAccFormValidation() {
     var x = document.forms["UserAccountDetails"]["Fullname"].value;
     if (x == "") {
         alert("Name cannot be empty");
@@ -572,11 +575,12 @@ function UserAccFormValidation() {
         return false;
     }
 
-}
+}*/
 
 /* -- Maiada: Admin Account -- */
+/* Phase 3 Scripts are embedded in php files' script tags */
 
-function AdminAccFormValidation() {
+/*function AdminAccFormValidation() {
     var x = document.forms["UserAccountDetails"]["Fullname"].value;
     if (x == "") {
         alert("Name cannot be empty");
@@ -631,7 +635,7 @@ function AdminAccFormValidation() {
         alert("Please use numbers only in the password");
         return true;
     }
-}
+}*/
 
 /*seif*/
 document.addEventListener("DOMContentLoaded", function(event) {

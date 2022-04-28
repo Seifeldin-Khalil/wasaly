@@ -1,3 +1,9 @@
+<?php 
+        if(!empty($_GET['error'])){
+            //echo "<script> console.log(". '"Message here"'.") </script>";
+            echo '<script>alert("'.$_GET['error'].'")</script>';
+        }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -72,7 +78,7 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </nav>
     <center>
-        <form method = "post" action = "AddNewAccount.php" class = "formtemplate" name = "signup" onsubmit = "return signupvalidateForm()">
+        <form method = "post" action = "AddNewAccount.php" class = "formtemplate" name = "signup">
 
             <h1 id = "pagetitle">Sign Up</h1>
 

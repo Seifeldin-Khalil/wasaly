@@ -1,3 +1,10 @@
+<?php 
+        if(!empty($_GET['error'])){
+            //echo "<script> console.log(". '"Message here"'.") </script>";
+            echo '<script>alert("'.$_GET['error'].'")</script>';
+        }
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -46,7 +53,7 @@
 
     
     <center>
-        <form method = "post" action = "AddNewProduct.php" name="addItem" class = "formtemplate" onsubmit="return addItemvalidateForm()">
+        <form method = "post" action = "AddNewProduct.php" name="addItem" class = "formtemplate" >
 
                 <h1 id = "pagetitle">Add product</h1>
 
@@ -73,7 +80,7 @@
                     <label for = "accept">I am not robot</label>
                 </div>
                 <div>
-                    <input class="addproduct" type="submit" name="submit" value = "Add product" save>
+                    <input class="addproduct" onclick = "addItemvalidateFormm()" type="submit" name="submit" value = "Add product" save>
                     <button class = "addproduct"><a href = "Admin%20Stock%20Management.html">View product</a></button>
                 </div>
             

@@ -11,25 +11,76 @@ try {
     } catch (PDOException $e) {
         echo $e->getMessage();
     }
-
+    if(!empty($_GET['error'])){
+        //echo "<script> console.log(". '"Message here"'.") </script>";
+        echo '<script>alert("'.$_GET['error'].'")</script>';
+    }
     if (isset($_POST['submit'])) {
         $ID = $_GET['ID'];
-echo $ID;
         $productID = $_POST['prodid'];
         $productName = $_POST['prodname'];
         $productCategory = $_POST['prodcat'];
         $productAmount = $_POST['prodamount'];
         $productPrice = $_POST['prodprice'];
+        $error = "";
+        try{
+            $formisvalid = true;
+            if(empty($_POST['prodid'])){
+                $error = "You must enter product ID.";
+                $formisvalid = false;
+            }else if(preg_match("/^[a-zA-Z]*$/", $_POST['prodid'])){
+                $error = "You must enter ID in numbers";    
+                $formisvalid = false;
+            }
+            if(empty($_POST['prodname'])){
+                $error = "You must enter product Name.";
+                $formisvalid = false;
+            }else if(!preg_match("/^[a-zA-Z]*$/", $_POST['prodname'])){
+                $error = "You must enter Name in Letters"; 
+                $formisvalid = false;   
+            }
 
-        try {
+            if(empty($_POST['prodcat'])){
+                $error = "You must enter product Category.";
+                $formisvalid = false;
+            }else if($_POST['prodcat'] != 'fruits'){
+                if($_POST['prodcat'] != 'veggies'){
+                    $error = "Your category must be from two types(fruits & veggies)";
+                    $formisvalid = false;
+                }    
+            }
+
+            if(empty($_POST['prodamount'])){
+                $error = "You must enter product Amount.";
+                $formisvalid = false;
+            }else if(preg_match("/^[a-zA-Z]*$/", $_POST['prodamount'])){
+                $error = "You must enter Amount in numbers"; 
+                $formisvalid = false;   
+            }
+
+            if(empty($_POST['prodprice'])){
+                $error = "You must enter product Price.";
+                $formisvalid = false;
+            }else if(preg_match("/^[a-zA-Z]*$/", $_POST['prodprice'])){
+                $error = "You must enter Price in numbers"; 
+                $formisvalid = false;
+            }    
+            
+            if(empty($_POST['prodaccept'])){
+                $error = "You must verify your self.";
+                $formisvalid = false;
+            }    
+            if($formisvalid){
             $editinsert = $conn -> query("UPDATE `product` SET `Product_ID`='$productID',`Product_Name`='$productName',`Category`='$productCategory',`Amount`='$productAmount',`Price`='$productPrice' WHERE Product_ID = $ID");
+                if($editinsert){header("location: View_Products.php");
+                }
+            }
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
-            if($editinsert){header("location: View_Products.php");
-            }
     }
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -76,7 +127,7 @@ echo $ID;
 
     
     <center>
-        <form method = "post" class = "formtemplate" name = "editForm" onsubmit="return editItemvalidateForm()">
+        <form  method = "post" class = "formtemplate" name = "editForm">
 
                 <h1 id = "pagetitle">Edit product</h1>
 
@@ -103,7 +154,7 @@ echo $ID;
                     <label for = "accept">I am not robot</label>
                 </div>
                 <div>
-                    <input class="addproduct" type="submit" name="submit" value = "Edit product" save>
+                    <input class="addproduct" onclick = "editItemvalidateForm()" type="submit" name="submit" value = "Edit product" save>
                     <button class = "addproduct"><a href = "Admin%20Stock%20Management.html">View product</a></button>
                 </div>
                 <div>

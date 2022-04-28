@@ -41,6 +41,34 @@
             "Category": "fruits",
             "Amount": "30",
             "Price": "45"
+        },
+        {
+            "Product_ID": "7",
+            "Product_Name": "Cherry",
+            "Category": "fruits",
+            "Amount": "90",
+            "Price": "70"
+        },
+        {
+            "Product_ID": "8",
+            "Product_Name": "Orange ",
+            "Category": "fruits",
+            "Amount": "30",
+            "Price": "12"
+        },
+        {
+            "Product_ID": "9",
+            "Product_Name": "Watermelon ",
+            "Category": "fruits",
+            "Amount": "50",
+            "Price": "9"
+        },
+        {
+            "Product_ID": "10",
+            "Product_Name": "Guava ",
+            "Category": "fruits",
+            "Amount": "30",
+            "Price": "60"
         }
     ]
 }

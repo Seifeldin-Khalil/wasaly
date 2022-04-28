@@ -14,6 +14,6 @@ if (!isset($_SESSION['loggedIn'])) {
         } catch (PDOException $e) {
         echo $e->getMessage();
     }
-
+    
     header("location: view_Products.php");
 ?>

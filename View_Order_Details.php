@@ -147,48 +147,30 @@
             </div>
 
 
-    <div id = "recommendationsTitle">
+            <div id = "recommendationsTitle">
         <h3>Recommendations</h3>
         <hr style="height:2px;border-width:0;color:gray;background-color:gray">
     </div>
     <center class = "container">
     <div class = "gridRecommendation">
-
-        <div class = "itemRecommend">
-            <a href = "#"><img src = "imgs/Fruits&Veggies/pngfind.com-apple-vector-png-5952311.png"></a>
-            <a href = "#"><h4>Apple</h4></a>
-            <p>15 EGP per kilo</p>
-            <p>Shipping fees 10.00 EGP</p>
-            <button class = "addtocart" onclick="document.location='cart.html'">Add to cart</button>
-        </div>
-        <div class = "itemRecommend">
-            <a href = "#"><img src = "imgs/Fruits&Veggies/favpng_cavendish-banana-juice-cooking-banana-fruit.png"></a>
-            <a href = "#"><h4>Banana</h4></a>
-            <p>25 EGP per kilo</p>
-            <p>Shipping fees 12.00 EGP</p>
-            <button class = "addtocart" onclick="document.location='cart.html'">Add to cart</button>
-        </div>
-        <div class = "itemRecommend">
-            <a href = "#"><img src = "imgs/Fruits&Veggies/favpng_citrus-sinensis-sweet-lemon-orange-fruit-food.png"></a>
-            <a href = "#"><h4>Orange</h4></a>
-            <p>15 EGP per kilo</p>
-            <p>Shipping fees 10.00 EGP</p>
-            <button class = "addtocart" onclick="document.location='cart.html'">Add to cart</button>
-        </div>
-        <div class = "itemRecommend">
-            <a href = "#"><img src = "imgs/Fruits&Veggies/Lovepik_com-401520273-tomato-splashing.png"></a>
-            <a href = "#"><h4>Tomato</h4></a>
-            <p>15 EGP per kilo</p>
-            <p>Shipping fees 10.00 EGP</p>
-            <button class = "addtocart" onclick="document.location='cart.html'">Add to cart</button>
-        </div>
-        <div class = "itemRecommend">
-            <a href = "#"><img src = "imgs/Fruits&Veggies/pngaaa.com-3510282.png"></a>
-            <a href = "#"><h4>Pepper</h4></a>
-            <p>15 EGP per kilo</p>
-            <p>Shipping fees 10.00 EGP</p>
-            <button class = "addtocart" onclick="document.location='cart.html'">Add to cart</button>
-        </div>
+        <?php 
+        try {
+            $selecteproducts = $conn -> query("SELECT `Product_Name`, `Price` FROM `product`");
+            $selecteditems = $selecteproducts -> fetchAll(PDO::FETCH_ASSOC); 
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+        for ($i = 0; $i < 5; $i++) {
+            echo '<div class = "itemRecommend">';
+            echo "<a href = " . "#" ."><img src = " . "imgs/Fruits&Veggies/pngfind.com-apple-vector-png-5952311.png" . "></a>";
+            echo "<a href = ". "#" . "><h4>" . $selecteditems[$i]['Product_Name'] . "</h4></a>";
+            echo "<p>" . $selecteditems[$i]['Price'] . " EGP per kilo</p>";
+            echo "<p>Shipping fees 10.00 EGP</p>";
+            echo "<button class = " . "addtocart" . " onclick=" . "document.location=" . "'cart.php'" . ">Add to cart</button>";
+            echo "</div>";
+        }
+        ?>
+ 
     </div>
     </center>
     <div>

@@ -1,16 +1,6 @@
 <?php
     session_start();
-    try {
-        $conn = new PDO("mysql:host=localhost;dbname=wasaly_db", "root", "");
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      } catch(PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
-    }
-
-    $cityErr = $addErr = $postalErr = $cNameErr = $cvvErr = $expErr = "";
-    $city = $address = $postal = $cName = $cvv = $exp= "";
-
+    require('connect.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["City"])) {
     $cityErr = "City is required";
@@ -47,60 +37,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>
     <body>
         <nav>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <div class="navbar2">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12">
+       
+        <?php include("Header.php"); ?>
 
-                            <div class="navbar-header">
-                                <a href="#"><img class = "navimg" src = "imgs/navbar_logo.png"></a>
-                            </div>
-                            <div class="navbar-collapse collapse" id="mobile_menu">
-                                <ul class="nav navbar-nav">
-                                    <li class="active"><a href="Home.html">Home</a></li>
-                                    <li><a href="About.html" class="dropdown-toggle">About Us</a></li>
-                                    <li><a href="User%20Fruits.html">Fruits</a></li>
-                                    <li><a href="/User%20Veggies.html">Veggies</a></li>
-                                    <li><a href="contact%20us.html">Contact Us</a></li>
-                                </ul>
-                                <ul class="nav navbar-nav">
-                                    <li>
-                                        <form action="" class="navbar-form">
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <input type="search" name="search" id="" placeholder="Search Anything Here..." class="form-control">
-                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </li>
-                                </ul>
-
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="/User%20Account.html"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-
-                                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login / Sign Up <span class="caret"></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="Login.html">Login</a></li>
-                                            <li><a href="Sign%20Up.html">Sign us</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </nav>
         <center>
 <form name="Checkout" method = "post" action=" <?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class = "formtemplate-checkout">
     <h1>Check-Out</h1>
@@ -155,57 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 });
         </script>
 
-    <footer class="footer-distributed">
-
-    <div class="footer-left">
-
-        <img src="imgs/final_footer.png" alt = "footer logo">
-        <p class="footer-links">
-            <a href="Home.html" class="link-1">Home</a>
-            <a href="User%20Account.html">Account</a>
-            <a href="About.html">About us</a>
-            <a href="contact%20us.html">Contact us</a>
-        </p>
-
-        <p class="footer-company-name">Wasaly.mart © 2015</p>
-    </div>
-
-    <div class="footer-center">
-
-        <div>
-            <i class="fa fa-map-marker"></i>
-            <p><span>Building 30, North 90 Road, </span> 5th Settlement, New Cairo, Egypt</p>
-        </div>
-
-        <div>
-            <i class="fa fa-phone"></i>
-            <p>+201013700990</p>
-        </div>
-
-        <div>
-            <i class="fa fa-envelope"></i>
-            <p><a href="mailto:support@company.com">Support.mart@wasaly.com</a></p>
-        </div>
-
-    </div>
-
-    <div class="footer-right">
-
-        <p class="footer-company-about">
-            <span>About wasaly.mart</span>
-            Egyptian based company established to enhance the lifestyle and health of the Egyptian community. Our main goal is to provide you with the best quality fruits and vegetables from the comfort of your own home. Your health is our priority.
-        </p>
-
-        <div class="footer-icons">
-
-            <a href="#"><i ><img class="facebook" src = "imgs/footer_icons/facebook.png"></i></a>
-            <a href="#"><i ><img class="twitter" src = "imgs/footer_icons/twitter.png"></i></a>
-            <a href="#"><i ></i><img class="youtube" src = "imgs/footer_icons/youtube.png"></a>
-            <a href="#"><i ><img class="instagram" src = "imgs/footer_icons/instagram.png"></i></a>
-
-        </div>
-    </div>
-</footer>
+<?php include("Footer.php"); ?>
 
 </body>
 </html>

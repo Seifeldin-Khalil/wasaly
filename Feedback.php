@@ -75,41 +75,47 @@ require_once "connect.php";
    <div id="content-wrap">
      <!-- all other page content -->
    </div>
-   <?php
-      $name = " ";
-      $email = " ";
-      $phone = " ";
-      $message = " "; 
-      $rating = " ";
-      if ($_SERVER["REQUEST_METHOD"] == "POST") 
-      {
-          if (empty($_POST["name"]))
-          {
-              $name = "Name is required.";
-              if (empty($_POST["email"])) 
-              {
-                  $email = "Email is required.";
-                  if (empty($_POST["phone"])) 
-                  {
-                      $phone = "Phone Number is required.";
-                      if (empty($_POST["message"])) 
-                      {
-                          $message = "Message is required.";
-                          if (empty($_POST["message"])) 
-                          {
-                              $message = "Message is required.";
-                              if($_POST["rating"]== "No Rating")
-                              {
-                                  $rating = "You must rate your order.";
-                              }
-                          }
-                      }
-                  }
-              }
-          }
-       }    
-   ?>
+
 <?php
+$name = " ";
+$email = " ";
+$phone = " ";
+$message = " "; 
+$rating = " ";
+$bool = true;
+            if ($_SERVER["REQUEST_METHOD"] == "POST")
+            {
+                if (empty($_POST["name"]))
+                {
+                    $bool = false;
+                echo '<script>alert("Name is required")</script>';
+                    $name = "Name is required.";
+                    if (empty($_POST["email"])) 
+                    {
+                        $bool = false;
+                    echo '<script>alert("Email is required")</script>';
+                        $email = "Email is required.";
+                        if (empty($_POST["phone"])) 
+                        {
+                            $bool = false;
+                        echo '<script>alert("Phone is required")</script>';
+                            $phone = "Phone Number is required.";
+                            if (empty($_POST["message"])) 
+                            {
+                                $bool = false;
+                            echo '<script>alert("Message is required")</script>';
+                                $message = "Message is required."; 
+                                    if($_POST["rating"]== "No Rating")
+                                    {
+                                        $bool = false;
+                                    echo '<script>alert("Rating is required")</script>';
+                                        $rating = "You must rate your order.";
+                                    }
+                            }
+                        }
+                    }
+                }
+            }
 if(isset($_POST ["submit"]))
 {
  
@@ -117,11 +123,17 @@ if(isset($_POST ["submit"]))
         $feedback_email = $_POST['email'];
         $feedback_name = $_POST['name'];
         $feedback_phone = $_POST['phone'];
-        $feedback_rating = $_POST['rating'];
-        
+        $feedback_rating = $_POST['rating'];        
         try
         {
-            $insertindb = $conn -> query("INSERT INTO `feedback`(`Description`, `Rating`, `name`, `email`, `phone`, `Order_ID`) VALUES ('$feedback_description','$feedback_rating','$feedback_name','$feedback_email','$feedback_phone','3')");
+
+                    
+            if($bool)
+            {
+                $insertindb = $conn -> query("INSERT INTO `feedback`(`Description`, `Rating`, `name`, `email`, `phone`, `Order_ID`) VALUES ('$feedback_description','$feedback_rating','$feedback_name','$feedback_email','$feedback_phone','3')");
+            }
+            
+            
         }
         catch(PDOException $e)
             {
@@ -137,7 +149,7 @@ if(isset($_POST ["submit"]))
 			<div class="right">
 				<h2>Give us your feedback</h2>
                 <h3>On Order #1111</h3>
-                <form name = "feedback" method = "POST" action=" <?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <form name = "feedback" method = "POST">
 				<input name = "name"  type="text" class="field" placeholder="Your Name">
 
 

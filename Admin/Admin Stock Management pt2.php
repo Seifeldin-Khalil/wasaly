@@ -68,7 +68,7 @@ require "../connect.php";
             <div class="row" style="margin-bottom: 25px;">
             <?php
             try {
-                $proddatainsert = $conn -> query("SELECT * FROM `product` WHERE `Category` = 'fruits'");
+                $proddatainsert = $conn -> query("SELECT * FROM `product` WHERE `Category` = 'veggies'");
                 $insertdata = $proddatainsert -> fetchAll(PDO::FETCH_ASSOC); 
             } catch (PDOException $e) 
             {

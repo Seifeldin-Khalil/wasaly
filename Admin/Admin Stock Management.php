@@ -82,7 +82,7 @@ require "../connect.php";
                         echo '<h4 class="card-title" style="text-align: center">'.$value['Product_Name'].'</h4>';
                         echo '<h5 style="margin-top: 15px; margin-bottom: 20px;text-align: center">$ '.$value['Price'].'<br></h5>';
                         echo '<div class="btn-group-vertical" role="group" aria-label="Basic example" style="width: 100%;"><button type="button" class="btn btn-secondary btn-sm btn-outline-info" style="font-size: 20px; width: 100%; font-weight: 200; text-align: center; float: right; margin-bottom: 10.6px;">Edit</button>';
-                         echo "<a href=" . "deleteproduct.php?ID=" . $value["Product_ID"] .'  name = "delete-button" class="btn btn-secondary btn-sm btn-outline-warning" style="float: right; width: 100%; font-size: 20px;">X </a> </div>';
+                         echo '<a href="deleteproduct.php?ID="' . $value["Product_ID"] .'  name = "delete-button" class="btn btn-secondary btn-sm btn-outline-warning" style="float: right; width: 100%; font-size: 20px;">X </a> </div>';
                     echo '</div>';
                 echo'</div>';
         echo'</div>';

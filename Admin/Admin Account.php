@@ -114,7 +114,7 @@
                                 </button>
                                 <br>
                                 <button class="accountBtn" style="border-radius: 10px; width:100%; margin-bottom: 10px"
-                                    onclick="document.location='../Login.php'">
+                                    onclick="document.location='../logout.php'">
                                     <span class="iconify" data-icon="icon-park:logout"></span> Logout
                                 </button>
                             </div>

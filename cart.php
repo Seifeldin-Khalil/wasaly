@@ -4,7 +4,9 @@
     if (!isset($_SESSION['cust_ID'])) {
         header("location: Login.php");
     }
-    $cust = $_SESSION['cust_ID']
+    $cust = $_SESSION['cust_ID'];
+    /*$order = $_SESSION['order_ID'];*/
+    $order = 1;
 ?>
 
 <html>
@@ -52,7 +54,7 @@
                 /* test */
                 $conn = mysqli_connect("localhost", "root", "", "wasaly_db");
 
-                $sql = "SELECT * FROM ordered_product INNER JOIN product ON product.Product_ID = ordered_product.Product_ID WHERE Order_ID = (SELECT Order_ID FROM order WHERE order.Customer_ID = $cust))";
+                $sql = "SELECT * FROM ordered_product INNER JOIN product ON product.Product_ID = ordered_product.Product_ID WHERE Order_ID = $order";
                 $result = mysqli_query($conn, $sql);
 
                 if(mysqli_num_rows($result) > 0){

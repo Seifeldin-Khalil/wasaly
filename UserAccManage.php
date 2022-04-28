@@ -2,14 +2,18 @@
     // validation is done here (php file) because it is more safe for sensitive data 
 
     // Loading original data from database 
-    $conn = mysqli_connect("localhost", "root", "", "wasaly_db");
 
-    $AID = $_SESSION["cust_ID"];
-    
+    $conn = mysqli_connect("localhost", "root", "", "wasaly_db");
+    session_start();
+    if (!isset($_SESSION['cust_ID'])) {
+        header("location: Login.php");
+    }
+
+    $AID = $_SESSION['cust_ID'];
+
     $sql = "SELECT * FROM customer WHERE Customer_ID = $AID";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
-
 
     //check if btn was clicked inside AdminAccount.php file 
     if(isset($_POST['submit'])){

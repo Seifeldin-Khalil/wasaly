@@ -93,7 +93,7 @@
                 $('.userinfo').click(function(){
                     var userid = $(this).data('id');
                     $.ajax({
-                        url: 'ajaxfile.php',
+                        url: 'ajaxPopup.php',
                         type: 'post',
                         data: {userid: userid},
                         success: function(response){ 

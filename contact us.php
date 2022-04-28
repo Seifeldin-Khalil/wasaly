@@ -1,12 +1,10 @@
-<?php
-    try {
-        $conn = new PDO("mysql:host=localhost;dbname=wasaly_db", "root", "");
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      } catch(PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
+<?php 
+    $conn = mysqli_connect("localhost", "root", "", "wasaly_db");
+    session_start();
+    if (!isset($_SESSION['cust_ID'])) {
+        header("location: Login.php");
     }
-
+    $cust = $_SESSION['cust_ID'];
 ?>
 
 <html>
@@ -34,6 +32,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 
     <title>Contact Us</title>
 </head>
@@ -55,18 +57,12 @@
 
                 <br>
                 <hr>
-                <div class="sign-up-container">
-                    <div class="envelope">
-                        <div class="paper">
-                            <h1 id="SubsTitle">Subscribe our Newsletter</h1>
-                            <form class="sign-up-form">
-                                <input type="text" placeholder="Email" class="text-input" />
-                                <button type="submit" class="subsbutton">Sign up</button>
-                            </form>
-                        </div>
-                        <div class="bottom-flap"></div>
-                    </div>
-                </div>
+                <br>
+                <br>
+                <button data-id='envelopee' class="userinfo btn btn-success">
+                    <img src="imgs/subs.png" style="width:70%; float: center;" alt="App Icon">
+                </button>
+                
 
             </div>
             <div class="contactFormcolumn" style="text-align:Left;">
@@ -92,6 +88,35 @@
                     <input type="submit" value="Submit" onClick="return contactUsFormValidation()">
                 </form>
             </div>
+        <script type='text/javascript'>
+            $(document).ready(function(){
+                $('.userinfo').click(function(){
+                    var userid = $(this).data('id');
+                    $.ajax({
+                        url: 'ajaxfile.php',
+                        type: 'post',
+                        data: {userid: userid},
+                        success: function(response){ 
+                            $('.modal-body').html(response); 
+                            $('#empModal').modal('show'); 
+                        }
+                    });
+                });
+            });
+            </script>
+        </div>
+        <div class="modal fade" id="empModal" role="dialog">
+                <div class="modal-dialog" style = "width: 60%; height: 60%">
+                    <div class="modal-content">
+                        <center>
+                        <div class="modal-body">
+                        </div>
+                        </center>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 

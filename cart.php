@@ -71,7 +71,7 @@
                             <img src="imgs/Maii/delete-icn.svg" alt="" /></button>';
                         echo "</td>";
 
-                        echo "<td style = 'width: 50px; padding: 10px; text-align:center'> <img src='imgs/Fruits&Veggies/redApples.kpg.jpg' alt=''/></td>";
+                        echo "<td style = 'width: 50px; padding: 10px; text-align:center'> <img src='imgs/Fruits&Veggies/".$row["Image"]."' alt=''/></td>";
 
                         echo "<td style = 'padding: 5px; text-align:left; padding-left: 15px'>";
                         echo "<h3 style = 'margin: 0px'> " . $row["Product_Name"] . "</h3>";

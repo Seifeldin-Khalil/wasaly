@@ -1,0 +1,7 @@
+  <p class = "about-p">
+        Open To All: We are open to all members of the community; everyone can shop and anyone can become an owner.
+
+Sustainability: We are committed to sustainable business practices that ensure we are a resource for the community for generations to come.
+
+
+         </p>

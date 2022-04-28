@@ -72,7 +72,47 @@
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </nav>
-    
+    <script>
+function loadMission() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() 
+  {
+    if (this.readyState == 4 && this.status == 200) 
+    {
+      document.getElementById("mission").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "Our_Mission.txt", true);
+  xhttp.send();
+}
+function loadVision() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() 
+  {
+    if (this.readyState == 4 && this.status == 200) 
+    {
+      document.getElementById("vision").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "Our_Vision.txt", true);
+  xhttp.send();
+}
+function loadValues() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() 
+  {
+    if (this.readyState == 4 && this.status == 200) 
+    {
+      document.getElementById("values").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "Our_Values.txt", true);
+  xhttp.send();
+}
+</script>
  <div id="page-container">
    <div id="content-wrap">
      <!-- all other page content -->
@@ -100,12 +140,15 @@
     <div class = about-container>
      <div class = "about-mid">
         <h1 class = "about-title"> OUR MISSION</h1>
-         <p class = "about-p">
-         Wasaly Mart desires to accomplish customer's satisfaction by offering the best products farmed under great conditions
-         </p>
+        <div id = "mission">
+            <center>
+        <button onclick = "loadMission()"> Read More ! </button>
+</div>
+</center>
      </div>
         <img class = "about-img" src = "imgs/Home/ourmission.jpg">
         </div>
+</div>
      
      <br>
      <br>
@@ -115,9 +158,11 @@
         <div class = about-container>
      <div class = "about-mid">
         <h1 class = "about-title"> OUR VISION</h1>
-         <p class = "about-p">
-         To bring healthy, affordable food to our community .A vibrant and healthy community with access to healthy food through an affordable, member-owned, grocery store.
-         </p>
+        <div id = "vision">
+            <center>
+        <button onclick = "loadVision()"> Read More ! </button>
+</div>
+</center>
      </div>
         <img class = "about-img" src = "imgs/Home/ourvision.jpg">
         </div>
@@ -129,13 +174,11 @@
        <div class = about-container>
      <div class = "about-mid">
         <h1 class = "about-title">  OUR VALUES </h1>
-         <p class = "about-p">
-        Open To All: We are open to all members of the community; everyone can shop and anyone can become an owner.
-
-Sustainability: We are committed to sustainable business practices that ensure we are a resource for the community for generations to come.
-
-
-         </p>
+        <div id = "values">
+            <center>
+        <button onclick = "loadValues()"> Read More ! </button>
+</div>
+</center>
      </div>
         <img src = "imgs/Home/ourvalues.jpg">
         </div>

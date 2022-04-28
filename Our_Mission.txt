@@ -1,0 +1,3 @@
+<p class = "about-p">
+         Wasaly Mart desires to accomplish customer's satisfaction by offering the best products farmed under great conditions
+         </p>

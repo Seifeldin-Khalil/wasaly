@@ -1,0 +1,3 @@
+  <p class = "about-p">
+         To bring healthy, affordable food to our community .A vibrant and healthy community with access to healthy food through an affordable, member-owned, grocery store.
+         </p>

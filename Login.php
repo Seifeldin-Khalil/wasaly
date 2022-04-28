@@ -23,6 +23,7 @@
         if (mysqli_num_rows($result)  > 0){
             $row = mysqli_fetch_assoc($result);
             $_SESSION ['username'] = $row ['username'];
+            $_SESSION ['admin_ID'] = $row ['Admin_ID'];
             header("Location: Admin/Admin Account.php");
         }
         else{

@@ -1,5 +1,9 @@
 <?php
-   require('connect.php');
+   session_start();
+   if (!isset($_SESSION['cust_ID'])) {
+       header("location: Login.php");
+   }
+   $conn = mysqli_connect("localhost", "root", "", "wasaly_db");
 ?>
 <html>
 

@@ -20,7 +20,7 @@
     }
 
     try {
-        $selectedorderitems = $conn -> query("SELECT `Ordered_product_ID`, `Order_ID`, `Product_ID`, `Quantity` FROM `ordered_product` Where `Order_ID` = $ID");
+        $selectedorderitems = $conn -> query("SELECT `Order_ID`, `Product_ID`, `Quantity` FROM `ordered_product` Where `Order_ID` = $ID");
         $selecteditems = $selectedorderitems -> fetchAll(PDO::FETCH_ASSOC); 
     } catch (PDOException $e) {
         echo $e->getMessage();

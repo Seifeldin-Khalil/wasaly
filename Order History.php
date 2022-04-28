@@ -1,9 +1,9 @@
 <?php 
     require('connect.php');
-    /*session_start();
-    if (!isset($_SESSION['loggedIn'])) {
-        header("location: HomePage.php");
-    }*/
+    session_start();
+    if (!isset($_SESSION['cust_ID'])) {
+        header("location: Login.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -87,9 +87,9 @@
                 <h3 id = "filterheader">Quick Search</h3>
                 <input type="text" id="searchInput" onkeyup="searchInTable()" placeholder="Search for date..">
                 <h3 id = "filterheader">Quick Sorting</h3>
-                <input id = "filtercheck" type="radio" name = "filtername" value = "asc" style="height:15px; width:15px;"><label class = "labelfont">Higher to lower price</label>
+                <input id = "filtercheck" type="radio" name = "filtername" value = "asc" style="height:15px; width:15px;"><label class = "labelfont">lower to Higher price</label>
                 <br>    
-                <input id = "filtercheck2" type="radio" name = "filtername" value = "desc" style="height:15px; width:15px;"><label class = "labelfont">Lower to higher price</label>
+                <input id = "filtercheck2" type="radio" name = "filtername" value = "desc" style="height:15px; width:15px;"><label class = "labelfont">Higher to Lower price</label>
                 <br>
                 <button id = "sortbutton" onclick="sortTable()">Sort</button>
             </div>
@@ -110,7 +110,8 @@
                     </tr>
                     <?php
                             try {
-                                $selectedorders = $conn -> query("SELECT `Order_ID`, `Order_date`, `Order_status` FROM `order`");
+                                $ID = $_SESSION['cust_ID'];
+                                $selectedorders = $conn -> query("SELECT `Order_ID`, `Order_date`, `Order_status` FROM `order` where Customer_ID = $ID");
                                 $selecteddata = $selectedorders -> fetchAll(PDO::FETCH_ASSOC); 
                             } catch (PDOException $e) {
                                 echo $e->getMessage();

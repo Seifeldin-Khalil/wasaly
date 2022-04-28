@@ -4,6 +4,7 @@
        header("location: Login.php");
    }
    $conn = mysqli_connect("localhost", "root", "", "wasaly_db");
+   require('connect.php');
 ?>
 <html>
 

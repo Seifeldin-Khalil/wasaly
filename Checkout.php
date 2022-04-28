@@ -1,5 +1,4 @@
 <?php
-    session_start();
     require('connect.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["City"])) {
@@ -21,6 +20,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $expErr = "Expiry date is required";
   }
 }
+else{
+
+}
+
+session_start();
+   if (!isset($_SESSION['cust_ID'])) {
+       header("location: Login.php");
+   }
+   $conn = mysqli_connect("localhost", "root", "", "wasaly_db");
 
 ?>
 <html>
@@ -41,9 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </head>
     <body>
-        <nav>
        
-        <?php include("Header.php"); ?>
+        <?php include("Header.php");?>
 
         <center>
 <form name="Checkout" method = "post" action=" <?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class = "formtemplate-checkout">

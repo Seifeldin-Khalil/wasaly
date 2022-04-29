@@ -74,7 +74,8 @@ try {
             }    
             if($formisvalid){
             $editinsert = $conn -> query("UPDATE `product` SET `Product_ID`='$productID',`Product_Name`='$productName',`Category`='$productCategory',`Amount`='$productAmount',`Price`='$productPrice', `Image`='$image' WHERE Product_ID = $ID");
-                if($editinsert){header("location: View_Products.php");
+                if($editinsert){header(
+                    "location: Admin Stock Management.php");
                 }
             }
         } catch (PDOException $e) {

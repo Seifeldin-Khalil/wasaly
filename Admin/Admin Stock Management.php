@@ -48,7 +48,7 @@ require "../connect.php";
             </center>
 
             <p></p>
-            <div class="row" style="margin-bottom: 25px;">
+            <div class="row" style="margin-bottom: 0px;">
             <?php
             try {
                 $proddatainsert = $conn -> query("SELECT * FROM `product` WHERE `Category` = 'fruits'");
@@ -58,8 +58,10 @@ require "../connect.php";
                 echo $e->getMessage();
             }
             foreach($insertdata as $value)
-            {  echo '<div class="col-sm-4">';
-                echo '<div class="stockcard">';
+            {  
+
+                echo '<div class="col-sm-4">';
+                echo '<div class="stockcard" style=" margin-bottom: 30px;">';
                     echo '<img class="card-img-top" src="../imgs/Fruits&Veggies/'.$value['Image'].'" alt="Card image cap" width="128" height="200">';
                     echo '<div class="card-body">';
                         echo '<h4 class="card-title" style="text-align: center">'.$value['Product_Name'].'</h4>';
@@ -69,6 +71,7 @@ require "../connect.php";
                     echo '</div>';
                 echo'</div>';
         echo'</div>';
+
             }        
             ?>
           

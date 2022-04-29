@@ -42,7 +42,7 @@
             <div class="row g-1">
             <?php
                  try {
-                    $selecteproducts = $conn -> query("SELECT * FROM `product` WHERE Category = 'Vegetables' ");
+                    $selecteproducts = $conn -> query("SELECT * FROM `product` WHERE Category = 'veggies' ");
                     $selecteditems = $selecteproducts -> fetchAll(PDO::FETCH_ASSOC); 
                 } catch (PDOException $e) {
                     echo $e->getMessage();
@@ -50,7 +50,7 @@
                 foreach ( $selecteditems as $Vegetable) {
                 echo '<div class="col-md-3">';
                 echo    '<div class="carddd p-3">';
-                echo        '<div class="text-center"> <img src = "imgs/Fruits&Veggies/ '. $Vegetable['Image'] .'" width="200"> </div>';
+                echo        '<div class="text-center"> <img src = "imgs/Fruits&Veggies/' . $Vegetable['Image'] .' "width="200"> </div>';
                 echo        '<div class="product-details"> <span class="font-weight-bold d-block"><center>$' . $Vegetable['Price'] .'/kg</center></span> <center><span>' . $Vegetable['Product_Name'] . '</span></center>';
                 echo            '<div class="buttttons d-flex flex-row">';
                 echo            '<a href = "addtoCartv.php?ptd='.$Vegetable['Product_ID'].'">';

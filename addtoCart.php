@@ -20,7 +20,7 @@
         $query = "INSERT INTO `ordered_product`(`Order_ID`, `Product_ID`, `Quantity`) VALUES ('$sessid','$PID','1')";
         $data = mysqli_query($conn, $query);
         echo "<script>alert('Item added Succesfully');</script>";
-        header("Location: User Fruits.php");
+        header('Refresh: 2;User Fruits.php');
     }
 
 ?>

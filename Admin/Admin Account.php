@@ -74,7 +74,7 @@
 </head>
 
 <body>
-    <?php include("../Include/header & footer/Header.php"); ?>
+    <?php include("../Include/header & footer/adminHeader.php"); ?>
 
     <div class="container" style="margin-top: 70px; margin-bottom: 50px">
         <div class="row gutters">
@@ -201,7 +201,7 @@
         </div>
     </div>
 
-    <?php include("../Include/header & footer/Footer.php"); ?>
+    <?php include("../Include/header & footer/AdminFooter.php"); ?>
 </body>
 
 </html>

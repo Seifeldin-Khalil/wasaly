@@ -41,7 +41,7 @@ require_once "connect.php";
                 $formisvalid = false;
             }else if($_POST['gender'] != 'male'){
                 if($_POST['gender'] != 'female'){
-                    $error = "Your gender must be from two types(male & female)";
+                    $error = "Your gender must be from two types(male or female)";
                     $formisvalid = false;
                 }    
             }
@@ -90,6 +90,9 @@ require_once "connect.php";
             }     
             if($formisvalid){
                 $insertindb = $conn -> query("INSERT INTO `customer`(`F_name`, `L_name`, `Gender`, `Address`, `Mail`, `Username`, `Password`, `Phone_Number`, `age`) VALUES ('$custfname','$custlname','$gender','$Address','$Email','$username','$password','$phonenumber','$age')");
+                if($insertindb){
+                    header('Location: Login.php');
+                }
             }else {
                 header('Location: Sign Up.php?error=' . $error);
             }

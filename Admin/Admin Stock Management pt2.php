@@ -59,7 +59,7 @@ require "../connect.php";
             }
             foreach($insertdata as $value)
             {  echo '<div class="col-sm-4">';
-                echo '<div class="stockcard">';
+                echo '<div class="stockcard" style="margin-bottom: 30px;">';
                     echo '<img class="card-img-top" src="../imgs/Fruits&Veggies/'.$value["Image"].'" alt="Card image cap" width="128" height="200">';
                     echo '<div class="card-body">';
                         echo '<h4 class="card-title" style="text-align: center">'.$value['Product_Name'].'</h4>';

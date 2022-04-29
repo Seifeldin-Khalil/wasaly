@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2022 at 09:23 PM
+-- Generation Time: Apr 29, 2022 at 11:37 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -39,6 +39,13 @@ CREATE TABLE `admin` (
   `Phone_Number` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`Admin_ID`, `F_name`, `L_name`, `Gender`, `Address`, `Mail`, `Username`, `Password`, `Phone_Number`) VALUES
+(1, 'hagrass', 'hagrass', 'male', 'fwrf', 'vwv', 'hh', 'hh', 1013700990);
+
 -- --------------------------------------------------------
 
 --
@@ -63,7 +70,16 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`Customer_ID`, `F_name`, `L_name`, `Gender`, `Address`, `Mail`, `Username`, `Password`, `Phone_Number`, `age`) VALUES
-(1, 'abdelrahman', 'hagrass', 'male', 'sv', 'mana.hagrass@gmail.com', 'hagrass', '123456789', 1013700990, 21);
+(1, 'abdelrahman', 'hagrass', 'male', 'new cairo', 'mana.hagrass@gmail.com', 'Hagrass', '12345678', 1013700990, 21),
+(2, 'Mahmoud', 'Assem', 'male', 'nozha', 'assem@gmail.com', 'Assem', '10102020', 123456789, 21),
+(3, 'Maiada', 'Khaled', 'female', 'new cairo', 'maiada@gmail.com', 'Maiada', 'maiada123', 123565798, 21),
+(4, 'Seif', 'Khalil', 'male', 'rehab', 'seif@gmail.com', 'Seif', 'seif1234', 1236598744, 21),
+(5, 'ahmed', 'mohamed', 'male', 'nasr city', 'ahmed@gmail.com', 'ahmed', 'ahmed1234', 113256874, 21),
+(6, 'mohamed', 'salah', 'male', 'madinty', 'salah@gmail.com', 'salah', 'salah1234', 2147483647, 35),
+(7, 'nada', 'mohamed', 'female', 'madinty', 'nadamohamed@gmail.com', 'nada', 'nada1234', 1236598744, 18),
+(8, 'abdelrahman', 'mostafa', 'male', 'nasr city', 'abdelrahmanmostafa@gmail.com', 'abdelrahman', 'abdelrahman', 1013700990, 30),
+(9, 'mohand', 'galal', 'male', 'nozha', 'mail@gmail.com', 'mohand', 'mohand1234', 123456789, 40),
+(10, 'magdy', 'ahmed', 'male', 'rehab', 'magdy@gmail.com', 'magdy', 'magdy1234', 1013700990, 55);
 
 -- --------------------------------------------------------
 
@@ -94,19 +110,6 @@ CREATE TABLE `order` (
   `Customer_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `order`
---
-
-INSERT INTO `order` (`Order_ID`, `Order_date`, `Order_status`, `Customer_ID`) VALUES
-(1, '12/3/2022', 'Delivered', 1),
-(2, '12/3/2022', 'Delivered', 1),
-(3, '12/3/2022', 'Delivered', 1),
-(2002, '12/3/2022', 'Pending', 1),
-(2003, '12/3/2022', 'Delivered', 1),
-(2004, '12/3/2022', 'Delivered', 1),
-(4004, '12/3/2022', 'Pending', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -118,20 +121,6 @@ CREATE TABLE `ordered_product` (
   `Product_ID` int(11) NOT NULL,
   `Quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `ordered_product`
---
-
-INSERT INTO `ordered_product` (`Order_ID`, `Product_ID`, `Quantity`) VALUES
-(1, 2, 20),
-(2, 2, 33),
-(3, 2, 20),
-(2002, 2, 20),
-(2003, 2, 20),
-(4004, 2, 20),
-(2003, 500, 33),
-(4004, 500, 33);
 
 -- --------------------------------------------------------
 
@@ -153,8 +142,16 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`Product_ID`, `Product_Name`, `Category`, `Amount`, `Price`, `Image`) VALUES
-(2, 'Apple', 'fruits', 300, 15.25, ''),
-(500, 'applee', 'fruits', 2000, 30, '');
+(1, 'Apple', 'fruits', 300, 15.25, 'pngfind.com-apple-vector-png-5952311.png'),
+(2, 'Banana', 'fruits', 100, 30, 'favpng_cavendish-banana-juice-cooking-banana-fruit.png'),
+(3, 'Orange', 'fruits', 20, 15.25, 'favpng_citrus-sinensis-sweet-lemon-orange-fruit-food.png'),
+(4, 'Tomato', 'veggies', 200, 13, 'Lovepik_com-401520273-tomato-splashing.png'),
+(5, 'Pepper', 'veggies', 400, 10, 'pngaaa.com-3510282.png'),
+(6, 'Kiwi', 'fruits', 60, 50, 'kiwis.png'),
+(7, 'Cucumber', 'veggies', 500, 7.5, 'cucumber.png'),
+(8, 'Corn', 'veggies', 150, 5.75, 'corn.jpg'),
+(9, 'Chili', 'veggies', 250, 350, 'chilli.png'),
+(10, 'Mango', 'fruits', 20, 15.25, 'mango.png');
 
 --
 -- Indexes for dumped tables
@@ -207,13 +204,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `Admin_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Admin_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `Customer_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Customer_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `feedback`
@@ -225,13 +222,13 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `Order_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4005;
+  MODIFY `Order_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8008;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `Product_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=501;
+  MODIFY `Product_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5001;
 
 --
 -- Constraints for dumped tables

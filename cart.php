@@ -5,8 +5,7 @@
         header("location: Login.php");
     }
     $cust = $_SESSION['cust_ID'];
-    /*$order = $_SESSION['order_ID'];*/
-    $order = 1;
+    $order = $_SESSION['order_ID'];
 ?>
 
 <html>

@@ -14,6 +14,21 @@ require_once "connect.php";
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+
+
+          <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
    
        
 
@@ -22,125 +37,75 @@ require_once "connect.php";
 </head>
 
 <body>
-   <nav>  
-        <div class="navbar2">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12">
-
-                            <div class="navbar-header">
-                                <a href="#"><img class = "navimg" src = "imgs/navbar_logo.png"></a>
-                            </div>                        
-                            <div class="navbar-collapse collapse" id="mobile_menu">
-                                <ul class="nav navbar-nav">
-                                    <li class="active"><a href="Home.html">Home</a></li>
-                                    <li><a href="About.html" class="dropdown-toggle">About Us</a></li>
-                                    <li><a href="User%20Fruits.html">Fruits</a></li>
-                                    <li><a href="/User%20Veggies.html">Veggies</a></li>
-                                    <li><a href="contact%20us.html">Contact Us</a></li>
-                                </ul>
-                                <ul class="nav navbar-nav">
-                                    <li>
-                                        <form action="" class="navbar-form">
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <input type="search" name="search" id="" placeholder="Search Anything Here..." class="form-control">
-                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </li>
-                                </ul>
-
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="/User%20Account.html"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-
-                                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login / Sign Up <span class="caret"></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="Login.html">Login</a></li>
-                                            <li><a href="Sign%20Up.html">Sign us</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-           
-    </nav>
+<?php include("Include/header & footer/Header.php"); ?>
     
  <div id="page-container">
    <div id="content-wrap">
      <!-- all other page content -->
    </div>
+   <?php
 
-<?php
-$name = " ";
-$email = " ";
-$phone = " ";
-$message = " "; 
-$rating = " ";
-$bool = true;
-            if ($_SERVER["REQUEST_METHOD"] == "POST")
-            {
-                if (empty($_POST["name"]))
-                {
-                    $bool = false;
-                echo '<script>alert("Name is required")</script>';
-                    $name = "Name is required.";
-                    if (empty($_POST["email"])) 
-                    {
-                        $bool = false;
-                    echo '<script>alert("Email is required")</script>';
-                        $email = "Email is required.";
-                        if (empty($_POST["phone"])) 
-                        {
-                            $bool = false;
-                        echo '<script>alert("Phone is required")</script>';
-                            $phone = "Phone Number is required.";
-                            if (empty($_POST["message"])) 
-                            {
-                                $bool = false;
-                            echo '<script>alert("Message is required")</script>';
-                                $message = "Message is required."; 
-                                    if($_POST["rating"]== "No Rating")
-                                    {
-                                        $bool = false;
-                                    echo '<script>alert("Rating is required")</script>';
-                                        $rating = "You must rate your order.";
-                                    }
-                            }
-                        }
-                    }
-                }
-            }
-if(isset($_POST ["submit"]))
-{
- 
-        $feedback_description = $_POST['message'];
-        $feedback_email = $_POST['email'];
-        $feedback_name = $_POST['name'];
-        $feedback_phone = $_POST['phone'];
-        $feedback_rating = $_POST['rating'];        
-        try
-        {
+$nameErr = $messageErr  = $phoneErr = $emailErr = $ratingErr = NULL;
+$name = $message  = $phone = $email = $rating = NULL;
 
-                    
-            if($bool)
-            {
-                $insertindb = $conn -> query("INSERT INTO `feedback`(`Description`, `Rating`, `name`, `email`, `phone`, `Order_ID`) VALUES ('$feedback_description','$feedback_rating','$feedback_name','$feedback_email','$feedback_phone','3')");
-            }
-            
-            
+$flag = true;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    if (empty($_POST["name"])) {
+        $nameErr = "Name is required";
+        $flag = false;
+    } else {
+        $firstname = test_input($_POST["name"]);
+    }
+
+    if (empty($_POST["email"])) {
+        $emailErr = "Email is required";
+        $flag = false;
+    } else {
+        $lastname = test_input($_POST["email"]);
+    }
+
+    if (empty($_POST["phone"])) {
+        $phoneErr = "Phone is required";
+        $flag = false;
+    } else {
+        $phone = test_input($_POST["phone"]);
+    }
+
+    if (empty($_POST["message"])) {
+        $messageErr = "Message is required";
+        $flag = false;
+    } else {
+        $email = test_input($_POST["message"]);
+    }
+    if (($_POST["rating"])=="no rating") {
+        $ratingErr = "Rating is required";
+        $flag = false;
+    } else {
+        $rating = test_input($_POST["rating"]);
+    }
+
+    // submit form if validated successfully
+    if ($flag) 
+    {    
+        $sql = "INSERT INTO `feedback`(`Description`, `Rating`, `name`, `email`, `phone`, `Order_ID`) VALUES ('$message','$rating','$name','$email','$phone' , '3')";
+        // execute sql insert
+        if ($conn->query($sql) == TRUE) {
+            echo "<script> alert('data saved successfully');</script>";
         }
-        catch(PDOException $e)
-            {
-               echo 'error while inserting feedback into database';
-            }    
+    }
 }
+
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
 ?>
+
      	<div class="container">
 		<div class="contact-box">
 			<div class="left">
@@ -153,25 +118,25 @@ if(isset($_POST ["submit"]))
 				<input name = "name"  type="text" class="field" placeholder="Your Name">
 
 
-                <span> <?php echo $name ?> </span>
+                <span class = "validationerr"> <?= $nameErr ?> </span>
 
 
 				<input name = "email" type="text" class="field" placeholder="Your Email">
 
 
-                <span> <?php echo $email ?> </span>
+                <span class = "validationerr"> <?=  $emailErr ?> </span>
 
 
 				<input name = "phone" type="text" class="field" placeholder="Phone">
 
 
-                <span> <?php echo $phone ?> </span>
+                <span class = "validationerr"> <?= $phoneErr ?> </span>
 
 
 				<textarea name = "message" placeholder="Message" class="field"></textarea>
 
 
-                <span> <?php echo $message ?> </span>
+                <span class = "validationerr"> <?= $messageErr ?> </span>
 
                 
                 
@@ -185,7 +150,8 @@ if(isset($_POST ["submit"]))
                     <option value="4 Star">4</option>
                     <option value="5 Star">5</option>
                 </select>
-               
+                <span class = "validationerr"> <?= $ratingErr ?> </span>
+
 				<input name = "submit" type = "submit" class="btn" value = "Send">
                     </form>
               
@@ -199,57 +165,7 @@ if(isset($_POST ["submit"]))
       <br>
       
      
-   <footer class="footer-distributed">
-
-    <div class="footer-left">
-
-        <img src="imgs/final_footer.png" alt = "footer logo">
-        <p class="footer-links">
-            <a href="Home.html" class="link-1">Home</a>
-            <a href="User%20Account.html">Account</a>
-            <a href="About.html">About us</a>
-            <a href="contact%20us.html">Contact us</a>
-        </p>
-
-        <p class="footer-company-name">Wasaly.mart Â© 2015</p>
-    </div>
-
-    <div class="footer-center">
-
-        <div>
-            <i class="fa fa-map-marker"></i>
-            <p><span>Building 30, North 90 Road, </span> 5th Settlement, New Cairo, Egypt</p>
-        </div>
-
-        <div>
-            <i class="fa fa-phone"></i>
-            <p>+201013700990</p>
-        </div>
-
-        <div>
-            <i class="fa fa-envelope"></i>
-            <p><a href="mailto:support@company.com">Support.mart@wasaly.com</a></p>
-        </div>
-
-    </div>
-
-    <div class="footer-right">
-
-        <p class="footer-company-about">
-            <span>About wasaly.mart</span>
-            Egyptian based company established to enhance the lifestyle and health of the Egyptian community. Our main goal is to provide you with the best quality fruits and vegetables from the comfort of your own home. Your health is our priority.
-        </p>
-
-        <div class="footer-icons">
-
-            <a href="#"><i ><img class="facebook" src = "imgs/footer_icons/facebook.png"></i></a>
-            <a href="#"><i ><img class="twitter" src = "imgs/footer_icons/twitter.png"></i></a>
-            <a href="#"><i ></i><img class="youtube" src = "imgs/footer_icons/youtube.png"></a>
-            <a href="#"><i ><img class="instagram" src = "imgs/footer_icons/instagram.png"></i></a>
-
-        </div>
-    </div>
-</footer>
+      <?php include("Include/header & footer/Footer.php"); ?>
  </div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 
@@ -261,7 +177,6 @@ if(isset($_POST ["submit"]))
 	box-sizing: border-box;
 	font-family: 'Quicksand', sans-serif;
 }
-
 body{
 	height: 100vh;
 	width: 100%;
@@ -393,6 +308,11 @@ textarea{
     border: 2px solid rgba(30,85,250,0.47);
     background-color: #fff;
      
+}
+.validationerr
+{
+    color: red;
+
 }
 .rating-stars
 {

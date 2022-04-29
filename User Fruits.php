@@ -43,7 +43,7 @@
             <div class="row g-1">
             <?php
                  try {
-                    $selecteproducts = $conn -> query("SELECT `Product_Name`, `Price` FROM `product` WHERE Category = 'Fruits' ");
+                    $selecteproducts = $conn -> query("SELECT * FROM `product` WHERE Category = 'Fruits' ");
                     $selecteditems = $selecteproducts -> fetchAll(PDO::FETCH_ASSOC); 
                 } catch (PDOException $e) {
                     echo $e->getMessage();
@@ -54,6 +54,7 @@
                 echo        '<div class="text-center"> <img src="imgs/Fruits&Veggies/favpng_cavendish-banana-juice-cooking-banana-fruit.png" width="200"> </div>';
                 echo        '<div class="product-details"> <span class="font-weight-bold d-block"><center>$' . $Fruit['Price'] .'/kg</center></span> <center><span>' . $Fruit['Product_Name'] . '</span></center>';
                 echo            '<div class="buttttons d-flex flex-row">';
+                echo    '<a href = "addtoCart.php?ptd='.$Fruit['Product_ID'].'">';
                 echo               '<div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">' . 1 .'</span>Add to cart </button>';
                 echo           '</div>';
                 echo       '</div>';

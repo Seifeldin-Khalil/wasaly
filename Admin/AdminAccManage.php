@@ -57,7 +57,7 @@
             $data4 = false;
 
             if(!empty($name)){
-                $query1 = "UPDATE `Username` = '$name' WHERE `admin`.`Admin_ID` = $AID;";
+                $query1 = "UPDATE `admin` SET `Username`= '$name' WHERE Admin_ID= $AID;";
                 $data1 = mysqli_query($conn, $query1);
             }
             if(!empty($npwd) && !empty($cpwd)){

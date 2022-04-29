@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2022 at 11:37 PM
+-- Generation Time: Apr 30, 2022 at 12:28 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -44,7 +44,16 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`Admin_ID`, `F_name`, `L_name`, `Gender`, `Address`, `Mail`, `Username`, `Password`, `Phone_Number`) VALUES
-(1, 'hagrass', 'hagrass', 'male', 'fwrf', 'vwv', 'hh', 'hh', 1013700990);
+(1, 'Mohamed', 'Awad', 'male', 'Zayed', 'awad@gmail.com', 'awad', 'awad123', 1013700990),
+(2, 'Ahmad', 'Sheriff', 'male', 'Rehab', 'ahmed.sheriff@gmail.com', 'aSheriff', 'sheriff123', 762945067),
+(3, 'Mohamed', 'Ali', 'male', 'Nozha', 'moAli@gmail.com', 'Ali', 'ali123', 123745906),
+(4, 'Kareem', 'Salem', 'male', 'Nasr City', 'kareemS@gmail.com', 'Kareem', 'kareem123', 456190256),
+(5, 'Eyad', 'Sayed', 'male', 'Nozha', 'eyad@gmail.com', 'Eyad', 'eyad123', 19253875),
+(6, 'Omar', 'Khaled', 'male', '5th Settlement', 'omark@gmail.com', 'Omar', 'omar123', 975162836),
+(7, 'Mona', 'Zaky', 'female', '6th October', 'mona@gmail.com', 'Mona', 'mona123', 16529464),
+(8, 'Lamar', 'Ahmad', 'female', 'Heliopolis', 'lamar@gmail.com', 'lamar', 'lamar123', 28168253),
+(9, 'Nour', 'Mohamad', 'female', 'Maadi', 'nour@gmail.com', 'Nour', 'nour123', 17387152),
+(10, 'Nasser', 'Ahmad', 'male', 'Heliopolis', 'nasser@gmail.com', 'Nasser', 'nasser123', 16728458);
 
 -- --------------------------------------------------------
 
@@ -204,7 +213,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `Admin_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Admin_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `customer`
@@ -222,7 +231,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `Order_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8008;
+  MODIFY `Order_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42026;
 
 --
 -- AUTO_INCREMENT for table `product`

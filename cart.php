@@ -126,7 +126,7 @@
                
             ?>
 
-    <?php include("Footer.php"); ?>
+    <?php include("Include/header & footer/Footer.php"); ?>
 </body>
 
 

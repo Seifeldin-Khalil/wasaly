@@ -1,5 +1,9 @@
 <?php
     require('connect.php');
+
+    $cityErr = $addErr = $postalErr = $cNameErr = $cvvErr = $expErr = "";
+    
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["City"])) {
     $cityErr = "City is required";
@@ -25,9 +29,9 @@ else{
 }
 
 session_start();
-   if (!isset($_SESSION['cust_ID'])) {
+   /*if (!isset($_SESSION['cust_ID'])) {
        header("location: Login.php");
-   }
+   }*/
    $conn = mysqli_connect("localhost", "root", "", "wasaly_db");
 
 ?>

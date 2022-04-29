@@ -51,7 +51,7 @@
                 foreach ( $selecteditems as $Fruit) {
                 echo '<div class="col-md-3">';
                 echo    '<div class="carddd p-3">';
-                echo        '<div class="text-center"> <img src = "imgs/Fruits&Veggies/ '. $Fruit['Image'] .'" width="200"> </div>';
+                echo        '<div class="text-center"> <img src = "imgs/Fruits&Veggies/' . $Fruit   ['Image'] .' "width="200"> </div>';
                 echo        '<div class="product-details"> <span class="font-weight-bold d-block"> <p id = "test"> </p><center>$' . $Fruit['Price'] .'/kg</center></span> <center><span>' . $Fruit['Product_Name'] . '</span></center>';
                 echo            '<div class="buttttons d-flex flex-row">';
                 echo    '<a href = "addtoCart.php?ptd='.$Fruit['Product_ID'].'">';

@@ -31,7 +31,7 @@
     
 </head>
 
-<?php include("Header.php"); ?>
+<?php include("Include/header & footer/Header.php"); ?>
 
     <div class="header-fruits">
         <h1 style = "text-align: center">Vegetables</h1>
@@ -42,7 +42,7 @@
             <div class="row g-1">
             <?php
                  try {
-                    $selecteproducts = $conn -> query("SELECT `Product_Name`, `Price` FROM `product` WHERE Category = 'Vegetables' ");
+                    $selecteproducts = $conn -> query("SELECT * FROM `product` WHERE Category = 'Vegetables' ");
                     $selecteditems = $selecteproducts -> fetchAll(PDO::FETCH_ASSOC); 
                 } catch (PDOException $e) {
                     echo $e->getMessage();
@@ -50,9 +50,10 @@
                 foreach ( $selecteditems as $Vegetable) {
                 echo '<div class="col-md-3">';
                 echo    '<div class="carddd p-3">';
-                echo        '<div class="text-center"> <img src="imgs/Fruits&Veggies/favpng_cavendish-banana-juice-cooking-banana-fruit.png" width="200"> </div>';
+                echo        '<div class="text-center"> <img src = "imgs/Fruits&Veggies/ '. $Vegetable['Image'] .'" width="200"> </div>';
                 echo        '<div class="product-details"> <span class="font-weight-bold d-block"><center>$' . $Vegetable['Price'] .'/kg</center></span> <center><span>' . $Vegetable['Product_Name'] . '</span></center>';
                 echo            '<div class="buttttons d-flex flex-row">';
+                echo            '<a href = "addtoCartv.php?ptd='.$Vegetable['Product_ID'].'">';
                 echo               '<div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">' . 1 .'</span>Add to cart </button>';
                 echo           '</div>';
                 echo       '</div>';
@@ -66,7 +67,7 @@
 
 
 
-    <?php include("Footer.php"); ?>
+    <?php include("Include/header & footer/Footer.php"); ?>
 
 </body>
 

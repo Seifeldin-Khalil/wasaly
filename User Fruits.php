@@ -1,8 +1,8 @@
 <?php
    session_start();
-   if (!isset($_SESSION['cust_ID'])) {
+   /*if (!isset($_SESSION['cust_ID'])) {
        header("location: Login.php");
-   }
+   }*/
    $conn = mysqli_connect("localhost", "root", "", "wasaly_db");
    require('connect.php');
 ?>
@@ -32,7 +32,7 @@
     </head>
     <body>
 
-    <?php include("Header.php"); ?>
+    <?php include("Include/header & footer/Header.php"); ?>
 
         <div class="header-fruits">
         <h1 style="text-align:center">FRUITS</h1>
@@ -51,7 +51,7 @@
                 foreach ( $selecteditems as $Fruit) {
                 echo '<div class="col-md-3">';
                 echo    '<div class="carddd p-3">';
-                echo        '<div class="text-center"> <img src="imgs/Fruits&Veggies/favpng_cavendish-banana-juice-cooking-banana-fruit.png" width="200"> </div>';
+                echo        '<div class="text-center"> <img src = "imgs/Fruits&Veggies/ '. $Fruit['Image'] .'" width="200"> </div>';
                 echo        '<div class="product-details"> <span class="font-weight-bold d-block"> <p id = "test"> </p><center>$' . $Fruit['Price'] .'/kg</center></span> <center><span>' . $Fruit['Product_Name'] . '</span></center>';
                 echo            '<div class="buttttons d-flex flex-row">';
                 echo    '<a href = "addtoCart.php?ptd='.$Fruit['Product_ID'].'">';
@@ -66,7 +66,7 @@
         </div>
     </div>
 
-        
-<?php include("Footer.php"); ?>
+    
+    <?php include("Include/header & footer/Footer.php"); ?>
     
 </body></html>

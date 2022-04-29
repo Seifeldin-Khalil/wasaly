@@ -29,9 +29,9 @@ else{
 }
 
 session_start();
-   /*if (!isset($_SESSION['cust_ID'])) {
+   if (!isset($_SESSION['cust_ID'])) {
        header("location: Login.php");
-   }*/
+   }
    $conn = mysqli_connect("localhost", "root", "", "wasaly_db");
 
 ?>
@@ -54,7 +54,7 @@ session_start();
 </head>
     <body>
        
-        <?php include("Header.php");?>
+    <?php include("Include/header & footer/Header.php"); ?>
 
         <center>
 <form name="Checkout" method = "post" action=" <?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class = "formtemplate-checkout">
@@ -110,7 +110,7 @@ session_start();
 });
         </script>
 
-<?php include("Footer.php"); ?>
+<?php include("Include/header & footer/Footer.php"); ?>
 
 </body>
 </html>

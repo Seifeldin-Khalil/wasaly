@@ -51,7 +51,7 @@
 
 </head>
     <body>
-    <?php include("Header.php"); ?>
+    <?php include("Include/header & footer/Header.php"); ?>
     
         <div class="register-photo">
     <div class="form-container">
@@ -73,5 +73,6 @@
     </div>
 </div>
 
-<?php include("Footer.php"); ?>
+<?php include("Include/header & footer/Footer.php"); ?>
+
 </body></html>

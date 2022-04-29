@@ -25,7 +25,7 @@
 
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>s
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
      <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Oswald:wght@200&display=swap');
 </style>

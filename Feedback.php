@@ -47,7 +47,7 @@ require_once "connect.php";
 
 $nameErr = $messageErr  = $phoneErr = $emailErr = $ratingErr = NULL;
 $name = $message  = $phone = $email = $rating = NULL;
-
+$orderID = $_GET['ID'];
 $flag = true;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // submit form if validated successfully
     if ($flag) 
     {    
-        $sql = "INSERT INTO `feedback`(`Description`, `Rating`, `name`, `email`, `phone`, `Order_ID`) VALUES ('$message','$rating','$name','$email','$phone' , '3')";
+        $sql = "INSERT INTO `feedback`(`Description`, `Rating`, `name`, `email`, `phone`, `Order_ID`) VALUES ('$message','$rating','$name','$email','$phone' , '$orderID')";
         // execute sql insert
         if ($conn->query($sql) == TRUE) {
             echo "<script> alert('data saved successfully');</script>";
@@ -113,7 +113,7 @@ function test_input($data)
             </div>
 			<div class="right">
 				<h2>Give us your feedback</h2>
-                <h3>On Order #1111</h3>
+                <h3>On Order # <?php echo $_GET['ID'];?></h3>
                 <form name = "feedback" method = "POST">
 				<input name = "name"  type="text" class="field" placeholder="Your Name">
 

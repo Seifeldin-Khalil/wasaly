@@ -1,9 +1,11 @@
+<?php 
+    session_start();
+    if (!isset($_SESSION['cust_ID'])) {
+        header("location: Login.php");
+    }
+?>
 <?php
 require_once "connect.php";
-/*session_start();
-if (!isset($_SESSION['loggedIn'])) {
-    header("location: HomePage.php");
-}*/
 
     if(isset($_POST['submit'])){
         

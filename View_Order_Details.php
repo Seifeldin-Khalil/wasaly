@@ -1,4 +1,10 @@
 
+    <?php 
+    session_start();
+    if (!isset($_SESSION['cust_ID'])) {
+        header("location: Login.php");
+    }
+?>
                     <?php
                         require('connect.php');
                 echo '<table id = "orderHistory">

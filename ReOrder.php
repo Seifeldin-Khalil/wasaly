@@ -1,4 +1,11 @@
 <?php 
+    require('connect.php');
+    session_start();
+    if (!isset($_SESSION['cust_ID'])) {
+        header("location: Login.php");
+    }
+?>
+<?php 
     $ID = $_GET['ID'];
     require('connect.php');
     try {

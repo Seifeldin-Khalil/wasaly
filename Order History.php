@@ -17,9 +17,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <!--page js and css-->
     <link rel="stylesheet" href="Include/CSS/stylesheet.css">
     <!--<link rel="stylesheet" href="Include/CSS/hagrassstyle.css">-->
@@ -96,7 +100,7 @@
                                     echo '<td>';
                                         echo '<a  onclick = ' . "show_order_history(" .$value['Order_ID'] .")" . '>View order details</a>';
                                     echo '<br>';
-                                        echo "<a href=" . "" . ">Rate &#128512;</a>";
+                                        echo "<a href=" . "Feedback.php" . ">Rate &#128512;</a>";
                                     echo '</td>';
                                     echo "<td><a href=" . "ReOrder.php?ID=" . $value["Order_ID"]  . ">Reorder</a></td>";
                                 echo "</tr>";
@@ -140,57 +144,7 @@
     <div>
         <button id = "totop"><img src="imgs/icons/Arrow-Up-PNG-Pic.png"></button>
     </div>
-<footer class="footer-distributed">
-
-    <div class="footer-left">
-
-        <img src="imgs/final_footer.png" alt = "footer logo">
-        <p class="footer-links">
-            <a href="#" class="link-1">Home</a>
-            <a href="#">Account</a>
-            <a href="#">About us</a>
-            <a href="#">Contact up</a>
-        </p>
-
-        <p class="footer-company-name">Wasaly.mart © 2015</p>
-    </div>
-
-    <div class="footer-center">
-
-        <div>
-            <i class="fa fa-map-marker"></i>
-            <p><span>Building 30, North 90 Road, </span> 5th Settlement, New Cairo, Egypt</p>
-        </div>
-
-        <div>
-            <i class="fa fa-phone"></i>
-            <p>+201013700990</p>
-        </div>
-
-        <div>
-            <i class="fa fa-envelope"></i>
-            <p><a href="mailto:support@company.com">Support.mart@wasaly.com</a></p>
-        </div>
-
-    </div>
-
-    <div class="footer-right">
-
-        <p class="footer-company-about">
-            <span>About wasaly.mart</span>
-            Egyptian based company established to enhance the lifestyle and health of the Egyptian community. Our main goal is to provide you with the best quality fruits and vegetables from the comfort of your own home. Your health is our priority.
-        </p>
-
-        <div class="footer-icons">
-
-            <a href="#"><i ><img class="facebook" src = "imgs/footer_icons/facebook.png"></i></a>
-            <a href="#"><i ><img class="twitter" src = "imgs/footer_icons/twitter.png"></i></a>
-            <a href="#"><i ></i><img class="youtube" src = "imgs/footer_icons/youtube.png"></a>
-            <a href="#"><i ><img class="instagram" src = "imgs/footer_icons/instagram.png"></i></a>
-
-        </div>
-    </div>
-</footer>
+    <?php include("Include/header & footer/Footer.php"); ?>
 </body>
 
 </html>

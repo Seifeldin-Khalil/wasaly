@@ -105,27 +105,7 @@ try {
 </head>
 
 <body>
-      <nav>
-        <div id="logo">
-            <a href="Admin%20Account.html">
-                <img src="../imgs/navbar_logo.png" alt="Wasaly LOGO">
-            </a>
-            <a id="login" href="Admin%20Account.html" class="AccBtn">
-                <br> Account 
-            </a>
-            <a href="" class="AccBtn">
-                <br> Logout 
-            </a>
-        </div>
-
-        <div id="navigation">
-            <ul id="nav">
-                <li class="navv"> <a class="active" href="Index.html"><span class="iconify icon:ic:baseline-flight icon-inline:false"></span> Fruits </a></li>
-                <li class="navv"> <a href="Hotels.html"><span class="iconify icon:fa-solid:hotel icon-inline:false"></span> Vegetables</a></li>
-                <li class="navv"> <a href="Attractions.html"><span class="iconify icon:mdi-ferris-wheel icon-inline:false"></span> Add Product </a></li>
-            </ul>
-        </div>
-</nav>
+<?php include("../Include/header & footer/adminHeader.php"); ?>
 
     
     <center>
@@ -168,64 +148,7 @@ try {
     <div>
         <button id = "totop"><img src="../imgs/icons/Arrow-Up-PNG-Pic.png"></button>
     </div>
-<footer class="footer-distributed">
-
-    <div class="footer-left">
-
-        <img src="../imgs/final_footer.png" alt = "footer logo">
-        <p class="footer-links">
-            <a href="#" class="link-1">Home</a>
-
-            <a href="#">Blog</a>
-
-            <a href="#">Pricing</a>
-
-            <a href="#">About</a>
-
-            <a href="#">Faq</a>
-
-            <a href="#">Contact</a>
-        </p>
-
-        <p class="footer-company-name">Company Name © 2015</p>
-    </div>
-
-    <div class="footer-center">
-
-        <div>
-            <i class="fa fa-map-marker"></i>
-            <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
-        </div>
-
-        <div>
-            <i class="fa fa-phone"></i>
-            <p>+1.555.555.5555</p>
-        </div>
-
-        <div>
-            <i class="fa fa-envelope"></i>
-            <p><a href="mailto:support@company.com">support@company.com</a></p>
-        </div>
-
-    </div>
-
-    <div class="footer-right">
-
-        <p class="footer-company-about">
-            <span>About the company</span>
-            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-        </p>
-
-        <div class="footer-icons">
-
-            <a href="#"><i ><img class="facebook" src = "../imgs/footer_icons/facebook.png"></i></a>
-            <a href="#"><i ><img class="twitter" src = "../imgs/footer_icons/twitter.png"></i></a>
-            <a href="#"><i ></i><img class="youtube" src = "../imgs/footer_icons/youtube.png"></a>
-            <a href="#"><i ><img class="instagram" src = "../imgs/footer_icons/instagram.png"></i></a>
-
-        </div>
-    </div>
-</footer>
+    <?php include("../Include/header & footer/AdminFooter.php"); ?>
 </body>
 
 

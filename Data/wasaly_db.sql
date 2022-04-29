@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2022 at 12:28 AM
+-- Generation Time: Apr 30, 2022 at 01:13 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -119,6 +119,23 @@ CREATE TABLE `order` (
   `Customer_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`Order_ID`, `Order_date`, `Order_status`, `Customer_ID`) VALUES
+(1, '2022/04/30', 'Pending', 1),
+(2, '2022/04/30', 'Pending', 2),
+(3, '2022/04/30', 'Pending', 1),
+(5, '2022/04/30', 'Pending', 3),
+(6, '2022/04/30', 'Pending', 5),
+(7, '2022/04/30', 'Pending', 6),
+(9, '2022/04/30', 'Pending', 8),
+(11, '2022/04/30', 'Pending', 9),
+(42026, '2022/04/30', 'Pending', 10),
+(42027, '2022/04/30', 'Pending', 4),
+(42031, '2022/04/30', 'Pending', 7);
+
 -- --------------------------------------------------------
 
 --
@@ -130,6 +147,40 @@ CREATE TABLE `ordered_product` (
   `Product_ID` int(11) NOT NULL,
   `Quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ordered_product`
+--
+
+INSERT INTO `ordered_product` (`Order_ID`, `Product_ID`, `Quantity`) VALUES
+(1, 1, 9),
+(1, 2, 2),
+(42026, 2, 1),
+(42031, 2, 1),
+(2, 3, 1),
+(3, 3, 1),
+(5, 3, 1),
+(2, 4, 1),
+(42026, 4, 1),
+(7, 5, 1),
+(42027, 5, 1),
+(3, 6, 1),
+(5, 6, 1),
+(6, 6, 1),
+(9, 6, 1),
+(42027, 6, 1),
+(9, 7, 1),
+(11, 7, 1),
+(42027, 7, 1),
+(6, 8, 1),
+(7, 8, 1),
+(9, 8, 1),
+(11, 9, 1),
+(42031, 9, 1),
+(6, 10, 1),
+(7, 10, 1),
+(9, 10, 1),
+(11, 10, 1);
 
 -- --------------------------------------------------------
 
@@ -231,7 +282,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `Order_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42026;
+  MODIFY `Order_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42033;
 
 --
 -- AUTO_INCREMENT for table `product`

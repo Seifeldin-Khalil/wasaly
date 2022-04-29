@@ -26,11 +26,8 @@
                 echo "Not incremented";
             }
         }else if ($sign == "minus"){
-             $query = "UPDATE `ordered_product` SET `Quantity` =  ($amt - 1)
-            WHERE `ordered_product`.`Ordered_product_ID` = 
-            (SELECT `ordered_product`.`Ordered_product_ID` FROM `ordered_product`
-             WHERE `ordered_product`.`Product_ID` = $PTD AND `ordered_product`.`Order_ID` = $OID
-            );";
+             $query = "UPDATE `ordered_product` SET `Quantity` = ($amt - 1)
+             WHERE ordered_product.Product_ID = $PTD AND ordered_product.Order_ID = $OID;";
             
             $data = mysqli_query($conn, $query);
     

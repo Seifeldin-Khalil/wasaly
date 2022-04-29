@@ -1,12 +1,13 @@
 <?php
-    static $i = 200;
+    static $i = 1;
     session_start();
     $id = $_SESSION["cust_ID"];
     $conn = mysqli_connect("localhost", "root", "", "wasaly_db");
     $date = date("Y/m/d");
     $PID=$_GET['ptd'];
     
-    $OID = pow($i,2)+$PID+$date;
+    $today = date("i:s");
+    $OID = ($i++) + $today;
 
 
     if(!isset($_SESSION['order_ID'])){

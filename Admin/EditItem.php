@@ -137,7 +137,7 @@ try {
                 </div>
                 <div>
                     <input class="addproduct" onclick = "editItemvalidateForm()" type="submit" name="submit" value = "Edit product" save>
-                    <button class = "addproduct"><a href = "Admin%20Stock%20Management.html">View product</a></button>
+                    <button class = "addproduct"><a href = "Admin%20Stock%20Management.php">View product</a></button>
                 </div>
                 <div>
                     <p>Wasaly.mart © 2022</p>

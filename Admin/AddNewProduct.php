@@ -66,6 +66,8 @@
                 $insertindb = $conn -> query("INSERT INTO `product`(`Product_ID`, `Product_Name`, `Category`, `Amount`, `Price`, `Image`) VALUES ('$productID','$productName','$productCategory','$productamount','$productPrice', '$image')");
                 if($insertindb){
                     header('Location: Admin Stock Management.php');
+                }else{
+                    header('Location: Add Item.php?error=' . $error);
                 }
             }else{
                 header('Location: Add Item.php?error=' . $error);

@@ -1,8 +1,10 @@
+<?php 
+    session_start();
+    if (!isset($_SESSION ['admin_ID'] )) {
+        header("location: ../Login.php");
+    }
+?>
 <?php
-/*session_start();
-if (!isset($_SESSION['loggedIn'])) {
-    header("location: HomePage.php");
-}*/
   require('../connect.php');
   if (isset($_GET['ID'])) {
         $ID = $_GET['ID'];
@@ -15,5 +17,5 @@ if (!isset($_SESSION['loggedIn'])) {
         echo $e->getMessage();
     }
     
-    header("location: view_Products.php");
+    header("location: Admin Stock Management.php");
 ?>

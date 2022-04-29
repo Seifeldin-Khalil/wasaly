@@ -1,5 +1,4 @@
 <?php 
-    require('../connect.php');
     session_start();
     if (!isset($_SESSION ['admin_ID'] )) {
         header("location: ../Login.php");
@@ -68,7 +67,7 @@
                 </div>
                 <div>
                     <input class="addproduct" onclick = "addItemvalidateFormm()" type="submit" name="submit" value = "Add product" save>
-                    <button class = "addproduct"><a href = "Admin%20Stock%20Management.html">View product</a></button>
+                    <button class = "addproduct"><a href = "Admin%20Stock%20Management.php">View product</a></button>
                 </div>
             
                 <div class="form-btns">

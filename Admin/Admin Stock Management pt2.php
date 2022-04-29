@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+    if (!isset($_SESSION ['admin_ID'] )) {
+        header("location: ../Login.php");
+    }
+?>
 <!DOCTYPE html>
 <?php
 require "../connect.php"; 
@@ -33,7 +39,7 @@ require "../connect.php";
     <center>
         <div class="jumbotron" style="width: 70%; margin-top: 30px;">
             <center>
-                <span class="badge badge-light" style="text-align: center; padding-right: 20px; width: 45%; margin-bottom: 50px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);" onclick="document.location='Admin Stock Management pt2.html'" id="test11">
+                <span class="badge badge-light" style="text-align: center; padding-right: 20px; width: 45%; margin-bottom: 50px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);" onclick="document.location='Admin Stock Management.php'" id="test11">
                     <h1 style="padding-right: 0px; text-align: center; letter-spacing: 8px;">&nbsp; Fruits</h1>
                 </span>
                 <span class="badge badge-dark" style="text-align: center; padding-right: 20px; width: 45%; margin-bottom: 50px; float:left; margin-left: 30px;">

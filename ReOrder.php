@@ -45,5 +45,7 @@
     }
     if ($insertOrder ) {
         header("location: Order History.php");
-    }  
+    }else{
+        header("location: Order History.php");
+    }
 ?>

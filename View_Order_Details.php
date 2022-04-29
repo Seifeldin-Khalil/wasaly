@@ -54,7 +54,7 @@
                                     echo '<td>';
                                         echo '<a  onclick = ' . "show_order_history(" .$value['Order_ID'] .")" . '>View order details</a>';
                                     echo '<br>';
-                                        echo "<a href=" . "" . ">Rate &#128512;</a>";
+                                    echo "<a href=" . "Feedback.php?ID=" . $value["Order_ID"] . ">Rate &#128512;</a>";
                                     echo '</td>';
                                     echo "<td><a href=" . "ReOrder.php?ID=" . $value["Order_ID"]  . ">Reorder</a></td>";
                                 echo "</tr>";

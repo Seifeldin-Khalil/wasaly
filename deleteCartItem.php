@@ -8,7 +8,7 @@
     $data = mysqli_query($conn, $query);
 
     if($data){
-        header("Location:http://localhost/wasaly/cart.php?oid=".$OID."");
+        header("Location:cart.php?oid=".$OID."");
         
     }else{
         echo "Not Deleted";

@@ -46,7 +46,7 @@
         <div class="carttitle">
             <span style="font-size: 32px; float:left">Shopping Bag
             </span>
-            <a href = "http://localhost/wasaly/removeAllCartItems.php?oid='<?php echo $order?>'" style="font-size: 15px; float: right; background-color: #9dc2f2; border-radius: 50px; padding: 4px 15px;font-family: 'Montserrat', sans-serif;">
+            <a href = "removeAllCartItems.php?oid='<?php echo $order?>'" style="font-size: 15px; float: right; background-color: #9dc2f2; border-radius: 50px; padding: 4px 15px;font-family: 'Montserrat', sans-serif;">
             Remove All</a>
            </div>
 
@@ -68,7 +68,7 @@
                             echo "<tr>";
                             
                             echo "<td style = 'padding: 5px;  text-align:center'>";
-                            echo '<a href = "http://localhost/wasaly/deleteCartItem.php?ptd='.$rowNum.'&oid='.$order.'">
+                            echo '<a href = "deleteCartItem.php?ptd='.$rowNum.'&oid='.$order.'">
                             <button style = "width: 30px; height: 40px" class="delete-btn" type="button" name="button">
                                 <img src="imgs/Maii/delete-icn.svg" alt="" /></button>';
                             echo "</td>";
@@ -81,7 +81,7 @@
 
                             $sign = "minus";
                             echo "<td style = 'padding: 5px;  text-align:center'>";
-                            echo '<a href = "http://localhost/wasaly/cartCalcs.php?ptd='.$rowNum.'&sign='.$sign.'&amt='.$row["Quantity"].'&oid='.$order.'">
+                            echo '<a href = "cartCalcs.php?ptd='.$rowNum.'&sign='.$sign.'&amt='.$row["Quantity"].'&oid='.$order.'">
                             <button class="minus-btn" style = "width: 30px; height: 40px"; padding-top: 5px" type="button" name="button"> <img src="imgs/Maii/minus.svg" alt="" /></button>';
                             echo "</td>";
                             
@@ -91,7 +91,7 @@
 
                             $sign = "plus";
                             echo "<td style = 'padding: 5px;  text-align:center'>";
-                            echo '<a href = "http://localhost/wasaly/cartCalcs.php?ptd='.$rowNum.'&sign='.$sign.'&amt='.$row["Quantity"].'&oid='.$order.'">';
+                            echo '<a href = "cartCalcs.php?ptd='.$rowNum.'&sign='.$sign.'&amt='.$row["Quantity"].'&oid='.$order.'">';
                             echo "<button class='plus-btn' style = 'width: 30px; height: 40px' type='button' name='button'><img src='imgs/Maii/plus.svg' alt=''/></button>";
                             echo "</td>";
 
@@ -113,14 +113,14 @@
                                         echo "$ " . $totalOrderPrice ; 
                             echo '</div>
                                 </div>
-                                <a href = "http://localhost/wasaly/Checkout.php?total='.$totalOrderPrice.'">
-                                <button class="chkoutBtn" onclick="document.location="Checkout.html"">Checkout</button>
+                                <a href = "Checkout.php?total='.$totalOrderPrice.'">
+                                <button class="chkoutBtn" onclick="document.location="Checkout.php"">Checkout</button>
                             </div>
                         </center></div>';
                     }else{
                         echo "<table><tr><td style = 'padding: 50px;  text-align:right'> <h3> Your cart is empty </h3></td>";
                         echo "<td style = 'padding: 50px;  text-align:left'>
-                        <a href = 'http://localhost/wasaly/Home(assem).php'>
+                        <a href = 'Home(assem).php'>
                         <button style='background-color: #9dc2f2;
                         border-radius: 50px; padding: 4px 15px;font-size: 16px; font-weight: 400;
                         color: #202020;' onclick='document.location='Home(assem).php''>Sart Shopping Now</button></td></tr> </table> </div>";
@@ -129,7 +129,7 @@
                else{
                 echo "<table><tr><td style = 'padding: 50px;  text-align:right'> <h3> Your cart is empty </h3></td>";
                 echo "<td style = 'padding: 50px;  text-align:left'>
-                <a href = 'http://localhost/wasaly/Home(assem).php'>
+                <a href = 'Home(assem).php'>
                 <button style='background-color: #9dc2f2;
                 border-radius: 50px; padding: 4px 15px;font-size: 16px; font-weight: 400;
                 color: #202020;' onclick='document.location='Home(assem).php''>Sart Shopping Now</button></td></tr> </table> </div>";

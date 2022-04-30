@@ -55,14 +55,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nameErr = "Name is required";
         $flag = false;
     } else {
-        $firstname = test_input($_POST["name"]);
+        $name = test_input($_POST["name"]);
     }
 
     if (empty($_POST["email"])) {
         $emailErr = "Email is required";
         $flag = false;
     } else {
-        $lastname = test_input($_POST["email"]);
+        $email = test_input($_POST["email"]);
     }
 
     if (empty($_POST["phone"])) {
@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $messageErr = "Message is required";
         $flag = false;
     } else {
-        $email = test_input($_POST["message"]);
+        $message = test_input($_POST["message"]);
     }
     if (($_POST["rating"])=="no rating") {
         $ratingErr = "Rating is required";
@@ -92,6 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // execute sql insert
         if ($conn->query($sql) == TRUE) {
             echo "<script> alert('data saved successfully');</script>";
+            echo "<script> window.location.href = 'Order History.php'; </script>";
         }
     }
 }

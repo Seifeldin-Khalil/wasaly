@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2022 at 01:13 AM
+-- Generation Time: Apr 30, 2022 at 03:03 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -106,6 +106,23 @@ CREATE TABLE `feedback` (
   `Order_ID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`Feedback_ID`, `Description`, `Rating`, `name`, `email`, `phone`, `Order_ID`) VALUES
+(1, 'My order was perfect', 5, 'Abdelrahman Hagrass', 'hagrass123@gmail.com', '01124556982', 1),
+(2, 'My order could have been better, i had high expectations but it is fine.', 4, 'Abdelrahman', 'hagrass123@gmail.com', '01124556982', 3),
+(3, 'Perfect Order', 5, 'Mahmoud Assem', 'mahmoud@gmail.com', '0111456569322', 2),
+(4, 'nice order', 3, 'Maiada', 'maiada@gmail.com', '01233654487', 5),
+(6, 'i had a bad experience with my order.', 2, 'SeifElDin Khalil', 'seif@gmail.com', '012112121777', 42027),
+(8, 'terrible experience and terrible service.', 1, 'ahmed mohamed', 'ahmed23234@gmail.com', '01112223665', 6),
+(9, 'Cool website xD', 5, 'mohamed salah', 'mosalah@gmail.com', '0111111111111', 7),
+(10, 'average service and average designed website.', 3, 'Nada Mohamed', 'nada@gmail.com', '012122121212', 42031),
+(11, 'my order arrived late, but beyond good quality products.', 4, 'abdelrahman shafiee', 'shafiee@gmail.com', '01554488787', 9),
+(12, 'i enjoyed the order.', 5, 'Mohand Galal', 'mogalal@gmail.com', '01588779921', 11),
+(13, 'below average....', 2, 'Magdy Ahme', 'magdyahmed123@gmail.com', '01223564875', 42026);
+
 -- --------------------------------------------------------
 
 --
@@ -134,7 +151,8 @@ INSERT INTO `order` (`Order_ID`, `Order_date`, `Order_status`, `Customer_ID`) VA
 (11, '2022/04/30', 'Pending', 9),
 (42026, '2022/04/30', 'Pending', 10),
 (42027, '2022/04/30', 'Pending', 4),
-(42031, '2022/04/30', 'Pending', 7);
+(42031, '2022/04/30', 'Pending', 7),
+(44027, '2022/04/30', 'Pending', 10);
 
 -- --------------------------------------------------------
 
@@ -157,11 +175,13 @@ INSERT INTO `ordered_product` (`Order_ID`, `Product_ID`, `Quantity`) VALUES
 (1, 2, 2),
 (42026, 2, 1),
 (42031, 2, 1),
+(44027, 2, 1),
 (2, 3, 1),
 (3, 3, 1),
 (5, 3, 1),
 (2, 4, 1),
 (42026, 4, 1),
+(44027, 4, 1),
 (7, 5, 1),
 (42027, 5, 1),
 (3, 6, 1),
@@ -276,19 +296,19 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `Feedback_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Feedback_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `Order_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42033;
+  MODIFY `Order_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44028;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `Product_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5001;
+  MODIFY `Product_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2147483648;
 
 --
 -- Constraints for dumped tables
